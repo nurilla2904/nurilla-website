@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nurilla Abdushukurov – International Consultant | Uzbekistan</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+:root{
+  --navy:#0d1b2a;
+  --navy2:#1a2e45;
+  --gold:#b8963e;
+  --gold2:#d4af6a;
+  --cream:#faf8f4;
+  --grey:#f0ede8;
+  --mid:#8a8a8a;
+  --text:#2c2c2c;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Inter',sans-serif;color:var(--text);background:#fff;overflow-x:hidden;}
+
+/* TOP BAR */
+.topbar{background:var(--navy);border-bottom:2px solid var(--gold);text-align:center;padding:13px 20px 9px;}
+.topbar .tname{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:600;letter-spacing:.05em;color:#fff;}
+.topbar .tname em{color:var(--gold2);font-style:normal;}
+.topbar .trole{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.55);margin-top:4px;}
+
+/* NAV */
+nav{background:#fff;border-bottom:1px solid rgba(184,150,62,.2);position:sticky;top:0;z-index:1000;box-shadow:0 2px 20px rgba(0,0,0,.07);}
+.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 30px;}
+.nav-brand{font-family:'Playfair Display',serif;font-size:.88rem;font-weight:600;color:var(--navy);padding:16px 0;letter-spacing:.04em;}
+.nav-brand span{color:var(--gold);}
+.nav-links{display:flex;list-style:none;}
+.nav-links li a{display:block;padding:20px 15px;color:var(--navy);text-decoration:none;font-size:.73rem;font-weight:500;letter-spacing:.13em;text-transform:uppercase;transition:color .3s;position:relative;}
+.nav-links li a::after{content:'';position:absolute;bottom:0;left:15px;right:15px;height:2px;background:var(--gold);transform:scaleX(0);transition:transform .3s;}
+.nav-links li a:hover::after{transform:scaleX(1);}
+.nav-links li a:hover{color:var(--gold);}
+.nav-cta{margin-left:10px;}
+.nav-cta a{background:var(--gold);color:#fff !important;padding:9px 20px;border-radius:2px;font-size:.72rem;letter-spacing:.13em;text-transform:uppercase;font-weight:600;text-decoration:none;transition:background .3s;}
+.nav-cta a:hover{background:var(--navy);}
+
+/* HERO */
+.hero{
+  min-height:100vh;
+  background:linear-gradient(135deg,rgba(13,27,42,0.92) 0%,rgba(26,46,69,0.88) 100%), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1800&q=80') center/cover no-repeat;
+  display:flex;align-items:center;justify-content:center;
+  position:relative;overflow:hidden;
+}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(to right,rgba(13,27,42,.95) 50%,rgba(13,27,42,.6));}
+.hero-inner{
+  max-width:1200px;margin:0 auto;
+  padding:120px 30px 80px;
+  display:grid;
+  grid-template-columns:1fr 400px;
+  gap:60px;
+  align-items:center;
+  position:relative;z-index:2;width:100%;
+}
+.hero-h1{font-family:'Playfair Display',serif;font-size:3.4rem;font-weight:700;line-height:1.15;color:#fff;margin-bottom:18px;}
+.hero-h1 em{color:var(--gold2);font-style:normal;display:block;}
+.hero-tagline{font-size:1.05rem;color:var(--gold2);font-weight:400;letter-spacing:.02em;margin-bottom:24px;font-style:italic;}
+.hero-sub{font-size:.92rem;color:rgba(255,255,255,.75);line-height:1.8;margin-bottom:40px;max-width:560px;}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:40px;}
+.btn-gold{background:var(--gold);color:#fff;padding:14px 32px;text-decoration:none;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600;border-radius:2px;transition:background .3s;}
+.btn-gold:hover{background:var(--gold2);color:var(--navy);}
+.btn-outline{border:1px solid rgba(255,255,255,.4);color:#fff;padding:14px 32px;text-decoration:none;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;font-weight:500;border-radius:2px;transition:all .3s;}
+.btn-outline:hover{border-color:var(--gold);color:var(--gold);}
+
+/* HERO STATS */
+.hero-stats{display:flex;gap:0;padding-top:24px;border-top:1px solid rgba(255,255,255,.1);flex-wrap:wrap;}
+.hstat{text-align:center;padding:8px 14px 8px 0;margin-right:14px;border-right:1px solid rgba(255,255,255,.1);flex:1 1 120px;}
+.hstat:last-child{border-right:none;margin-right:0;}
+.hstat .num{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;color:var(--gold2);}
+.hstat .lbl{font-size:.46rem;letter-spacing:.06em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-top:2px;line-height:1.35;}
+
+/* HERO PHOTO */
+.hero-photo-wrap{position:relative;}
+.hero-photo-frame{position:relative;border-radius:4px;overflow:hidden;box-shadow:0 40px 80px rgba(0,0,0,.5);}
+.hero-photo-frame::before{content:'';position:absolute;top:-12px;left:-12px;right:12px;bottom:12px;border:2px solid var(--gold);border-radius:4px;z-index:0;}
+.hero-photo-frame img{width:100%;display:block;position:relative;z-index:1;filter:grayscale(8%) contrast(1.05);}
+
+/* SECTION COMMON */
+.section{padding:90px 30px;}
+.section-inner{max-width:1200px;margin:0 auto;}
+.section-tag{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:12px;}
+.section-h2{font-family:'Playfair Display',serif;font-size:2.4rem;font-weight:700;color:var(--navy);margin-bottom:16px;line-height:1.2;}
+.section-h2.white{color:#fff;}
+.section-rule{width:50px;height:3px;background:var(--gold);margin-bottom:32px;}
+.section-intro{font-size:.97rem;line-height:1.8;color:#555;max-width:720px;}
+
+/* UZBEKISTAN SECTION */
+.uz-section{background:var(--cream);}
+.uz-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:50px;}
+.uz-card{background:#fff;border-radius:4px;padding:32px 28px;border-left:3px solid var(--gold);box-shadow:0 4px 20px rgba(0,0,0,.05);transition:transform .3s,box-shadow .3s;}
+.uz-card:hover{transform:translateY(-5px);box-shadow:0 12px 40px rgba(0,0,0,.1);}
+.uz-card h3{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:600;color:var(--navy);margin-bottom:12px;}
+.uz-card p{font-size:.88rem;line-height:1.75;color:#555;}
+.uz-closing{margin-top:50px;background:var(--navy);color:#fff;padding:36px 40px;border-radius:4px;border-left:4px solid var(--gold);}
+.uz-closing p{font-size:.97rem;line-height:1.8;font-style:italic;color:rgba(255,255,255,.85);}
+
+/* ABOUT */
+.about-section{background:#fff;}
+.about-grid{display:grid;grid-template-columns:1fr 380px;gap:70px;align-items:start;margin-top:50px;}
+.about-text p{font-size:.93rem;line-height:1.9;color:#555;margin-bottom:18px;}
+.about-right{}
+.career-timeline{}
+.career-timeline h3{font-family:'Playfair Display',serif;font-size:1.3rem;color:var(--navy);margin-bottom:24px;font-weight:600;}
+.tl-item{display:flex;gap:16px;margin-bottom:20px;align-items:flex-start;}
+.tl-icon{width:36px;height:36px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:.8rem;}
+.tl-icon i{color:#fff;}
+.tl-body{}
+.tl-year{font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);font-weight:600;}
+.tl-role{font-size:.9rem;font-weight:600;color:var(--navy);margin-top:2px;}
+.tl-org{font-size:.83rem;color:#666;margin-top:2px;}
+.lang-row{display:flex;gap:16px;flex-wrap:wrap;margin-top:30px;}
+.lang-badge{background:var(--grey);padding:8px 18px;border-radius:30px;font-size:.8rem;font-weight:500;color:var(--navy);}
+
+/* EXPERTISE */
+.expertise-section{background:linear-gradient(rgba(13,27,42,0.96),rgba(13,27,42,0.96)),url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1800&q=80') center/cover no-repeat;padding:90px 30px;}
+.expertise-section .section-h2{color:#fff;}
+.expertise-section .section-intro{color:rgba(255,255,255,.65);}
+.exp-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:50px;}
+.exp-card{background:rgba(255,255,255,.04);border:1px solid rgba(184,150,62,.2);border-radius:4px;padding:30px 24px;transition:background .3s,border-color .3s;}
+.exp-card:hover{background:rgba(184,150,62,.08);border-color:var(--gold);}
+.exp-card .ec-icon{font-size:1.5rem;color:var(--gold2);margin-bottom:16px;}
+.exp-card h3{font-family:'Playfair Display',serif;font-size:1rem;font-weight:600;color:#fff;margin-bottom:10px;}
+.exp-card p{font-size:.83rem;line-height:1.7;color:rgba(255,255,255,.55);}
+.publications{margin-top:60px;background:rgba(255,255,255,.03);border:1px solid rgba(184,150,62,.15);border-radius:4px;padding:36px 40px;}
+.publications h3{font-family:'Playfair Display',serif;font-size:1.2rem;color:#fff;margin-bottom:24px;font-weight:600;}
+.pub-item{padding:12px 0;border-bottom:1px solid rgba(255,255,255,.07);font-size:.85rem;color:rgba(255,255,255,.65);line-height:1.6;}
+.pub-item:last-child{border-bottom:none;}
+.pub-item strong{color:var(--gold2);}
+
+/* SERVICES */
+.services-section{background:var(--cream);}
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:50px;}
+.svc-card{background:#fff;border-radius:4px;padding:34px 28px;box-shadow:0 4px 20px rgba(0,0,0,.05);transition:all .3s;position:relative;overflow:hidden;}
+.svc-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--gold);transform:scaleX(0);transition:transform .3s;}
+.svc-card:hover::before{transform:scaleX(1);}
+.svc-card:hover{transform:translateY(-5px);box-shadow:0 16px 50px rgba(0,0,0,.1);}
+.svc-icon{width:48px;height:48px;background:rgba(184,150,62,.1);border-radius:4px;display:flex;align-items:center;justify-content:center;margin-bottom:18px;}
+.svc-icon i{color:var(--gold);font-size:1.1rem;}
+.svc-card h3{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:600;color:var(--navy);margin-bottom:10px;}
+.svc-card p{font-size:.86rem;line-height:1.75;color:#666;}
+
+/* INSIGHTS */
+.insights-section{background:#fff;}
+.insights-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:50px;}
+.insight-card{border-radius:4px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.07);transition:transform .3s;display:flex;flex-direction:column;}
+.insight-card:hover{transform:translateY(-5px);}
+.insight-header{background:var(--navy);padding:24px;}
+.insight-type-badge{display:inline-block;font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);font-weight:600;background:rgba(184,150,62,.15);padding:4px 10px;border-radius:30px;margin-bottom:10px;}
+.insight-header h3{font-family:'Playfair Display',serif;font-size:1rem;color:#fff;line-height:1.4;}
+.insight-body{padding:24px;background:#fff;flex:1;}
+.insight-body p{font-size:.86rem;line-height:1.7;color:#666;}
+.insight-tags{margin-top:16px;display:flex;gap:8px;flex-wrap:wrap;}
+.itag{font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);background:rgba(184,150,62,.08);padding:4px 10px;border-radius:30px;font-weight:500;}
+.priority-high{color:#c0392b;background:rgba(192,57,43,.08);}
+.subscribe-box{margin-top:60px;background:linear-gradient(135deg,rgba(13,27,42,0.95),rgba(26,46,69,0.95)),url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1200&q=80') center/cover no-repeat;border-radius:4px;padding:50px;text-align:center;}
+.subscribe-box h3{font-family:'Playfair Display',serif;font-size:1.6rem;color:#fff;margin-bottom:14px;}
+.subscribe-box p{font-size:.93rem;color:rgba(255,255,255,.65);margin-bottom:28px;}
+.subscribe-form{display:flex;gap:12px;max-width:480px;margin:0 auto;}
+.subscribe-form input{flex:1;padding:13px 18px;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.08);color:#fff;border-radius:2px;font-size:.9rem;outline:none;}
+.subscribe-form input::placeholder{color:rgba(255,255,255,.4);}
+.subscribe-form button{background:var(--gold);color:#fff;border:none;padding:13px 24px;border-radius:2px;cursor:pointer;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600;transition:background .3s;white-space:nowrap;}
+.subscribe-form button:hover{background:var(--gold2);color:var(--navy);}
+
+/* WHY ME */
+.whyme-section{background:var(--grey);}
+.whyme-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:50px;}
+.wm-card{background:#fff;border-radius:4px;padding:34px 28px;box-shadow:0 4px 20px rgba(0,0,0,.05);transition:all .3s;}
+.wm-card:hover{transform:translateY(-5px);box-shadow:0 12px 40px rgba(0,0,0,.1);}
+.wm-icon{font-size:1.8rem;margin-bottom:16px;}
+.wm-card h3{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:600;color:var(--navy);margin-bottom:10px;}
+.wm-card p{font-size:.87rem;line-height:1.75;color:#666;}
+.quote-box{margin-top:60px;background:var(--navy);border-left:4px solid var(--gold);border-radius:4px;padding:40px 50px;position:relative;}
+.quote-box::before{content:'\201C';font-family:'Playfair Display',serif;font-size:5rem;color:var(--gold);opacity:.3;position:absolute;top:10px;left:30px;line-height:1;}
+.quote-box blockquote{font-family:'Playfair Display',serif;font-size:1.15rem;line-height:1.75;color:rgba(255,255,255,.9);font-style:italic;padding-left:30px;}
+.quote-box cite{display:block;margin-top:18px;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold2);padding-left:30px;font-style:normal;}
+
+/* CONTACT */
+.contact-section{background:#fff;}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;margin-top:50px;align-items:start;}
+.contact-info .status-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(39,174,96,.1);border:1px solid rgba(39,174,96,.3);padding:8px 18px;border-radius:30px;margin-bottom:30px;}
+.status-dot{width:8px;height:8px;border-radius:50%;background:#27ae60;animation:pulse 2s infinite;}
+@keyframes pulse{0%,100%{opacity:1;}50%{opacity:.4;}}
+.status-badge span{font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:#27ae60;font-weight:600;}
+.contact-detail{display:flex;gap:16px;align-items:flex-start;margin-bottom:22px;}
+.cd-icon{width:40px;height:40px;background:var(--grey);border-radius:4px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.cd-icon i{color:var(--gold);}
+.cd-body .cd-label{font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--mid);font-weight:500;}
+.cd-body a{display:block;color:var(--navy);font-size:.9rem;font-weight:500;text-decoration:none;margin-top:2px;}
+.cd-body a:hover{color:var(--gold);}
+.cd-body p{font-size:.83rem;color:#888;margin-top:1px;}
+.eng-types{display:flex;flex-wrap:wrap;gap:8px;margin-top:30px;}
+.eng-badge{font-size:.72rem;letter-spacing:.08em;border:1px solid rgba(184,150,62,.4);color:var(--navy);padding:6px 14px;border-radius:30px;font-weight:500;}
+
+/* FORM */
+.contact-form-wrap{background:var(--cream);border-radius:4px;padding:28px 30px;}
+.form-group{margin-bottom:14px;}
+.form-group label{display:block;font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;font-weight:600;color:var(--navy);margin-bottom:8px;}
+.form-group input,.form-group select,.form-group textarea{width:100%;padding:10px 14px;border:1px solid #ddd;border-radius:2px;font-size:.87rem;font-family:'Inter',sans-serif;color:var(--text);background:#fff;outline:none;transition:border-color .3s;}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--gold);}
+.form-group textarea{resize:vertical;min-height:90px;}
+.form-submit{width:100%;background:var(--gold);color:#fff;border:none;padding:15px;font-size:.78rem;letter-spacing:.15em;text-transform:uppercase;font-weight:700;border-radius:2px;cursor:pointer;transition:background .3s;margin-top:6px;}
+.form-submit:hover{background:var(--navy);}
+.form-privacy{text-align:center;font-size:.75rem;color:#999;margin-top:12px;}
+.form-privacy i{color:var(--gold);margin-right:4px;}
+
+/* FOOTER */
+footer{background:var(--navy);border-top:2px solid var(--gold);padding:24px 30px;}
+.footer-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;}
+.footer-left{display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
+.footer-name{font-family:'Playfair Display',serif;font-size:1rem;color:#fff;font-weight:600;white-space:nowrap;}
+.footer-name span{color:var(--gold);}
+.footer-sep{color:rgba(255,255,255,.5);font-size:.9rem;}
+.footer-role-item{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:#fff;white-space:nowrap;}
+.footer-copy{font-size:.72rem;color:rgba(255,255,255,.8);white-space:nowrap;}
+
+@media(max-width:1024px){
+  .hero-inner{grid-template-columns:1fr;}
+  .hero-photo-wrap{display:none;}
+  .uz-grid{grid-template-columns:repeat(2,1fr);}
+  .exp-grid{grid-template-columns:repeat(2,1fr);}
+  .about-grid{grid-template-columns:1fr;}
+  .svc-grid{grid-template-columns:repeat(2,1fr);}
+  .insights-grid{grid-template-columns:repeat(2,1fr);}
+  .whyme-grid{grid-template-columns:repeat(2,1fr);}
+  .contact-grid{grid-template-columns:1fr;}
+}
+@media(max-width:768px){
+  .nav-links{display:none;}
+  .hero-h1{font-size:2.4rem;}
+  .uz-grid,.exp-grid,.svc-grid,.insights-grid,.whyme-grid{grid-template-columns:1fr;}
+  .subscribe-form{flex-direction:column;}
+}
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="tname">Nurilla Abdushukurov <em>|</em> International Consultant</div>
+  <div class="trole">Regulatory Affairs &nbsp;·&nbsp; Government Relations &nbsp;·&nbsp; Policy Advisory</div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <div class="nav-brand">Uzbekistan <span>·</span> Advisory</div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#expertise">Expertise</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#insights">Insights</a></li>
+      <li><a href="#whyme">Why Me</a></li>
+    </ul>
+    <div class="nav-cta"><a href="#contact">Contact</a></div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero-overlay"></div>
+  <div class="hero-inner">
+    <div class="hero-text">
+      <h1 class="hero-h1">Illuminating the Path <em>to Uzbekistan.</em></h1>
+      <p class="hero-tagline">Your Trusted Guide to Uzbekistan's Policy &amp; Business Landscape.</p>
+      <p class="hero-sub">With eight years spanning senior government roles, international development programmes, and private sector advisory, I help multinational companies, international organisations, foreign investors, and development partners navigate Uzbekistan's fast-moving regulatory, political, and investment landscape. My work is grounded in institutional knowledge, trusted relationships, and on-the-ground presence that turn complexity into clear, confident action.</p>
+      <div class="hero-btns">
+        <a href="#contact" class="btn-gold">Start a Conversation</a>
+        <a href="#about" class="btn-outline">Learn More</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hstat"><div class="num">8+</div><div class="lbl">Years Experience</div></div>
+        <div class="hstat"><div class="num">$40M+</div><div class="lbl">Export Contracts Facilitated</div></div>
+        <div class="hstat"><div class="num">30+</div><div class="lbl">International Missions Coordinated</div></div>
+        <div class="hstat"><div class="num">40+</div><div class="lbl">Stakeholder Meetings Organised</div></div>
+        <div class="hstat"><div class="num">50+</div><div class="lbl">Events, Trainings &amp; Capacity Building Coordinated</div></div>
+      </div>
+    </div>
+    <div class="hero-photo-wrap">
+      <div class="hero-photo-frame">
+        <img src="images/DSCF0428.jpg" alt="Nurilla Abdushukurov" onerror="this.parentElement.parentElement.style.display='none'">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- UZBEKISTAN -->
+<section class="section uz-section" id="uzbekistan">
+  <div class="section-inner">
+    <div class="section-tag">Market Context</div>
+    <h2 class="section-h2">Why Uzbekistan Requires Expert Advisory</h2>
+    <div class="section-rule"></div>
+    <p class="section-intro">Uzbekistan is one of the most active reform environments in the world. It is also one of the most complex to navigate. For organisations operating here, general analysis rarely translates into effective action.</p>
+    <div class="uz-grid">
+      <div class="uz-card"><h3>A Market That Moves Daily</h3><p>New legislation, decrees, and regulatory acts are issued almost continuously. Tax rules, licensing requirements, and investment conditions shift frequently. Without active local monitoring, organisations are regularly caught off-guard.</p></div>
+      <div class="uz-card"><h3>Unprecedented Reform Momentum</h3><p>Since 2017, Uzbekistan has pushed through one of the most ambitious reform programmes in the post-Soviet space: currency liberalisation, WTO accession, privatisation, and digital transformation. Every wave creates new opportunities and new compliance obligations.</p></div>
+      <div class="uz-card"><h3>Informal Dynamics Matter</h3><p>Official channels tell only part of the story. Which ministries carry weight, which advisors shape outcomes, and how relationships influence decisions — these things cannot be read in a policy document. They come from time spent inside the system.</p></div>
+      <div class="uz-card"><h3>Layered Institutional Complexity</h3><p>Multiple overlapping authorities operate in ways that are opaque to outsiders. Effective navigation across ministries, agencies, the presidential administration, and regional governments requires someone who has worked within these institutions.</p></div>
+      <div class="uz-card"><h3>Relationships Before Transactions</h3><p>Trust and personal relationships are foundational to doing business in Uzbekistan. Knowing who to approach, when, and how to frame a conversation often matters more than formal filings. This is not a market for cold outreach.</p></div>
+      <div class="uz-card"><h3>Green Economy &amp; Regional Connectivity</h3><p>Uzbekistan is positioning itself as a key hub along modern trade and transport corridors, while rapidly expanding its green economy commitments. These areas carry significant investment potential and fast-moving regulatory frameworks.</p></div>
+    </div>
+    <div class="uz-closing"><p>A regulation enacted today can alter your obligations tomorrow. An investment window that exists now may close within weeks. The difference is often having the right intelligence at the right moment.</p></div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section about-section" id="about">
+  <div class="section-inner">
+    <div class="section-tag">About</div>
+    <h2 class="section-h2">Nurilla Abdushukurov</h2>
+    <div class="section-rule"></div>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>I am a public affairs and international development consultant with over eight years of experience advising governments, international organisations, and private sector stakeholders across Uzbekistan and Central Asia.</p>
+        <p>I currently serve as Senior GR Advisor at <strong>Aretera Public Affairs</strong>, providing strategic counsel to multinational clients navigating the region's political, regulatory, and business environments.</p>
+        <p>Prior to this, I was a key member of <strong>USAID's Trade Central Asia Activity</strong>, a regional programme supporting Uzbekistan and its neighbours in building trade resilience and deepening economic integration. In that role, I coordinated trade facilitation and export promotion initiatives, facilitated over $40 million in export contracts, and supported Uzbekistan's WTO accession process alongside international and local expert consultants.</p>
+        <p>I have also worked as a local consultant for the <strong>OECD</strong>, supporting projects focused on competition and antimonopoly reform, environmental and water resilience, sustainable infrastructure investment, and climate mitigation and adaptation in Uzbekistan.</p>
+        <p>Earlier in my career, I worked at <strong>Uzbekistan's Ministry of Investments and Foreign Trade</strong>, where I was directly involved in some of the country's most significant economic reforms, including improving Uzbekistan's standing in international business rankings, co-organising the first Tashkent International Investment Forum, and supporting the Foreign Investors Council under the President of Uzbekistan.</p>
+        <p>I combine deep institutional knowledge with hands-on delivery, and work fluently in Uzbek, English, and Russian.</p>
+        <div class="lang-row">
+          <span class="lang-badge">🇺🇿 Uzbek — Native</span>
+          <span class="lang-badge">🇬🇧 English — C1</span>
+          <span class="lang-badge">🇷🇺 Russian — C1</span>
+        </div>
+      </div>
+      <div class="about-right">
+        <div class="career-timeline">
+          <h3>Career Path</h3>
+          <div class="tl-item"><div class="tl-icon"><i class="fas fa-graduation-cap"></i></div><div class="tl-body"><div class="tl-year">2014–2018</div><div class="tl-role">BSc Economics with Finance — First Class Honours</div><div class="tl-org">Westminster International University in Tashkent</div></div></div>
+          <div class="tl-item"><div class="tl-icon"><i class="fas fa-landmark"></i></div><div class="tl-body"><div class="tl-year">2018–2022</div><div class="tl-role">Investment Climate Expert</div><div class="tl-org">Ministry of Investments and Foreign Trade, Uzbekistan</div></div></div>
+          <div class="tl-item"><div class="tl-icon"><i class="fas fa-chart-bar"></i></div><div class="tl-body"><div class="tl-year">2022</div><div class="tl-role">Senior Officer, Data Analytics &amp; Market Research</div><div class="tl-org">Westminster International University in Tashkent</div></div></div>
+          <div class="tl-item"><div class="tl-icon"><i class="fas fa-globe"></i></div><div class="tl-body"><div class="tl-year">2022–2025</div><div class="tl-role">National Connectivity Associate</div><div class="tl-org">USAID Trade Central Asia Activity, DAI Global</div></div></div>
+          <div class="tl-item"><div class="tl-icon"><i class="fas fa-search"></i></div><div class="tl-body"><div class="tl-year">2022–Present</div><div class="tl-role">Local Consultant</div><div class="tl-org">OECD (Freelance)</div></div></div>
+          <div class="tl-item"><div class="tl-icon"><i class="fas fa-medal"></i></div><div class="tl-body"><div class="tl-year">2019–Present</div><div class="tl-role">One Young World Ambassador</div><div class="tl-org">European Commission Scholarship, London Summit 2019</div></div></div>
+          <div class="tl-item"><div class="tl-icon"><i class="fas fa-briefcase"></i></div><div class="tl-body"><div class="tl-year">2025–Present</div><div class="tl-role">Senior GR Advisor</div><div class="tl-org">Aretera Public Affairs</div></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERTISE -->
+<section class="expertise-section section" id="expertise">
+  <div class="section-inner">
+    <div class="section-tag">Expertise</div>
+    <h2 class="section-h2 white">Expertise</h2>
+    <div class="section-rule"></div>
+    <p class="section-intro">A practitioner-led advisory built on direct experience across government, multilateral organisations, and private sector engagements in Central Asia.</p>
+    <div class="exp-grid">
+      <div class="exp-card"><div class="ec-icon"><i class="fas fa-handshake"></i></div><h3>Government Relations &amp; Public Affairs</h3><p>Stakeholder mapping, ministerial engagement, regulatory dialogue, and advocacy strategy across Uzbekistan and Central Asia.</p></div>
+      <div class="exp-card"><div class="ec-icon"><i class="fas fa-ship"></i></div><h3>Trade Facilitation &amp; Export Promotion</h3><p>End-to-end export promotion programmes, B2B matchmaking, international trade fair participation, and market access strategy.</p></div>
+      <div class="exp-card"><div class="ec-icon"><i class="fas fa-chart-line"></i></div><h3>Investment Policy &amp; FDI</h3><p>Investment climate reform and FDI attraction, including development of regulatory acts, evidence-based legislative proposals, and coordination with international organisations and IFIs.</p></div>
+      <div class="exp-card"><div class="ec-icon"><i class="fas fa-balance-scale"></i></div><h3>Trade Policy</h3><p>Experience spanning both trade policy development and practical implementation, from drafting export policies to supporting legislative alignment with WTO rules.</p></div>
+      <div class="exp-card"><div class="ec-icon"><i class="fas fa-shield-alt"></i></div><h3>Regulatory Compliance &amp; Monitoring</h3><p>Continuous monitoring of Uzbekistan's legislative landscape, tracking new laws, presidential decrees, and regulatory acts as they emerge.</p></div>
+      <div class="exp-card"><div class="ec-icon"><i class="fas fa-bullhorn"></i></div><h3>Strategic Communications &amp; Crisis Management</h3><p>Government-facing messaging, crisis preparedness, and stakeholder communication in sensitive political environments.</p></div>
+      <div class="exp-card"><div class="ec-icon"><i class="fas fa-leaf"></i></div><h3>Green Economy &amp; Sustainable Development</h3><p>Green economy policy, sustainable infrastructure, and SDG-aligned analysis across the region.</p></div>
+      <div class="exp-card"><div class="ec-icon"><i class="fas fa-users"></i></div><h3>Mission &amp; Delegation Management</h3><p>Full-cycle organisation of expert missions, study tours, and high-level delegations including logistics, scheduling, and interpretation.</p></div>
+    </div>
+    <div class="publications">
+      <h3>Research &amp; Analytical Work</h3>
+      <div class="pub-item"><strong>Peer-Reviewed:</strong> Abdushukurov, N. (2019). The impact of currency crises on economic growth and foreign direct investment: The analysis of emerging and developing economies. <em>Russian Journal of Economics, 5(3): 220–250.</em></div>
+      <div class="pub-item"><strong>OECD (2020)</strong> — Investment Promotion in Eurasia: A Mapping of Investment Promotion Agencies</div>
+      <div class="pub-item"><strong>OECD (2021)</strong> — Improving the Legal Environment for Business and Investment in Central Asia</div>
+      <div class="pub-item"><strong>PWC (2021)</strong> — Cost of Doing Business in Uzbekistan</div>
+      <div class="pub-item"><strong>OECD (2022)</strong> — Boosting the Internationalisation of Firms through Better Export Promotion Policies in Uzbekistan</div>
+      <div class="pub-item"><strong>OECD (2022)</strong> — An Introduction to Competition Law and Policy in Uzbekistan</div>
+      <div class="pub-item"><strong>World Bank (2023)</strong> — Recommendations for a National FDI Strategy and Roadmap for Uzbekistan</div>
+      <div class="pub-item"><strong>OECD (2023)</strong> — Insights on the Business Climate in Uzbekistan</div>
+      <div class="pub-item"><strong>OECD (2025)</strong> — Roadmap for Sustainable Investment Policy Reforms in Uzbekistan</div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="section services-section" id="services">
+  <div class="section-inner">
+    <div class="section-tag">Services</div>
+    <h2 class="section-h2">How I Can Help</h2>
+    <div class="section-rule"></div>
+    <p class="section-intro">A focused set of advisory services for multinational companies, international organisations, foreign investors, and development partners operating in or entering Uzbekistan.</p>
+    <div class="svc-grid">
+      <div class="svc-card"><div class="svc-icon"><i class="fas fa-satellite-dish"></i></div><h3>Market Intelligence &amp; Entry</h3><p>Ongoing monitoring of Uzbekistan's policy, regulatory, and political environment. Custom briefings, sector reports, and rapid alerts on developments that affect your operations or strategy.</p></div>
+      <div class="svc-card"><div class="svc-icon"><i class="fas fa-network-wired"></i></div><h3>Stakeholder Engagement</h3><p>Identifying and approaching the right people across government, regulatory bodies, international organisations, and industry, with context and credibility.</p></div>
+      <div class="svc-card"><div class="svc-icon"><i class="fas fa-bullhorn"></i></div><h3>Policy Advocacy</h3><p>Developing and executing strategies to engage government on regulatory and legislative issues, from technical consultations to direct ministerial dialogue and coalition building.</p></div>
+      <div class="svc-card"><div class="svc-icon"><i class="fas fa-file-contract"></i></div><h3>Regulatory Compliance</h3><p>Monitoring the regulatory environment proactively, assessing the practical impact of new requirements, and guiding clients through adaptation before changes create risk.</p></div>
+      <div class="svc-card"><div class="svc-icon"><i class="fas fa-microscope"></i></div><h3>Analytics &amp; Research</h3><p>Evidence-based analysis: market entry assessments, investment climate reviews, sector studies, and bespoke research on specific regulatory or policy questions.</p></div>
+      <div class="svc-card"><div class="svc-icon"><i class="fas fa-chess"></i></div><h3>Strategy Development</h3><p>Translating intelligence and insight into clear, actionable plans — whether entering the market, managing a challenge, or capitalising on a policy opportunity.</p></div>
+      <div class="svc-card"><div class="svc-icon"><i class="fas fa-comments"></i></div><h3>Strategic Communications &amp; Crisis Management</h3><p>Government-facing communications, crisis preparedness planning, rapid response support, and narrative development for high-stakes situations.</p></div>
+      <div class="svc-card"><div class="svc-icon"><i class="fas fa-globe-asia"></i></div><h3>Export &amp; Trade Support</h3><p>Export promotion strategy, trade facilitation, B2B matchmaking, trade fair participation, and market access advisory across Uzbekistan and Central Asia.</p></div>
+      <div class="svc-card"><div class="svc-icon"><i class="fas fa-plane"></i></div><h3>Mission &amp; Delegation Support</h3><p>End-to-end organisation of expert missions, study tours, and high-level delegations to Uzbekistan: programme design, stakeholder scheduling, interpretation, and logistics.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- INSIGHTS -->
+<section class="section insights-section" id="insights">
+  <div class="section-inner">
+    <div class="section-tag">Insights &amp; Updates</div>
+    <h2 class="section-h2">Insights &amp; Updates</h2>
+    <div class="section-rule"></div>
+    <p class="section-intro">Regulatory alerts, policy developments, and market intelligence from Uzbekistan. For organisations that need to stay ahead.</p>
+    <div class="insights-grid">
+      <div class="insight-card"><div class="insight-header"><div class="insight-type-badge">Regulatory Alert — March 2026</div><h3>New Investment Framework: Key Changes for Foreign Investors</h3></div><div class="insight-body"><p>Uzbekistan's updated Investment Law introduces revised investor guarantees, new dispute resolution provisions, and sector-specific incentive structures taking effect Q2 2026.</p><div class="insight-tags"><span class="itag">Investment</span><span class="itag priority-high">High Priority</span></div></div></div>
+      <div class="insight-card"><div class="insight-header"><div class="insight-type-badge">Policy Brief — February 2026</div><h3>WTO Accession Update: Where Uzbekistan Stands</h3></div><div class="insight-body"><p>Following the latest round of bilateral negotiations, Uzbekistan has advanced tariff and services commitments. This brief outlines outstanding issues, expected timeline, and practical implications for retail, logistics, and digital operators.</p><div class="insight-tags"><span class="itag">Trade Policy</span><span class="itag">WTO</span></div></div></div>
+      <div class="insight-card"><div class="insight-header"><div class="insight-type-badge">Event — February 2026</div><h3>Uzbekistan Investment Forum 2026, Tashkent</h3></div><div class="insight-body"><p>Attending as part of the advisory delegation supporting international participants. Available for meetings on the margins.</p><div class="insight-tags"><span class="itag">Event</span><span class="itag">Investment</span></div></div></div>
+      <div class="insight-card"><div class="insight-header"><div class="insight-type-badge">Regulatory Alert — January 2026</div><h3>E-Commerce Platforms: New Licensing and Data Requirements</h3></div><div class="insight-body"><p>The Ministry of Digital Technologies has introduced mandatory licensing, data localisation obligations, and updated consumer protection requirements for digital platforms. Immediate compliance review is recommended.</p><div class="insight-tags"><span class="itag">Digital</span><span class="itag priority-high">Compliance</span></div></div></div>
+    </div>
+    <div class="subscribe-box">
+      <h3>Stay Informed on Uzbekistan</h3>
+      <p>Receive regulatory alerts, policy briefings, and market intelligence directly to your inbox.</p>
+      <div class="subscribe-form"><input type="email" placeholder="Your email address"><button type="button">Subscribe</button></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY ME -->
+<section class="section whyme-section" id="whyme">
+  <div class="section-inner">
+    <div class="section-tag">Why Me</div>
+    <h2 class="section-h2">What Sets This Advisory Apart</h2>
+    <div class="section-rule"></div>
+    <div class="whyme-grid">
+      <div class="wm-card"><div class="wm-icon">🏛️</div><h3>Inside-Out Institutional Knowledge</h3><p>Years spent working inside Uzbekistan's government institutions means I understand how decisions are actually made, not just how the system is supposed to work on paper.</p></div>
+      <div class="wm-card"><div class="wm-icon">🤝</div><h3>Real Access, Not Cold Calls</h3><p>Long-standing relationships across ministries, regulatory bodies, and international organisations give me access to context and intelligence that rarely surfaces publicly.</p></div>
+      <div class="wm-card"><div class="wm-icon">📡</div><h3>Active Daily Monitoring</h3><p>I track Uzbekistan's regulatory environment continuously. In a market where a single decree can reshape your operating conditions overnight, that is not optional. It is essential.</p></div>
+      <div class="wm-card"><div class="wm-icon">💬</div><h3>Multilingual and Locally Fluent</h3><p>I work in Uzbek, English, and Russian without losing nuance. I understand the cultural dynamics of Uzbekistan's business environment as well as its formal institutions.</p></div>
+      <div class="wm-card"><div class="wm-icon">🎯</div><h3>A Practitioner, Not Just an Analyst</h3><p>I have coordinated large-scale international programmes, facilitated major export and trade initiatives, and delivered on the ground across Uzbekistan and Central Asia.</p></div>
+      <div class="wm-card"><div class="wm-icon">🧾</div><h3>Structured Around Your Budget</h3><p>I bring local market knowledge to every engagement, working to structure each assignment to deliver maximum practical value at every resource level.</p></div>
+    </div>
+    <div class="quote-box">
+      <blockquote>Uzbekistan is not a market you navigate from a distance. The regulations change too quickly, the relationships matter too much, and the informal dynamics are too important to ignore. You need someone on the ground who has worked inside the system, not just studied it.</blockquote>
+      <cite>Nurilla Abdushukurov</cite>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section contact-section" id="contact">
+  <div class="section-inner">
+    <div class="section-tag">Contact</div>
+    <h2 class="section-h2">Get in Touch</h2>
+    <div class="section-rule"></div>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <p style="font-size:.95rem;line-height:1.85;color:#555;margin-bottom:28px;">Whether you are exploring market entry, managing a regulatory issue, planning a delegation, or simply need a clear picture of what is happening in Uzbekistan right now, I am happy to start with a conversation.</p>
+        <div class="status-badge"><div class="status-dot"></div><span>Currently Accepting New Engagements</span></div>
+        <div class="contact-detail"><div class="cd-icon"><i class="fas fa-envelope"></i></div><div class="cd-body"><div class="cd-label">Email</div><a href="mailto:nurilla2904@gmail.com">nurilla2904@gmail.com</a><p>Best way to reach me</p></div></div>
+        <div class="contact-detail"><div class="cd-icon"><i class="fab fa-linkedin"></i></div><div class="cd-body"><div class="cd-label">LinkedIn</div><a href="https://linkedin.com/in/nurilla-abdushukurov" target="_blank">linkedin.com/in/nurilla-abdushukurov</a><p>Connect professionally</p></div></div>
+        <div class="eng-types">
+          <span class="eng-badge">Retained Advisory</span>
+          <span class="eng-badge">Project-Based</span>
+          <span class="eng-badge">Mission Support</span>
+          <span class="eng-badge">One-Off Briefings</span>
+          <span class="eng-badge">Regulatory Monitoring</span>
+        </div>
+      </div>
+      <div class="contact-form-wrap">
+        <div class="form-group"><label>Your Name</label><input type="text" placeholder="John Smith"></div>
+        <div class="form-group"><label>Your Organisation</label><input type="text" placeholder="Company / Organisation name"></div>
+        <div class="form-group"><label>Email Address</label><input type="email" placeholder="you@organisation.com"></div>
+        <div class="form-group"><label>Nature of Enquiry</label>
+          <select>
+            <option>Market Intelligence &amp; Insights</option>
+            <option>Stakeholder Engagement</option>
+            <option>Policy Advocacy</option>
+            <option>Regulatory Compliance</option>
+            <option>Analytics &amp; Research</option>
+            <option>Strategy Development</option>
+            <option>Strategic Communications &amp; Crisis Management</option>
+            <option>Export &amp; Trade Support</option>
+            <option>Mission &amp; Delegation Support</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group"><label>Message</label><textarea placeholder="Tell me briefly about your needs in Uzbekistan..."></textarea></div>
+        <button class="form-submit" type="button">Send Message</button>
+        <p class="form-privacy"><i class="fas fa-lock"></i>Your information is kept strictly confidential and will never be shared with third parties.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-left">
+      <div class="footer-name">Nurilla <span>Abdushukurov</span></div>
+      <span class="footer-sep">&middot;</span>
+      <span class="footer-role-item">Regulatory Affairs</span>
+      <span class="footer-sep">&middot;</span>
+      <span class="footer-role-item">Government Relations</span>
+      <span class="footer-sep">&middot;</span>
+      <span class="footer-role-item">Policy Advisory</span>
+    </div>
+    <div class="footer-copy">&copy; 2026 Nurilla Abdushukurov &nbsp;&middot;&nbsp; All rights reserved</div>
+  </div>
+</footer>
+
+</body>
+</html>
