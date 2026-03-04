@@ -1,200 +1,171 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Insights &amp; Updates – Nurilla Abdushukurov</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Insights &amp; Updates | Nurilla Abdushukurov</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
-
-<!-- TOP BAR -->
-<div class="topbar">
-  <div class="tname">Nurilla Abdushukurov <em>|</em> International Consultant</div>
-  <div class="trole">Regulatory Affairs &nbsp;·&nbsp; Government Relations &nbsp;·&nbsp; Policy Advisory</div>
-</div>
-
-<!-- NAV -->
-<nav>
-  <div class="nav-inner">
-    <a href="index.html" class="nav-brand">Uzbekistan · <span>Advisory</span></a>
-    <ul class="nav-links">
-      <li><a href="about.html">About</a></li>
-      <li><a href="market.html">Market Context</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="insights.html" class="active">Insights</a></li>
-      <li><a href="whyme.html">Why Me</a></li>
-    </ul>
-    <div class="nav-cta"><a href="contact.html">Contact</a></div>
-    <button class="hamburger"><i class="fas fa-bars"></i></button>
+  <div class="topbar">
+    <div class="tname">Nurilla <em>Abdushukurov</em></div>
+    <div class="trole">Regulatory Affairs &nbsp;&middot;&nbsp; Government Relations &nbsp;&middot;&nbsp; Policy Advisory</div>
   </div>
-</nav>
-
-<!-- PAGE HEADER -->
-<div class="page-header">
-  <div class="section-tag">Insights &amp; Updates</div>
-  <h2 class="section-h2">Latest Intelligence</h2>
-  <div class="section-rule"></div>
-  <p class="section-intro">Regulatory alerts, policy briefs, and on-the-ground updates from Uzbekistan's fast-moving business and political environment.</p>
-</div>
-
-<!-- INSIGHTS -->
-<section class="section insights-section">
-  <div class="section-inner">
-
-    <!-- FILTER BAR -->
-    <div class="filter-bar">
-      <button class="filter-btn active" data-filter="all">All</button>
-      <button class="filter-btn" data-filter="regulatory-alert">Regulatory Alerts</button>
-      <button class="filter-btn" data-filter="policy-brief">Policy Briefs</button>
-      <button class="filter-btn" data-filter="news-brief">News Briefs</button>
-      <button class="filter-btn" data-filter="event">Events</button>
-      <button class="filter-btn" data-filter="update">Updates</button>
+  <nav>
+    <div class="nav-inner">
+      <a class="nav-brand" href="index.html">Nurilla <span>Abdushukurov</span></a>
+      <button class="hamburger" onclick="toggleMenu()">&#9776;</button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="market-context.html">Market Context</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="insights.html" class="active">Insights &amp; Updates</a></li>
+        <li><a href="why-me.html">Why Me</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li class="nav-cta"><a href="contact.html">Get in Touch</a></li>
+      </ul>
     </div>
-
-    <!-- INSIGHT CARDS -->
-    <div class="insights-grid" id="insightsGrid">
-
-      <div class="insight-card" data-category="regulatory-alert">
-        <div class="insight-header">
-          <span class="insight-type-badge">Regulatory Alert — March 2026</span>
-          <h3>New Investment Framework: Key Changes for Foreign Investors</h3>
-        </div>
-        <div class="insight-body">
-          <p>Uzbekistan's updated Investment Law introduces revised investor guarantees, new dispute resolution provisions, and sector-specific incentive structures taking effect Q2 2026.</p>
-          <div class="insight-tags">
-            <span class="itag">Investment</span>
-            <span class="itag priority-high">High Priority</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="insight-card" data-category="policy-brief">
-        <div class="insight-header">
-          <span class="insight-type-badge">Policy Brief — February 2026</span>
-          <h3>WTO Accession Update: Where Uzbekistan Stands</h3>
-        </div>
-        <div class="insight-body">
-          <p>Following the latest round of bilateral negotiations, Uzbekistan has advanced tariff and services commitments. This brief outlines outstanding issues, expected timeline, and practical implications for retail, logistics, and digital operators.</p>
-          <div class="insight-tags">
-            <span class="itag">Trade Policy</span>
-            <span class="itag">WTO</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="insight-card" data-category="event">
-        <div class="insight-header">
-          <span class="insight-type-badge">Event — February 2026</span>
-          <h3>Uzbekistan Investment Forum 2026, Tashkent</h3>
-        </div>
-        <div class="insight-body">
-          <p>Attending as part of the advisory delegation supporting international participants. Available for meetings on the margins.</p>
-          <div class="insight-tags">
-            <span class="itag">Event</span>
-            <span class="itag">Investment</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="insight-card" data-category="regulatory-alert">
-        <div class="insight-header">
-          <span class="insight-type-badge">Regulatory Alert — January 2026</span>
-          <h3>Tax Code Amendments: What Changes for Foreign Entities</h3>
-        </div>
-        <div class="insight-body">
-          <p>Recent amendments to the Tax Code introduce new reporting requirements and adjusted rates for foreign-owned enterprises. Key provisions take effect from April 2026.</p>
-          <div class="insight-tags">
-            <span class="itag">Tax</span>
-            <span class="itag">Compliance</span>
-            <span class="itag priority-high">High Priority</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="insight-card" data-category="policy-brief">
-        <div class="insight-header">
-          <span class="insight-type-badge">Policy Brief — December 2025</span>
-          <h3>Privatisation Pipeline: 2026 Outlook</h3>
-        </div>
-        <div class="insight-body">
-          <p>An overview of key state-owned enterprises scheduled for privatisation in 2026, including sectoral analysis, expected timelines, and entry points for international investors.</p>
-          <div class="insight-tags">
-            <span class="itag">Privatisation</span>
-            <span class="itag">Investment</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="insight-card" data-category="update">
-        <div class="insight-header">
-          <span class="insight-type-badge">Update — November 2025</span>
-          <h3>Green Economy Strategy: New Incentives for Renewable Energy</h3>
-        </div>
-        <div class="insight-body">
-          <p>Uzbekistan has announced expanded incentives for renewable energy investments, including tax holidays and simplified permitting for solar and wind projects above 10 MW capacity.</p>
-          <div class="insight-tags">
-            <span class="itag">Green Economy</span>
-            <span class="itag">Energy</span>
-          </div>
-        </div>
-      </div>
-
+    <div class="mobile-menu" id="mobileMenu">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="market-context.html">Market Context</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="insights.html">Insights &amp; Updates</a></li>
+        <li><a href="why-me.html">Why Me</a></li>
+        <li><a href="contact.html">Get in Touch</a></li>
+      </ul>
     </div>
+  </nav>
 
-    <!-- SUBSCRIBE -->
-    <div class="subscribe-box">
-      <h3>Stay Informed on Uzbekistan</h3>
-      <p>Receive periodic briefings on regulatory changes, policy shifts, and business environment updates directly in your inbox.</p>
-      <div class="subscribe-form">
-        <input type="email" placeholder="Your email address">
-        <button type="button">Subscribe</button>
-      </div>
-    </div>
-
+  <div class="page-hero">
+    <div class="ph-tag">Intelligence</div>
+    <h1>Insights &amp; Updates</h1>
+    <p>Regulatory alerts, policy developments, and market intelligence from Uzbekistan. For organisations that need to stay ahead.</p>
   </div>
-</section>
 
-<!-- FOOTER -->
-<footer>
-  <div class="footer-inner">
-    <div class="footer-left">
-      <div class="footer-name">Nurilla Abdushukurov</div>
-      <span class="footer-sep">·</span>
-      <span class="footer-role-item">Regulatory Affairs</span>
-      <span class="footer-sep">·</span>
-      <span class="footer-role-item">Government Relations</span>
-      <span class="footer-sep">·</span>
-      <span class="footer-role-item">Policy Advisory</span>
+  <section class="section">
+    <div class="section-inner">
+
+      <!-- FILTER BAR -->
+      <div class="filter-bar">
+        <button class="filter-btn active" onclick="filterCards('all',this)">All</button>
+        <button class="filter-btn" onclick="filterCards('regulatory-alert',this)">Regulatory Alerts</button>
+        <button class="filter-btn" onclick="filterCards('policy-brief',this)">Policy Briefs</button>
+        <button class="filter-btn" onclick="filterCards('event',this)">Events</button>
+        <button class="filter-btn" onclick="filterCards('market-intelligence',this)">Market Intelligence</button>
+      </div>
+
+      <!-- CARDS GRID -->
+      <div class="insights-grid" id="insightsGrid">
+
+        <div class="insight-card" data-type="regulatory-alert">
+          <div class="insight-header">
+            <span class="insight-type-badge">Regulatory Alert</span>
+            <h3>New Investment Framework: Key Changes for Foreign Investors</h3>
+          </div>
+          <div class="insight-body">
+            <div class="insight-meta">March 2026</div>
+            <p>Uzbekistan&rsquo;s updated Investment Law introduces revised investor guarantees, new dispute resolution provisions, and sector-specific incentive structures taking effect Q2 2026.</p>
+            <div class="insight-tags">
+              <span class="itag">Investment</span>
+              <span class="itag priority-high">High Priority</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="insight-card" data-type="policy-brief">
+          <div class="insight-header">
+            <span class="insight-type-badge">Policy Brief</span>
+            <h3>WTO Accession Update: Where Uzbekistan Stands</h3>
+          </div>
+          <div class="insight-body">
+            <div class="insight-meta">February 2026</div>
+            <p>Following the latest round of bilateral negotiations, Uzbekistan has advanced tariff and services commitments. This brief outlines outstanding issues, expected timeline, and practical implications for retail, logistics, and digital operators.</p>
+            <div class="insight-tags">
+              <span class="itag">Trade Policy</span>
+              <span class="itag">WTO</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="insight-card" data-type="event">
+          <div class="insight-header">
+            <span class="insight-type-badge">Event</span>
+            <h3>Uzbekistan Investment Forum 2026, Tashkent</h3>
+          </div>
+          <div class="insight-body">
+            <div class="insight-meta">February 2026</div>
+            <p>Attending as part of the advisory delegation supporting international participants. Available for meetings on the margins.</p>
+            <div class="insight-tags">
+              <span class="itag">Event</span>
+              <span class="itag">Investment</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="insight-card" data-type="regulatory-alert">
+          <div class="insight-header">
+            <span class="insight-type-badge">Regulatory Alert</span>
+            <h3>E-Commerce Platforms: New Licensing and Data Requirements</h3>
+          </div>
+          <div class="insight-body">
+            <div class="insight-meta">January 2026</div>
+            <p>The Ministry of Digital Technologies has introduced mandatory licensing, data localisation obligations, and updated consumer protection requirements for digital platforms. Immediate compliance review is recommended.</p>
+            <div class="insight-tags">
+              <span class="itag">Digital</span>
+              <span class="itag">Compliance</span>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /insights-grid -->
+
+      <!-- SUBSCRIBE -->
+      <div class="subscribe-box">
+        <h3>Stay Informed on Uzbekistan</h3>
+        <p>Receive regulatory alerts, policy briefings, and market intelligence directly to your inbox.</p>
+        <form class="subscribe-form" action="https://formspree.io/f/mreanjlb" method="POST">
+          <input type="email" name="email" placeholder="Your email address" required/>
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+
     </div>
-    <div class="footer-copy">&copy; 2026 Nurilla Abdushukurov &nbsp;·&nbsp; All rights reserved</div>
-  </div>
-</footer>
+  </section>
 
-<script src="nav.js"></script>
-<script>
-// Insights Filter
-(function(){
-  var btns = document.querySelectorAll('.filter-btn');
-  var cards = document.querySelectorAll('.insight-card');
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-left">
+        <span class="footer-name">Nurilla <span>Abdushukurov</span></span>
+        <span class="footer-sep">&middot;</span>
+        <span class="footer-role-item">Regulatory Affairs</span>
+        <span class="footer-sep">&middot;</span>
+        <span class="footer-role-item">Government Relations</span>
+        <span class="footer-sep">&middot;</span>
+        <span class="footer-role-item">Policy Advisory</span>
+      </div>
+      <span class="footer-copy">&copy; 2026 Nurilla Abdushukurov &nbsp;&middot;&nbsp; All rights reserved</span>
+    </div>
+  </footer>
 
-  btns.forEach(function(btn){
-    btn.addEventListener('click', function(){
-      btns.forEach(function(b){ b.classList.remove('active'); });
+  <script>
+    function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open');}
+    function filterCards(type, btn){
+      document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
       btn.classList.add('active');
-      var filter = btn.getAttribute('data-filter');
-      cards.forEach(function(card){
-        if(filter === 'all' || card.getAttribute('data-category') === filter){
-          card.style.display = '';
+      document.querySelectorAll('.insight-card').forEach(card=>{
+        if(type==='all'||card.dataset.type===type){
+          card.classList.remove('hidden');
         } else {
-          card.style.display = 'none';
+          card.classList.add('hidden');
         }
       });
-    });
-  });
-})();
-</script>
+    }
+  </script>
 </body>
 </html>

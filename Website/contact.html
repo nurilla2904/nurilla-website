@@ -1,163 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact – Nurilla Abdushukurov</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Contact | Nurilla Abdushukurov</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
-
-<div class="topbar">
-  <div class="tname">Nurilla Abdushukurov <em>|</em> International Consultant</div>
-  <div class="trole">Regulatory Affairs &nbsp; &nbsp; Government Relations &nbsp; &nbsp; Policy Advisory</div>
-</div>
-
-<nav>
-  <div class="nav-inner">
-    <a href="index.html" class="nav-brand">Uzbekistan <span>Advisory</span></a>
-    <ul class="nav-links">
-      <li><a href="about.html">About</a></li>
-      <li><a href="market.html">Market Context</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="insights.html">Insights</a></li>
-      <li><a href="whyme.html">Why Me</a></li>
-    </ul>
-    <div class="nav-cta"><a href="contact.html" class="active">Contact</a></div>
-    <button class="hamburger"><i class="fas fa-bars"></i></button>
+  <div class="topbar">
+    <div class="tname">Nurilla <em>Abdushukurov</em></div>
+    <div class="trole">Regulatory Affairs &nbsp;&middot;&nbsp; Government Relations &nbsp;&middot;&nbsp; Policy Advisory</div>
   </div>
-</nav>
+  <nav>
+    <div class="nav-inner">
+      <a class="nav-brand" href="index.html">Nurilla <span>Abdushukurov</span></a>
+      <button class="hamburger" onclick="toggleMenu()">&#9776;</button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="market-context.html">Market Context</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="insights.html">Insights &amp; Updates</a></li>
+        <li><a href="why-me.html">Why Me</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+        <li class="nav-cta"><a href="contact.html">Get in Touch</a></li>
+      </ul>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="market-context.html">Market Context</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="insights.html">Insights &amp; Updates</a></li>
+        <li><a href="why-me.html">Why Me</a></li>
+        <li><a href="contact.html">Get in Touch</a></li>
+      </ul>
+    </div>
+  </nav>
 
-<div class="mobile-menu" id="mobile-menu">
-  <a href="about.html">About</a>
-  <a href="market.html">Market Context</a>
-  <a href="services.html">Services</a>
-  <a href="insights.html">Insights</a>
-  <a href="whyme.html">Why Me</a>
-  <a href="contact.html" class="active">Contact</a>
-</div>
+  <div class="page-hero">
+    <div class="ph-tag">Get in Touch</div>
+    <h1>Let&rsquo;s Start a Conversation</h1>
+    <p>Whether you are exploring market entry, managing a regulatory issue, planning a delegation, or simply need a clear picture of what is happening in Uzbekistan right now &mdash; I am happy to talk.</p>
+  </div>
 
-<!-- CONTACT -->
-<section class="section contact-section" id="contact">
-  <div class="section-inner">
-    <div class="section-tag">Contact</div>
-    <h2 class="section-h2">Start a Conversation</h2>
-    <div class="section-rule"></div>
-    <p class="section-intro">Whether you're entering Uzbekistan, managing an existing presence, or need a rapid assessment on a specific issue — I'm available for a confidential initial discussion.</p>
-    <div class="contact-grid">
-      <div class="contact-info">
-        <div class="status-badge">
-          <span class="status-dot"></span>
-          <span>Available for New Engagements</span>
-        </div>
-        <div class="contact-detail">
-          <div class="cd-icon"><i class="fas fa-envelope"></i></div>
-          <div class="cd-body">
-            <div class="cd-label">Email</div>
-            <a href="mailto:nurilla2904@gmail.com">nurilla2904@gmail.com</a>
+  <section class="section">
+    <div class="section-inner">
+      <div class="contact-grid">
+
+        <!-- LEFT: Contact Info -->
+        <div>
+          <div class="status-badge">
+            <span class="status-dot"></span>
+            <span>Currently Accepting New Engagements</span>
+          </div>
+
+          <div class="contact-detail">
+            <div class="cd-icon"><i class="fas fa-envelope"></i></div>
+            <div>
+              <div class="cd-label">Email</div>
+              <a href="mailto:nurilla2904@gmail.com">nurilla2904@gmail.com</a>
+              <p>Best way to reach me</p>
+            </div>
+          </div>
+
+          <div class="contact-detail">
+            <div class="cd-icon"><i class="fab fa-linkedin"></i></div>
+            <div>
+              <div class="cd-label">LinkedIn</div>
+              <a href="https://linkedin.com/in/nurilla-abdushukurov" target="_blank">linkedin.com/in/nurilla-abdushukurov</a>
+              <p>Connect professionally</p>
+            </div>
+          </div>
+
+          <div style="margin-top:36px;">
+            <div class="section-tag">Engagement Types</div>
+            <div class="eng-types">
+              <span class="eng-badge">Retained Advisory</span>
+              <span class="eng-badge">Project-Based</span>
+              <span class="eng-badge">Mission Support</span>
+              <span class="eng-badge">One-Off Briefings</span>
+              <span class="eng-badge">Regulatory Monitoring</span>
+            </div>
           </div>
         </div>
-        <div class="contact-detail">
-          <div class="cd-icon"><i class="fab fa-linkedin"></i></div>
-          <div class="cd-body">
-            <div class="cd-label">LinkedIn</div>
-            <a href="https://www.linkedin.com/in/nurilla-abdushukurov/" target="_blank">linkedin.com/in/nurilla-abdushukurov</a>
-          </div>
+
+        <!-- RIGHT: Formspree Form -->
+        <div class="contact-form-wrap">
+          <form action="https://formspree.io/f/mreanjlb" method="POST">
+            <div class="form-group">
+              <label for="name">Your Name</label>
+              <input type="text" id="name" name="name" placeholder="Full name" required/>
+            </div>
+            <div class="form-group">
+              <label for="org">Your Organisation</label>
+              <input type="text" id="org" name="organisation" placeholder="Company or organisation"/>
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" placeholder="your@email.com" required/>
+            </div>
+            <div class="form-group">
+              <label for="enquiry">Nature of Enquiry</label>
+              <select id="enquiry" name="enquiry">
+                <option value="">Select a category&hellip;</option>
+                <option>Market Intelligence &amp; Insights</option>
+                <option>Stakeholder Engagement</option>
+                <option>Policy Advocacy</option>
+                <option>Regulatory Compliance</option>
+                <option>Analytics &amp; Research</option>
+                <option>Strategy Development</option>
+                <option>Strategic Communications &amp; Crisis Management</option>
+                <option>Export &amp; Trade Support</option>
+                <option>Mission &amp; Delegation Support</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" placeholder="Tell me about your situation and how I can help&hellip;" required></textarea>
+            </div>
+            <button type="submit" class="form-submit">Send Message</button>
+            <p class="form-privacy"><i class="fas fa-lock"></i>Your information is kept strictly confidential and will never be shared with third parties.</p>
+          </form>
         </div>
-        <div class="contact-detail">
-          <div class="cd-icon"><i class="fas fa-map-marker-alt"></i></div>
-          <div class="cd-body">
-            <div class="cd-label">Location</div>
-            <a>Tashkent, Uzbekistan</a>
-            <p>Available for travel across Central Asia</p>
-          </div>
-        </div>
-        <div class="eng-types">
-          <span class="eng-badge">Retainer Advisory</span>
-          <span class="eng-badge">Project-Based</span>
-          <span class="eng-badge">Rapid Response</span>
-          <span class="eng-badge">Single Briefing</span>
-        </div>
-      </div>
-      <div class="contact-form-wrap">
-        <form id="contact-form" action="https://formspree.io/f/xyzgpjkv" method="POST">
-          <div class="form-group">
-            <label>Your Name</label>
-            <input type="text" name="name" required>
-          </div>
-          <div class="form-group">
-            <label>Organisation</label>
-            <input type="text" name="organisation">
-          </div>
-          <div class="form-group">
-            <label>Email</label>
-            <input type="email" name="email" required>
-          </div>
-          <div class="form-group">
-            <label>Engagement Type</label>
-            <select name="engagement">
-              <option value="">Select type</option>
-              <option>Retainer Advisory</option>
-              <option>Project-Based Engagement</option>
-              <option>Rapid Response / Ad Hoc</option>
-              <option>Single Briefing / Consultation</option>
-              <option>Other</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label>Message</label>
-            <textarea name="message" rows="5" required></textarea>
-          </div>
-          <button type="submit" class="form-submit">Send Message</button>
-          <p class="form-privacy"><i class="fas fa-lock"></i> All enquiries are treated with full confidentiality</p>
-        </form>
-        <div id="form-success" style="display:none;text-align:center;padding:40px 20px;">
-          <h3 style="font-family:'Playfair Display',serif;color:#0d1b2a;margin-bottom:12px;">Message Sent</h3>
-          <p style="color:#555;">Thank you for reaching out. I will respond within 24 hours.</p>
-        </div>
+
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<footer>
-  <div class="footer-inner">
-    <div class="footer-left">
-      <span class="footer-name">Nurilla <span>Abdushukurov</span></span>
-      <span class="footer-sep">|</span>
-      <span class="footer-role-item">Regulatory Affairs</span>
-      <span class="footer-sep">·</span>
-      <span class="footer-role-item">Government Relations</span>
-      <span class="footer-sep">·</span>
-      <span class="footer-role-item">Policy Advisory</span>
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-left">
+        <span class="footer-name">Nurilla <span>Abdushukurov</span></span>
+        <span class="footer-sep">&middot;</span>
+        <span class="footer-role-item">Regulatory Affairs</span>
+        <span class="footer-sep">&middot;</span>
+        <span class="footer-role-item">Government Relations</span>
+        <span class="footer-sep">&middot;</span>
+        <span class="footer-role-item">Policy Advisory</span>
+      </div>
+      <span class="footer-copy">&copy; 2026 Nurilla Abdushukurov &nbsp;&middot;&nbsp; All rights reserved</span>
     </div>
-    <div class="footer-copy">&copy; 2026 Nurilla Abdushukurov. All rights reserved.</div>
-  </div>
-</footer>
-
-<script src="nav.js"></script>
-<script>
-  document.getElementById('contact-form').addEventListener('submit', function(e){
-    e.preventDefault();
-    var form = this;
-    var data = new FormData(form);
-    fetch(form.action, {
-      method: 'POST',
-      body: data,
-      headers: {'Accept': 'application/json'}
-    }).then(function(r){
-      if(r.ok){
-        form.style.display='none';
-        document.getElementById('form-success').style.display='block';
-      } else {
-        alert('Something went wrong. Please email nurilla2904@gmail.com directly.');
-      }
-    }).catch(function(){
-      alert('Something went wrong. Please email nurilla2904@gmail.com directly.');
-    });
-  });
-</script>
+  </footer>
+  <script>function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open');}</script>
 </body>
 </html>
