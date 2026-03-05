@@ -1,171 +1,355 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-  <title>Insights &amp; Updates | Nurilla Abdushukurov</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
-  <link rel="stylesheet" href="styles.css"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Insights & Updates – Nurilla Abdushukurov</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+/* ── PAGE HERO ── */
+.page-hero{background:var(--navy);padding:72px 30px 60px;text-align:center;border-bottom:2px solid var(--gold);}
+.page-hero .eyebrow{font-size:.68rem;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;}
+.page-hero h1{font-family:'Playfair Display',serif;font-size:2.6rem;font-weight:700;color:#fff;margin-bottom:16px;}
+.page-hero p{color:rgba(255,255,255,.6);font-size:.95rem;max-width:560px;margin:0 auto;line-height:1.7;}
+
+/* ── FILTER TABS ── */
+.filter-bar{max-width:1200px;margin:48px auto 40px;padding:0 30px;display:flex;flex-wrap:wrap;gap:10px;}
+.filter-btn{border:1.5px solid #ccc;background:#fff;color:var(--navy);padding:9px 22px;border-radius:30px;font-size:.72rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;transition:all .25s;}
+.filter-btn:hover{border-color:var(--gold);color:var(--gold);}
+.filter-btn.active{background:var(--gold);border-color:var(--gold);color:#fff;}
+
+/* ── GRID ── */
+.insights-grid{max-width:1200px;margin:0 auto 80px;padding:0 30px;display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:28px;}
+
+/* ── CARD ── */
+.card{border-radius:4px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,.08);transition:box-shadow .3s;display:flex;flex-direction:column;}
+.card:hover{box-shadow:0 8px 40px rgba(0,0,0,.14);}
+.card-header{background:var(--navy);padding:28px 28px 22px;position:relative;}
+.card-type-badge{display:inline-block;font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;font-weight:700;padding:4px 10px;border-radius:2px;margin-bottom:14px;}
+.badge-regulatory{background:rgba(184,150,62,.25);color:var(--gold2);}
+.badge-policy{background:rgba(100,160,220,.2);color:#7ab4e0;}
+.badge-event{background:rgba(120,200,140,.2);color:#7ecf97;}
+.badge-market{background:rgba(200,120,180,.2);color:#e09bd4;}
+.card-header h3{font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:700;color:#fff;line-height:1.4;}
+.card-body{background:#fff;padding:22px 28px 0;flex:1;}
+.card-date{font-size:.75rem;color:var(--mid);font-style:italic;margin-bottom:10px;}
+.card-summary{font-size:.88rem;line-height:1.7;color:#444;}
+.card-tags{display:flex;flex-wrap:wrap;gap:8px;padding:18px 28px 0;}
+.tag{font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600;padding:4px 10px;border:1.5px solid var(--gold);border-radius:2px;color:var(--gold);}
+.tag.priority{border-color:#e05a5a;color:#e05a5a;}
+
+/* ── EXPAND TOGGLE ── */
+.card-expand-btn{display:flex;align-items:center;gap:8px;background:none;border:none;cursor:pointer;font-size:.72rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);padding:18px 28px 22px;transition:color .2s;}
+.card-expand-btn:hover{color:var(--navy);}
+.card-expand-btn .chevron{display:inline-block;transition:transform .3s;font-style:normal;}
+.card-expand-btn.open .chevron{transform:rotate(180deg);}
+
+/* ── FULL CONTENT ── */
+.card-full{display:none;padding:0 28px 28px;border-top:1px solid var(--grey);margin-top:0;}
+.card-full.open{display:block;}
+.card-full h4{font-family:'Playfair Display',serif;font-size:1rem;color:var(--navy);margin:18px 0 8px;}
+.card-full p{font-size:.88rem;line-height:1.75;color:#444;margin-bottom:12px;}
+.card-full ul{margin:0 0 12px 18px;}
+.card-full ul li{font-size:.88rem;line-height:1.7;color:#444;margin-bottom:5px;}
+.card-full .read-cta{display:inline-block;margin-top:10px;font-size:.72rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#fff;background:var(--gold);padding:10px 22px;border-radius:2px;text-decoration:none;}
+
+/* ── HIDDEN CARD ── */
+.card.hidden{display:none;}
+
+/* ── SUBSCRIBE STRIP ── */
+.subscribe-strip{background:var(--navy);padding:60px 30px;text-align:center;border-top:2px solid var(--gold);}
+.subscribe-strip h2{font-family:'Playfair Display',serif;font-size:1.7rem;color:#fff;margin-bottom:10px;}
+.subscribe-strip p{color:rgba(255,255,255,.6);font-size:.9rem;margin-bottom:28px;}
+.sub-form{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;}
+.sub-form input[type=email]{padding:12px 20px;border:none;border-radius:2px;font-size:.88rem;width:300px;font-family:inherit;}
+.sub-form button{background:var(--gold);color:#fff;border:none;padding:12px 28px;border-radius:2px;font-size:.75rem;font-weight:600;letter-spacing:.13em;text-transform:uppercase;cursor:pointer;}
+</style>
 </head>
 <body>
-  <div class="topbar">
-    <div class="tname">Nurilla <em>Abdushukurov</em></div>
-    <div class="trole">Regulatory Affairs &nbsp;&middot;&nbsp; Government Relations &nbsp;&middot;&nbsp; Policy Advisory</div>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="tname">Nurilla <em>Abdushukurov</em></div>
+  <div class="trole">Regulatory Affairs &middot; Government Relations &middot; Policy Advisory</div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand">Nurilla <span>Abdushukurov</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="market-context.html">Market Context</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="insights.html" class="active">Insights &amp; Updates</a></li>
+      <li><a href="why-me.html">Why Me</a></li>
+      <li class="nav-cta"><a href="contact.html">Get in Touch</a></li>
+    </ul>
   </div>
-  <nav>
-    <div class="nav-inner">
-      <a class="nav-brand" href="index.html">Nurilla <span>Abdushukurov</span></a>
-      <button class="hamburger" onclick="toggleMenu()">&#9776;</button>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="market-context.html">Market Context</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="insights.html" class="active">Insights &amp; Updates</a></li>
-        <li><a href="why-me.html">Why Me</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li class="nav-cta"><a href="contact.html">Get in Touch</a></li>
-      </ul>
+</nav>
+
+<!-- HERO -->
+<section class="page-hero">
+  <div class="eyebrow">Intelligence &middot; Analysis &middot; Updates</div>
+  <h1>Insights &amp; Updates</h1>
+  <p>Regulatory alerts, policy briefs, market intelligence, and key events — curated for international companies navigating Uzbekistan.</p>
+</section>
+
+<!-- FILTER BAR -->
+<div class="filter-bar">
+  <button class="filter-btn active" data-filter="all">All</button>
+  <button class="filter-btn" data-filter="regulatory">Regulatory Alerts</button>
+  <button class="filter-btn" data-filter="policy">Policy Briefs</button>
+  <button class="filter-btn" data-filter="event">Events</button>
+  <button class="filter-btn" data-filter="market">Market Intelligence</button>
+</div>
+
+<!-- GRID -->
+<div class="insights-grid">
+
+  <!-- CARD 1 -->
+  <div class="card" data-type="regulatory">
+    <div class="card-header">
+      <div class="card-type-badge badge-regulatory">Regulatory Alert</div>
+      <h3>New Investment Framework: Key Changes for Foreign Investors</h3>
     </div>
-    <div class="mobile-menu" id="mobileMenu">
+    <div class="card-body">
+      <div class="card-date">March 2026</div>
+      <div class="card-summary">Uzbekistan's updated Investment Law introduces revised investor guarantees, new dispute resolution provisions, and sector-specific incentive structures taking effect Q2 2026.</div>
+    </div>
+    <div class="card-tags">
+      <span class="tag">Investment</span>
+      <span class="tag priority">High Priority</span>
+    </div>
+    <button class="card-expand-btn" onclick="toggleCard(this)">
+      Read Full Brief <em class="chevron">&#8964;</em>
+    </button>
+    <div class="card-full">
+      <h4>What Changed</h4>
+      <p>The revised Investment Law (effective 1 April 2026) introduces three substantive changes that directly affect foreign investors operating or planning to enter Uzbekistan:</p>
       <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="market-context.html">Market Context</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="insights.html">Insights &amp; Updates</a></li>
-        <li><a href="why-me.html">Why Me</a></li>
-        <li><a href="contact.html">Get in Touch</a></li>
+        <li><strong>Investor Guarantees:</strong> Enhanced protections against nationalisation and expropriation, now aligned with OECD standards. Compensation timelines reduced from 60 to 30 days.</li>
+        <li><strong>Dispute Resolution:</strong> Foreign investors may now choose international arbitration (ICSID or Stockholm) without first exhausting local remedies — a significant departure from the prior framework.</li>
+        <li><strong>Sector Incentives:</strong> New incentive tiers for green energy, pharmaceutical manufacturing, and logistics. Tax holidays extended to 7 years in priority zones.</li>
       </ul>
+      <h4>What This Means for You</h4>
+      <p>Companies with existing investment agreements should review whether renegotiation to capture the new guarantee provisions is advantageous. New market entrants benefit most from the streamlined arbitration pathway. Sector-specific eligibility criteria require review against your operational scope.</p>
+      <h4>Next Steps</h4>
+      <p>Contact me for a tailored briefing on how these changes apply to your specific sector and investment structure.</p>
+      <a href="contact.html" class="read-cta">Request a Briefing</a>
     </div>
-  </nav>
-
-  <div class="page-hero">
-    <div class="ph-tag">Intelligence</div>
-    <h1>Insights &amp; Updates</h1>
-    <p>Regulatory alerts, policy developments, and market intelligence from Uzbekistan. For organisations that need to stay ahead.</p>
   </div>
 
-  <section class="section">
-    <div class="section-inner">
-
-      <!-- FILTER BAR -->
-      <div class="filter-bar">
-        <button class="filter-btn active" onclick="filterCards('all',this)">All</button>
-        <button class="filter-btn" onclick="filterCards('regulatory-alert',this)">Regulatory Alerts</button>
-        <button class="filter-btn" onclick="filterCards('policy-brief',this)">Policy Briefs</button>
-        <button class="filter-btn" onclick="filterCards('event',this)">Events</button>
-        <button class="filter-btn" onclick="filterCards('market-intelligence',this)">Market Intelligence</button>
-      </div>
-
-      <!-- CARDS GRID -->
-      <div class="insights-grid" id="insightsGrid">
-
-        <div class="insight-card" data-type="regulatory-alert">
-          <div class="insight-header">
-            <span class="insight-type-badge">Regulatory Alert</span>
-            <h3>New Investment Framework: Key Changes for Foreign Investors</h3>
-          </div>
-          <div class="insight-body">
-            <div class="insight-meta">March 2026</div>
-            <p>Uzbekistan&rsquo;s updated Investment Law introduces revised investor guarantees, new dispute resolution provisions, and sector-specific incentive structures taking effect Q2 2026.</p>
-            <div class="insight-tags">
-              <span class="itag">Investment</span>
-              <span class="itag priority-high">High Priority</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="insight-card" data-type="policy-brief">
-          <div class="insight-header">
-            <span class="insight-type-badge">Policy Brief</span>
-            <h3>WTO Accession Update: Where Uzbekistan Stands</h3>
-          </div>
-          <div class="insight-body">
-            <div class="insight-meta">February 2026</div>
-            <p>Following the latest round of bilateral negotiations, Uzbekistan has advanced tariff and services commitments. This brief outlines outstanding issues, expected timeline, and practical implications for retail, logistics, and digital operators.</p>
-            <div class="insight-tags">
-              <span class="itag">Trade Policy</span>
-              <span class="itag">WTO</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="insight-card" data-type="event">
-          <div class="insight-header">
-            <span class="insight-type-badge">Event</span>
-            <h3>Uzbekistan Investment Forum 2026, Tashkent</h3>
-          </div>
-          <div class="insight-body">
-            <div class="insight-meta">February 2026</div>
-            <p>Attending as part of the advisory delegation supporting international participants. Available for meetings on the margins.</p>
-            <div class="insight-tags">
-              <span class="itag">Event</span>
-              <span class="itag">Investment</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="insight-card" data-type="regulatory-alert">
-          <div class="insight-header">
-            <span class="insight-type-badge">Regulatory Alert</span>
-            <h3>E-Commerce Platforms: New Licensing and Data Requirements</h3>
-          </div>
-          <div class="insight-body">
-            <div class="insight-meta">January 2026</div>
-            <p>The Ministry of Digital Technologies has introduced mandatory licensing, data localisation obligations, and updated consumer protection requirements for digital platforms. Immediate compliance review is recommended.</p>
-            <div class="insight-tags">
-              <span class="itag">Digital</span>
-              <span class="itag">Compliance</span>
-            </div>
-          </div>
-        </div>
-
-      </div><!-- /insights-grid -->
-
-      <!-- SUBSCRIBE -->
-      <div class="subscribe-box">
-        <h3>Stay Informed on Uzbekistan</h3>
-        <p>Receive regulatory alerts, policy briefings, and market intelligence directly to your inbox.</p>
-        <form class="subscribe-form" action="https://formspree.io/f/mreanjlb" method="POST">
-          <input type="email" name="email" placeholder="Your email address" required/>
-          <button type="submit">Subscribe</button>
-        </form>
-      </div>
-
+  <!-- CARD 2 -->
+  <div class="card" data-type="policy">
+    <div class="card-header">
+      <div class="card-type-badge badge-policy">Policy Brief</div>
+      <h3>WTO Accession Update: Where Uzbekistan Stands</h3>
     </div>
-  </section>
-
-  <footer>
-    <div class="footer-inner">
-      <div class="footer-left">
-        <span class="footer-name">Nurilla <span>Abdushukurov</span></span>
-        <span class="footer-sep">&middot;</span>
-        <span class="footer-role-item">Regulatory Affairs</span>
-        <span class="footer-sep">&middot;</span>
-        <span class="footer-role-item">Government Relations</span>
-        <span class="footer-sep">&middot;</span>
-        <span class="footer-role-item">Policy Advisory</span>
-      </div>
-      <span class="footer-copy">&copy; 2026 Nurilla Abdushukurov &nbsp;&middot;&nbsp; All rights reserved</span>
+    <div class="card-body">
+      <div class="card-date">February 2026</div>
+      <div class="card-summary">Following the latest round of bilateral negotiations, Uzbekistan has advanced tariff and services commitments. This brief outlines outstanding issues, expected timeline, and practical implications for retail, logistics, and digital operators.</div>
     </div>
-  </footer>
+    <div class="card-tags">
+      <span class="tag">Trade Policy</span>
+      <span class="tag">WTO</span>
+    </div>
+    <button class="card-expand-btn" onclick="toggleCard(this)">
+      Read Full Brief <em class="chevron">&#8964;</em>
+    </button>
+    <div class="card-full">
+      <h4>Current Status</h4>
+      <p>Uzbekistan's WTO Working Party met for its 8th session in Geneva in January 2026. Significant progress was recorded on goods tariff schedules, with average MFN rates expected to settle near 9.5% — down from the current 14.2%.</p>
+      <h4>Key Outstanding Issues</h4>
+      <ul>
+        <li>Services schedule — particularly financial services and telecommunications — remains contested with the EU and US delegations.</li>
+        <li>SPS/TBT alignment with WTO standards is on track but requires additional legislative changes expected by mid-2026.</li>
+        <li>State trading enterprises and subsidy notifications are under scrutiny.</li>
+      </ul>
+      <h4>Projected Timeline</h4>
+      <p>Accession is now projected for late 2027 at the earliest. For companies in retail, logistics, and digital services, this opens planning windows for market entry structuring and licensing strategy ahead of the transition.</p>
+      <a href="contact.html" class="read-cta">Discuss Implications</a>
+    </div>
+  </div>
 
-  <script>
-    function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open');}
-    function filterCards(type, btn){
-      document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
-      btn.classList.add('active');
-      document.querySelectorAll('.insight-card').forEach(card=>{
-        if(type==='all'||card.dataset.type===type){
-          card.classList.remove('hidden');
-        } else {
-          card.classList.add('hidden');
-        }
-      });
-    }
-  </script>
+  <!-- CARD 3 -->
+  <div class="card" data-type="event">
+    <div class="card-header">
+      <div class="card-type-badge badge-event">Event</div>
+      <h3>Uzbekistan Investment Forum 2026, Tashkent</h3>
+    </div>
+    <div class="card-body">
+      <div class="card-date">February 2026</div>
+      <div class="card-summary">Attending as part of the advisory delegation supporting international participants. Available for meetings on the margins.</div>
+    </div>
+    <div class="card-tags">
+      <span class="tag">Event</span>
+      <span class="tag">Investment</span>
+    </div>
+    <button class="card-expand-btn" onclick="toggleCard(this)">
+      Read More <em class="chevron">&#8964;</em>
+    </button>
+    <div class="card-full">
+      <h4>About the Forum</h4>
+      <p>The Uzbekistan Investment Forum is the government's flagship annual event connecting international investors, development finance institutions, and senior policymakers. The 2026 edition focused on green transition, digital economy, and regional trade corridors.</p>
+      <h4>My Role</h4>
+      <p>I participated as part of the advisory delegation, supporting a group of international companies in navigating bilateral meetings with government counterparts and understanding new priority investment sectors announced during the forum.</p>
+      <h4>Key Announcements from the Forum</h4>
+      <ul>
+        <li>$3.2bn in new investment commitments announced across energy, infrastructure, and agri-processing sectors.</li>
+        <li>Launch of the new Special Economic Zone fast-track registration for qualifying investors.</li>
+        <li>Confirmation of revised PPP framework expected in Q2 2026.</li>
+      </ul>
+      <p>If you attended or were unable to attend and would like a full debrief, feel free to get in touch.</p>
+      <a href="contact.html" class="read-cta">Request a Debrief</a>
+    </div>
+  </div>
+
+  <!-- CARD 4 -->
+  <div class="card" data-type="market">
+    <div class="card-header">
+      <div class="card-type-badge badge-market">Market Intelligence</div>
+      <h3>Digital Economy Regulation: What's Coming in 2026</h3>
+    </div>
+    <div class="card-body">
+      <div class="card-date">January 2026</div>
+      <div class="card-summary">Uzbekistan is preparing a comprehensive digital economy law covering data localisation, e-commerce licensing, and platform liability. Key provisions expected to affect tech, fintech, and logistics operators.</div>
+    </div>
+    <div class="card-tags">
+      <span class="tag">Digital</span>
+      <span class="tag">Regulation</span>
+      <span class="tag priority">High Priority</span>
+    </div>
+    <button class="card-expand-btn" onclick="toggleCard(this)">
+      Read Full Brief <em class="chevron">&#8964;</em>
+    </button>
+    <div class="card-full">
+      <h4>Legislative Pipeline</h4>
+      <p>The draft Digital Economy Development Law is expected to pass parliament by Q3 2026. Based on current drafts circulated to stakeholders, three provisions are of particular significance to international operators:</p>
+      <ul>
+        <li><strong>Data Localisation:</strong> Personal data of Uzbek citizens must be stored on servers within Uzbekistan. Transition period of 18 months from enactment.</li>
+        <li><strong>E-Commerce Licensing:</strong> Platforms generating over UZS 10bn annually will require a digital commerce licence. Application process and fee structure still under consultation.</li>
+        <li><strong>Platform Liability:</strong> Marketplace platforms face new duties of care for third-party seller compliance — similar to EU DSA provisions but with broader scope.</li>
+      </ul>
+      <h4>Who Is Affected</h4>
+      <p>Any company operating a digital platform, marketplace, payment gateway, or data-driven service in Uzbekistan should begin compliance planning now. The 18-month transition for data localisation is shorter than it appears given infrastructure procurement lead times.</p>
+      <a href="contact.html" class="read-cta">Get a Compliance Assessment</a>
+    </div>
+  </div>
+
+  <!-- CARD 5 -->
+  <div class="card" data-type="regulatory">
+    <div class="card-header">
+      <div class="card-type-badge badge-regulatory">Regulatory Alert</div>
+      <h3>Currency Regulation Update: New Rules for Foreign Exchange Transactions</h3>
+    </div>
+    <div class="card-body">
+      <div class="card-date">January 2026</div>
+      <div class="card-summary">The Central Bank of Uzbekistan has issued updated foreign exchange regulations affecting repatriation of profits, intercompany loan arrangements, and documentation requirements for capital transfers.</div>
+    </div>
+    <div class="card-tags">
+      <span class="tag">Finance</span>
+      <span class="tag">FX</span>
+    </div>
+    <button class="card-expand-btn" onclick="toggleCard(this)">
+      Read Full Brief <em class="chevron">&#8964;</em>
+    </button>
+    <div class="card-full">
+      <h4>What Has Changed</h4>
+      <p>Effective 1 February 2026, the Central Bank's updated Resolution No. 47 introduces the following changes:</p>
+      <ul>
+        <li><strong>Profit Repatriation:</strong> Documentation requirements simplified — single notarised certificate of tax compliance replaces the prior three-document package.</li>
+        <li><strong>Intercompany Loans:</strong> Loans from foreign parent companies now require CBU registration only above USD 500,000 (previously USD 100,000).</li>
+        <li><strong>Capital Transfer Timelines:</strong> Processing time for approved transfers reduced from 10 to 5 business days.</li>
+      </ul>
+      <h4>Practical Impact</h4>
+      <p>These changes reduce administrative burden for most multinational structures. However, companies with complex holding structures or multiple currency exposures should verify that their current banking mandates are aligned with the new documentation standards.</p>
+      <a href="contact.html" class="read-cta">Request Advisory Support</a>
+    </div>
+  </div>
+
+  <!-- CARD 6 -->
+  <div class="card" data-type="event">
+    <div class="card-header">
+      <div class="card-type-badge badge-event">Event</div>
+      <h3>Central Asia Business Summit, Almaty — Speaker Participation</h3>
+    </div>
+    <div class="card-body">
+      <div class="card-date">December 2025</div>
+      <div class="card-summary">Participated as a panellist on regulatory convergence in Central Asia. Key themes: harmonisation, cross-border investment facilitation, and the role of advisory services in reducing market entry risk.</div>
+    </div>
+    <div class="card-tags">
+      <span class="tag">Event</span>
+      <span class="tag">Central Asia</span>
+    </div>
+    <button class="card-expand-btn" onclick="toggleCard(this)">
+      Read More <em class="chevron">&#8964;</em>
+    </button>
+    <div class="card-full">
+      <h4>Panel Session: Regulatory Convergence in Central Asia</h4>
+      <p>I joined senior representatives from the EBRD, the Kazakhstani Ministry of Trade, and two European multinationals to discuss the evolving regulatory landscape across the Central Asian markets, with a particular focus on Uzbekistan's reform trajectory.</p>
+      <h4>Key Discussion Points</h4>
+      <ul>
+        <li>Uzbekistan was highlighted as the region's most active reform market, with the highest volume of new legislation affecting foreign business in 2025.</li>
+        <li>Cross-border supply chain regulation and customs digitalisation were identified as the next frontier for harmonisation.</li>
+        <li>The panel agreed that local advisory capacity remains the critical gap for international companies entering the region.</li>
+      </ul>
+      <h4>Notes Available</h4>
+      <p>I prepared a post-event summary note for clients and contacts. If you would like to receive it, please get in touch.</p>
+      <a href="contact.html" class="read-cta">Request Session Notes</a>
+    </div>
+  </div>
+
+</div><!-- /insights-grid -->
+
+<!-- SUBSCRIBE STRIP -->
+<section class="subscribe-strip">
+  <h2>Stay Informed</h2>
+  <p>Receive regulatory alerts and market intelligence directly to your inbox — no noise, just what matters.</p>
+  <form class="sub-form" action="https://formspree.io/f/mreanjlb" method="POST">
+    <input type="email" name="email" placeholder="Your email address" required>
+    <button type="submit">Subscribe</button>
+  </form>
+</section>
+
+<!-- FOOTER -->
+<footer style="background:var(--navy);color:rgba(255,255,255,.45);text-align:center;padding:28px 20px;font-size:.75rem;letter-spacing:.05em;">
+  &copy; 2026 Nurilla Abdushukurov &mdash; Tashkent, Uzbekistan
+</footer>
+
+<script>
+// Filter
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', function(){
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    this.classList.add('active');
+    const filter = this.dataset.filter;
+    document.querySelectorAll('.card').forEach(card => {
+      if(filter === 'all' || card.dataset.type === filter){
+        card.classList.remove('hidden');
+      } else {
+        card.classList.add('hidden');
+      }
+    });
+  });
+});
+
+// Expand/Collapse
+function toggleCard(btn){
+  const full = btn.nextElementSibling;
+  const isOpen = full.classList.contains('open');
+  // Close all
+  document.querySelectorAll('.card-full').forEach(f => f.classList.remove('open'));
+  document.querySelectorAll('.card-expand-btn').forEach(b => b.classList.remove('open'));
+  // Open clicked (if was closed)
+  if(!isOpen){
+    full.classList.add('open');
+    btn.classList.add('open');
+    btn.scrollIntoView({behavior:'smooth', block:'nearest'});
+  }
+}
+</script>
 </body>
 </html>
