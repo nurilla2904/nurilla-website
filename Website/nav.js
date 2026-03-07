@@ -10,12 +10,13 @@
   mobile.className = 'mobile-menu';
 
   var ul = document.createElement('ul');
+  var ctaText = ctaLink ? ctaLink.textContent.trim() : '';
 
   for(var i = 0; i < links.length; i++){
     var txt = links[i].textContent.trim();
 
-    /* skip duplicate if CTA also has "Get in Touch" */
-    if(ctaLink && txt === ctaLink.textContent.trim()) continue;
+    /* skip if CTA duplicates this link */
+    if(ctaLink && txt === ctaText) continue;
 
     var li = document.createElement('li');
     var a = document.createElement('a');
@@ -23,7 +24,7 @@
     a.textContent = txt;
     if(links[i].classList.contains('active')) a.classList.add('active');
 
-    /* style "Get in Touch" red even if it only appears in nav-links */
+    /* always style "Get in Touch" red */
     if(txt === 'Get in Touch'){
       a.style.color = '#c0392b';
       a.style.fontWeight = '700';
@@ -33,11 +34,12 @@
     ul.appendChild(li);
   }
 
+  /* add CTA link if it exists (pages that have .nav-cta) */
   if(ctaLink){
     var li = document.createElement('li');
     var c = document.createElement('a');
     c.href = ctaLink.href;
-    c.textContent = ctaLink.textContent;
+    c.textContent = ctaText;
     c.style.color = '#c0392b';
     c.style.fontWeight = '700';
     li.appendChild(c);
