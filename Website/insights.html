@@ -106,21 +106,7 @@
 </div>
 
 <!-- Navigation -->
-<nav>
-  <div class="nav-inner">
-    <a href="index.html" class="nav-brand">Nurilla <span>Abdushukurov</span></a>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="market-context.html">Market Context</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="insights.html" class="active">Insights & Updates</a></li>
-      <li><a href="why-me.html">Why Me</a></li>
-      <li class="nav-cta"><a href="contact.html">Get in Touch</a></li>
-    </ul>
-    <button class="hamburger"><i class="fas fa-bars"></i></button>
-  </div>
-</nav>
+<nav><div class="nav-inner"><a class="nav-brand" href="index.html">Nurilla <span>Abdushukurov</span></a><button class="hamburger" onclick="toggleMenu()">&#9776;</button><ul class="nav-links"><li><a href="index.html">Home</a></li><li><a href="market-context.html">Market Context</a></li><li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li><li><a href="insights.html" class="active">Insights &amp; Updates</a></li><li><a href="why-me.html">Why Me</a></li><li class="nav-cta"><a href="contact.html">Get in Touch</a></li></ul></div><div class="mobile-menu" id="mobileMenu"><ul><li><a href="index.html">Home</a></li><li><a href="market-context.html">Market Context</a></li><li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li><li><a href="insights.html" class="active">Insights &amp; Updates</a></li><li><a href="why-me.html">Why Me</a></li><li class="nav-cta"><a href="contact.html">Get in Touch</a></li></ul></div></nav>
 
 <!-- Hero -->
 <section class="page-hero">
@@ -376,7 +362,7 @@
   </div>
 </div>
 
-<script src="nav.js"></script>
+
 <script>
 // ── State ──
 var currentTypeFilter = 'all';
@@ -493,5 +479,6 @@ document.addEventListener('keydown', function(e){
   if(e.key === 'Escape') closeModal();
 });
 </script>
+<script>function toggleMenu(){document.getElementById("mobileMenu").classList.toggle("open");}</script>
 </body>
 </html>
