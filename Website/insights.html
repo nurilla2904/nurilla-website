@@ -15,10 +15,21 @@
 .page-hero p{color:rgba(255,255,255,.6);font-size:.95rem;max-width:560px;margin:0 auto;line-height:1.7;}
 
 /* ── FILTER TABS ── */
-.filter-bar{max-width:1200px;margin:48px auto 40px;padding:0 30px;display:flex;flex-wrap:wrap;gap:10px;}
+.filter-bar{max-width:1200px;margin:48px auto 0;padding:0 30px;display:flex;flex-wrap:wrap;gap:10px;align-items:center;}
 .filter-btn{border:1.5px solid #ccc;background:#fff;color:var(--navy);padding:9px 22px;border-radius:30px;font-size:.72rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;transition:all .25s;}
 .filter-btn:hover{border-color:var(--gold);color:var(--gold);}
 .filter-btn.active{background:var(--gold);border-color:var(--gold);color:#fff;}
+
+/* ── SORT BAR ── */
+.sort-bar{max-width:1200px;margin:18px auto 40px;padding:0 30px;display:flex;align-items:center;gap:12px;flex-wrap:wrap;justify-content:space-between;}
+.sort-left{display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+.sort-label{font-size:.72rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--navy);}
+.sort-select{border:1.5px solid #ccc;background:#fff;color:var(--navy);padding:8px 16px;border-radius:4px;font-size:.78rem;font-weight:500;font-family:inherit;cursor:pointer;transition:border-color .25s;}
+.sort-select:hover{border-color:var(--gold);}
+.active-tag-filter{display:none;align-items:center;gap:8px;font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);background:rgba(184,150,62,.1);padding:6px 14px;border-radius:20px;border:1.5px solid var(--gold);}
+.active-tag-filter.visible{display:inline-flex;}
+.clear-tag{background:none;border:none;color:var(--gold);font-size:.9rem;cursor:pointer;padding:0 0 0 4px;line-height:1;font-weight:700;}
+.clear-tag:hover{color:var(--navy);}
 
 /* ── GRID ── */
 .insights-grid{max-width:1200px;margin:0 auto 80px;padding:0 30px;display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:28px;}
@@ -37,8 +48,10 @@
 .card-date{font-size:.75rem;color:var(--mid);font-style:italic;margin-bottom:10px;}
 .card-summary{font-size:.88rem;line-height:1.7;color:#444;}
 .card-tags{display:flex;flex-wrap:wrap;gap:8px;padding:18px 28px 0;}
-.tag{font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600;padding:4px 10px;border:1.5px solid var(--gold);border-radius:2px;color:var(--gold);}
+.tag{font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600;padding:4px 10px;border:1.5px solid var(--gold);border-radius:2px;color:var(--gold);cursor:pointer;transition:all .2s;}
+.tag:hover{background:var(--gold);color:#fff;}
 .tag.priority{border-color:#e05a5a;color:#e05a5a;}
+.tag.priority:hover{background:#e05a5a;color:#fff;}
 
 /* ── EXPAND TOGGLE (now opens modal) ── */
 .card-expand-btn{display:flex;align-items:center;gap:8px;background:none;border:none;cursor:pointer;font-size:.72rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);padding:18px 28px 22px;transition:color .2s;}
@@ -55,6 +68,10 @@
 
 /* ── HIDDEN CARD ── */
 .card.hidden{display:none;}
+
+/* ── NO RESULTS ── */
+.no-results{display:none;text-align:center;padding:60px 30px;font-size:.95rem;color:var(--mid);font-style:italic;max-width:1200px;margin:0 auto;}
+.no-results.visible{display:block;}
 
 /* ── SUBSCRIBE STRIP ── */
 .subscribe-strip{background:var(--navy);padding:60px 30px;text-align:center;border-top:2px solid var(--gold);}
@@ -89,7 +106,21 @@
 </div>
 
 <!-- Navigation -->
-<nav><div class="nav-inner"><a class="nav-brand" href="index.html">Nurilla <span>Abdushukurov</span></a><button class="hamburger" onclick="toggleMenu()">&#9776;</button><ul class="nav-links"><li><a href="index.html">Home</a></li><li><a href="market-context.html">Market Context</a></li><li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li><li><a href="insights.html" class="active">Insights &amp; Updates</a></li><li><a href="why-me.html">Why Me</a></li><li class="nav-cta"><a href="contact.html">Get in Touch</a></li></ul></div><div class="mobile-menu" id="mobileMenu"><ul><li><a href="index.html">Home</a></li><li><a href="market-context.html">Market Context</a></li><li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li><li><a href="insights.html" class="active">Insights &amp; Updates</a></li><li><a href="why-me.html">Why Me</a></li><li class="nav-cta"><a href="contact.html">Get in Touch</a></li></ul></div></nav>
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand">Nurilla <span>Abdushukurov</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="market-context.html">Market Context</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="insights.html" class="active">Insights & Updates</a></li>
+      <li><a href="why-me.html">Why Me</a></li>
+      <li class="nav-cta"><a href="contact.html">Get in Touch</a></li>
+    </ul>
+    <button class="hamburger"><i class="fas fa-bars"></i></button>
+  </div>
+</nav>
 
 <!-- Hero -->
 <section class="page-hero">
@@ -107,11 +138,29 @@
   <button class="filter-btn" data-filter="market">Market Intelligence</button>
 </div>
 
+<!-- Sort Bar -->
+<div class="sort-bar">
+  <div class="sort-left">
+    <span class="sort-label">Sort by:</span>
+    <select class="sort-select" id="sortSelect">
+      <option value="newest">Newest First</option>
+      <option value="oldest">Oldest First</option>
+    </select>
+    <div class="active-tag-filter" id="activeTagFilter">
+      <span id="activeTagName"></span>
+      <button class="clear-tag" onclick="clearTagFilter()" title="Clear tag filter">&times;</button>
+    </div>
+  </div>
+</div>
+
+<!-- No Results Message -->
+<p class="no-results" id="noResults">No insights match your current filters.</p>
+
 <!-- Insights Grid -->
-<div class="insights-grid">
+<div class="insights-grid" id="insightsGrid">
 
   <!-- Card 1 -->
-  <div class="card" data-type="regulatory">
+  <div class="card" data-type="regulatory" data-date="2026-03" data-tags="investment,high-priority">
     <div class="card-header">
       <span class="card-type-badge badge-regulatory">Regulatory Alert</span>
       <h3>New Investment Framework: Key Changes for Foreign Investors</h3>
@@ -121,8 +170,8 @@
       <p class="card-summary">Uzbekistan's updated Investment Law introduces revised investor guarantees, new dispute resolution provisions, and sector-specific incentive structures taking effect Q2 2026.</p>
     </div>
     <div class="card-tags">
-      <span class="tag">Investment</span>
-      <span class="tag priority">High Priority</span>
+      <span class="tag" data-tag="investment">Investment</span>
+      <span class="tag priority" data-tag="high-priority">High Priority</span>
     </div>
     <button class="card-expand-btn" onclick="toggleCard(this)">Read Full Brief <em class="chevron">⌄</em></button>
     <div class="card-full">
@@ -142,7 +191,7 @@
   </div>
 
   <!-- Card 2 -->
-  <div class="card" data-type="policy">
+  <div class="card" data-type="policy" data-date="2026-02" data-tags="trade-policy,wto">
     <div class="card-header">
       <span class="card-type-badge badge-policy">Policy Brief</span>
       <h3>WTO Accession Update: Where Uzbekistan Stands</h3>
@@ -152,8 +201,8 @@
       <p class="card-summary">Following the latest round of bilateral negotiations, Uzbekistan has advanced tariff and services commitments. This brief outlines outstanding issues, expected timeline, and practical implications for retail, logistics, and digital operators.</p>
     </div>
     <div class="card-tags">
-      <span class="tag">Trade Policy</span>
-      <span class="tag">WTO</span>
+      <span class="tag" data-tag="trade-policy">Trade Policy</span>
+      <span class="tag" data-tag="wto">WTO</span>
     </div>
     <button class="card-expand-btn" onclick="toggleCard(this)">Read Full Brief <em class="chevron">⌄</em></button>
     <div class="card-full">
@@ -172,7 +221,7 @@
   </div>
 
   <!-- Card 3 -->
-  <div class="card" data-type="event">
+  <div class="card" data-type="event" data-date="2026-02" data-tags="event,investment">
     <div class="card-header">
       <span class="card-type-badge badge-event">Event</span>
       <h3>Uzbekistan Investment Forum 2026, Tashkent</h3>
@@ -182,8 +231,8 @@
       <p class="card-summary">Attending as part of the advisory delegation supporting international participants. Available for meetings on the margins.</p>
     </div>
     <div class="card-tags">
-      <span class="tag">Event</span>
-      <span class="tag">Investment</span>
+      <span class="tag" data-tag="event">Event</span>
+      <span class="tag" data-tag="investment">Investment</span>
     </div>
     <button class="card-expand-btn" onclick="toggleCard(this)">Read More <em class="chevron">⌄</em></button>
     <div class="card-full">
@@ -203,7 +252,7 @@
   </div>
 
   <!-- Card 4 -->
-  <div class="card" data-type="market">
+  <div class="card" data-type="market" data-date="2026-01" data-tags="digital,regulation,high-priority">
     <div class="card-header">
       <span class="card-type-badge badge-market">Market Intelligence</span>
       <h3>Digital Economy Regulation: What's Coming in 2026</h3>
@@ -213,9 +262,9 @@
       <p class="card-summary">Uzbekistan is preparing a comprehensive digital economy law covering data localisation, e-commerce licensing, and platform liability. Key provisions expected to affect tech, fintech, and logistics operators.</p>
     </div>
     <div class="card-tags">
-      <span class="tag">Digital</span>
-      <span class="tag">Regulation</span>
-      <span class="tag priority">High Priority</span>
+      <span class="tag" data-tag="digital">Digital</span>
+      <span class="tag" data-tag="regulation">Regulation</span>
+      <span class="tag priority" data-tag="high-priority">High Priority</span>
     </div>
     <button class="card-expand-btn" onclick="toggleCard(this)">Read Full Brief <em class="chevron">⌄</em></button>
     <div class="card-full">
@@ -233,7 +282,7 @@
   </div>
 
   <!-- Card 5 -->
-  <div class="card" data-type="regulatory">
+  <div class="card" data-type="regulatory" data-date="2026-01" data-tags="finance,fx">
     <div class="card-header">
       <span class="card-type-badge badge-regulatory">Regulatory Alert</span>
       <h3>Currency Regulation Update: New Rules for Foreign Exchange Transactions</h3>
@@ -243,8 +292,8 @@
       <p class="card-summary">The Central Bank of Uzbekistan has issued updated foreign exchange regulations affecting repatriation of profits, intercompany loan arrangements, and documentation requirements for capital transfers.</p>
     </div>
     <div class="card-tags">
-      <span class="tag">Finance</span>
-      <span class="tag">FX</span>
+      <span class="tag" data-tag="finance">Finance</span>
+      <span class="tag" data-tag="fx">FX</span>
     </div>
     <button class="card-expand-btn" onclick="toggleCard(this)">Read Full Brief <em class="chevron">⌄</em></button>
     <div class="card-full">
@@ -262,7 +311,7 @@
   </div>
 
   <!-- Card 6 -->
-  <div class="card" data-type="event">
+  <div class="card" data-type="event" data-date="2025-12" data-tags="event,central-asia">
     <div class="card-header">
       <span class="card-type-badge badge-event">Event</span>
       <h3>Central Asia Business Summit, Almaty — Speaker Participation</h3>
@@ -272,8 +321,8 @@
       <p class="card-summary">Participated as a panellist on regulatory convergence in Central Asia. Key themes: harmonisation, cross-border investment facilitation, and the role of advisory services in reducing market entry risk.</p>
     </div>
     <div class="card-tags">
-      <span class="tag">Event</span>
-      <span class="tag">Central Asia</span>
+      <span class="tag" data-tag="event">Event</span>
+      <span class="tag" data-tag="central-asia">Central Asia</span>
     </div>
     <button class="card-expand-btn" onclick="toggleCard(this)">Read More <em class="chevron">⌄</em></button>
     <div class="card-full">
@@ -297,8 +346,8 @@
 <section class="subscribe-strip">
   <h2>Stay Informed</h2>
   <p>Receive regulatory alerts and market intelligence directly to your inbox — no noise, just what matters.</p>
-  <form class="sub-form">
-    <input type="email" placeholder="Your email address">
+  <form class="sub-form" action="https://formspree.io/f/mreanjlb" method="POST">
+    <input type="email" name="email" placeholder="Your email address" required>
     <button type="submit">Subscribe</button>
   </form>
 </section>
@@ -327,25 +376,98 @@
   </div>
 </div>
 
-
+<script src="nav.js"></script>
 <script>
-// Filter
-document.querySelectorAll('.filter-btn').forEach(btn => {
+// ── State ──
+var currentTypeFilter = 'all';
+var currentTagFilter = null;
+var currentSort = 'newest';
+
+// ── Type Filter (top buttons) ──
+document.querySelectorAll('.filter-btn').forEach(function(btn){
   btn.addEventListener('click', function(){
-    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.filter-btn').forEach(function(b){ b.classList.remove('active'); });
     this.classList.add('active');
-    const filter = this.dataset.filter;
-    document.querySelectorAll('.card').forEach(card => {
-      if(filter === 'all' || card.dataset.type === filter){
-        card.classList.remove('hidden');
-      } else {
-        card.classList.add('hidden');
-      }
-    });
+    currentTypeFilter = this.dataset.filter;
+    applyFilters();
   });
 });
 
-// Open modal instead of expanding inline
+// ── Sort ──
+document.getElementById('sortSelect').addEventListener('change', function(){
+  currentSort = this.value;
+  sortCards();
+  applyFilters();
+});
+
+// ── Tag Click ──
+document.querySelectorAll('.tag').forEach(function(tag){
+  tag.addEventListener('click', function(){
+    var tagValue = this.dataset.tag;
+    if(currentTagFilter === tagValue){
+      clearTagFilter();
+    } else {
+      currentTagFilter = tagValue;
+      var label = this.textContent;
+      document.getElementById('activeTagName').textContent = label;
+      document.getElementById('activeTagFilter').classList.add('visible');
+      applyFilters();
+    }
+  });
+});
+
+function clearTagFilter(){
+  currentTagFilter = null;
+  document.getElementById('activeTagFilter').classList.remove('visible');
+  applyFilters();
+}
+
+// ── Apply Both Filters ──
+function applyFilters(){
+  var cards = document.querySelectorAll('.card');
+  var visibleCount = 0;
+  cards.forEach(function(card){
+    var typeMatch = (currentTypeFilter === 'all' || card.dataset.type === currentTypeFilter);
+    var tagMatch = true;
+    if(currentTagFilter){
+      var cardTags = card.dataset.tags ? card.dataset.tags.split(',') : [];
+      tagMatch = cardTags.indexOf(currentTagFilter) !== -1;
+    }
+    if(typeMatch && tagMatch){
+      card.classList.remove('hidden');
+      visibleCount++;
+    } else {
+      card.classList.add('hidden');
+    }
+  });
+  // Show/hide no-results message
+  var noResults = document.getElementById('noResults');
+  if(visibleCount === 0){
+    noResults.classList.add('visible');
+  } else {
+    noResults.classList.remove('visible');
+  }
+}
+
+// ── Sort Cards ──
+function sortCards(){
+  var grid = document.getElementById('insightsGrid');
+  var cards = Array.from(grid.querySelectorAll('.card'));
+  cards.sort(function(a, b){
+    var dateA = a.dataset.date;
+    var dateB = b.dataset.date;
+    if(currentSort === 'newest'){
+      return dateB.localeCompare(dateA);
+    } else {
+      return dateA.localeCompare(dateB);
+    }
+  });
+  cards.forEach(function(card){
+    grid.appendChild(card);
+  });
+}
+
+// ── Modal ──
 function toggleCard(btn){
   var card = btn.closest('.card');
   var title = card.querySelector('.card-header h3').innerHTML;
@@ -363,22 +485,13 @@ function closeModal(){
   document.body.style.overflow = '';
 }
 
-// Close on overlay click
 document.getElementById('insightModal').addEventListener('click', function(e){
   if(e.target === this) closeModal();
 });
 
-// Close on Escape key
 document.addEventListener('keydown', function(e){
   if(e.key === 'Escape') closeModal();
 });
 </script>
-
-
-
-
-
-
-<script>function toggleMenu(){document.getElementById("mobileMenu").classList.toggle("open");}</script>
 </body>
 </html>
