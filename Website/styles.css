@@ -187,3 +187,7 @@ footer{background:var(--navy);border-top:2px solid var(--gold);padding:24px 30px
   .quote-box::before{display:none;}
   .quote-box blockquote,.quote-box cite{padding-left:0;}
 }
+
+/* ── Mobile menu "Get in Touch" gold button ── */
+.mobile-menu .nav-cta a{background:var(--gold)!important;color:#fff!important;padding:9px 20px!important;border-radius:2px;font-size:.72rem;letter-spacing:.13em;text-transform:uppercase;font-weight:600;display:inline-block;margin-top:8px;}
+.mobile-menu .nav-cta a:hover{background:var(--navy)!important;}
