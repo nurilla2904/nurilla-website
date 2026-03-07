@@ -12,14 +12,23 @@
   var ul = document.createElement('ul');
 
   for(var i = 0; i < links.length; i++){
-    /* skip "Get in Touch" from nav-links if it also exists as the CTA */
-    if(ctaLink && links[i].textContent.trim() === ctaLink.textContent.trim()) continue;
+    var txt = links[i].textContent.trim();
+
+    /* skip duplicate if CTA also has "Get in Touch" */
+    if(ctaLink && txt === ctaLink.textContent.trim()) continue;
 
     var li = document.createElement('li');
     var a = document.createElement('a');
     a.href = links[i].href;
-    a.textContent = links[i].textContent;
+    a.textContent = txt;
     if(links[i].classList.contains('active')) a.classList.add('active');
+
+    /* style "Get in Touch" red even if it only appears in nav-links */
+    if(txt === 'Get in Touch'){
+      a.style.color = '#c0392b';
+      a.style.fontWeight = '700';
+    }
+
     li.appendChild(a);
     ul.appendChild(li);
   }
