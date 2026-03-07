@@ -9,23 +9,30 @@
   var mobile = document.createElement('div');
   mobile.className = 'mobile-menu';
 
+  var ul = document.createElement('ul');
+
   for(var i = 0; i < links.length; i++){
+    var li = document.createElement('li');
     var a = document.createElement('a');
     a.href = links[i].href;
     a.textContent = links[i].textContent;
     if(links[i].classList.contains('active')) a.classList.add('active');
-    mobile.appendChild(a);
+    li.appendChild(a);
+    ul.appendChild(li);
   }
 
   if(ctaLink){
+    var li = document.createElement('li');
     var c = document.createElement('a');
     c.href = ctaLink.href;
     c.textContent = ctaLink.textContent;
     c.style.color = 'var(--gold)';
     c.style.fontWeight = '600';
-    mobile.appendChild(c);
+    li.appendChild(c);
+    ul.appendChild(li);
   }
 
+  mobile.appendChild(ul);
   nav.appendChild(mobile);
 
   hamburger.addEventListener('click', function(){
