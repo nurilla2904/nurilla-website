@@ -1,121 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-  <title>Why Me | Nurilla Abdushukurov</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
-  <link rel="stylesheet" href="styles.css"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Why Me | Nurilla Abdushukurov</title>
+<link rel="stylesheet" href="styles.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-  <div class="topbar">
-    <div class="tname">Nurilla <em>Abdushukurov</em></div>
-    <div class="trole">Regulatory Affairs &nbsp;&middot;&nbsp; Government Relations &nbsp;&middot;&nbsp; Policy Advisory</div>
+
+<!-- Top Bar -->
+<div class="topbar">
+  <div class="tname">Nurilla <em>Abdushukurov</em></div>
+  <div class="trole">Regulatory Affairs &middot; Government Relations &middot; Policy Advisory</div>
+</div>
+
+<!-- Navigation -->
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand">Nurilla <span>Abdushukurov</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="market-context.html">Market Context</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="insights.html">Insights & Updates</a></li>
+      <li><a href="why-me.html" class="active">Why Me</a></li>
+      <li class="nav-cta"><a href="contact.html">Get in Touch</a></li>
+    </ul>
+    <button class="hamburger" onclick="toggleMenu()"><i class="fas fa-bars"></i></button>
   </div>
-  <nav>
-    <div class="nav-inner">
-      <a class="nav-brand" href="index.html">Nurilla <span>Abdushukurov</span></a>
-      <button class="hamburger" onclick="toggleMenu()">&#9776;</button>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="market-context.html">Market Context</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="insights.html">Insights &amp; Updates</a></li>
-        <li><a href="why-me.html" class="active">Why Me</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li class="nav-cta"><a href="contact.html">Get in Touch</a></li>
-      </ul>
-    </div>
-    <div class="mobile-menu" id="mobileMenu">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="market-context.html">Market Context</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="insights.html">Insights &amp; Updates</a></li>
-        <li><a href="why-me.html">Why Me</a></li>
-        <li><a href="contact.html">Get in Touch</a></li>
-      </ul>
-    </div>
-  </nav>
-
-  <div class="page-hero">
-    <div class="ph-tag">Differentiation</div>
-    <h1>What Sets This Advisory Apart</h1>
-    <p>Not just analysis &mdash; practitioner-level knowledge built from years inside Uzbekistan&rsquo;s government, development organisations, and private sector.</p>
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="market-context.html">Market Context</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="insights.html">Insights & Updates</a></li>
+      <li><a href="why-me.html">Why Me</a></li>
+      <li><a href="contact.html">Get in Touch</a></li>
+    </ul>
   </div>
+</nav>
 
-  <section class="section" style="background:var(--grey);">
-    <div class="section-inner">
-      <div class="section-tag">Distinct Advantages</div>
-      <h2 class="section-h2">Why Me</h2>
-      <div class="section-rule"></div>
-      <div class="whyme-grid">
-        <div class="wm-card">
-          <div class="wm-icon">&#127963;</div>
-          <h3>Inside-Out Institutional Knowledge</h3>
-          <p>Years spent working inside Uzbekistan&rsquo;s government institutions means I understand how decisions are actually made &mdash; not just how the system is supposed to work on paper.</p>
-        </div>
-        <div class="wm-card">
-          <div class="wm-icon">&#129309;</div>
-          <h3>Real Access, Not Cold Calls</h3>
-          <p>Long-standing relationships across ministries, regulatory bodies, and international organisations give me access to context and intelligence that rarely surfaces publicly.</p>
-        </div>
-        <div class="wm-card">
-          <div class="wm-icon">&#128225;</div>
-          <h3>Active Daily Monitoring</h3>
-          <p>I track Uzbekistan&rsquo;s regulatory environment continuously. In a market where a single decree can reshape your operating conditions overnight, that is not optional. It is essential.</p>
-        </div>
-        <div class="wm-card">
-          <div class="wm-icon">&#128172;</div>
-          <h3>Multilingual and Locally Fluent</h3>
-          <p>I work in Uzbek, English, and Russian without losing nuance. I understand the cultural dynamics of Uzbekistan&rsquo;s business environment as well as its formal institutions.</p>
-        </div>
-        <div class="wm-card">
-          <div class="wm-icon">&#127919;</div>
-          <h3>A Practitioner, Not Just an Analyst</h3>
-          <p>I have coordinated large-scale international programmes, facilitated major export and trade initiatives, and delivered on the ground across Uzbekistan and Central Asia.</p>
-        </div>
-        <div class="wm-card">
-          <div class="wm-icon">&#129518;</div>
-          <h3>Structured Around Your Budget</h3>
-          <p>I bring local market knowledge to every engagement, working to structure each assignment to deliver maximum practical value at every resource level.</p>
-        </div>
+<!-- Page Hero -->
+<section class="page-hero">
+  <div class="ph-tag">Differentiation</div>
+  <h1>What Sets This Advisory Apart</h1>
+  <p>Not just analysis — practitioner-level knowledge built from years inside Uzbekistan's government, development organisations, and private sector.</p>
+</section>
+
+<!-- Why Me Grid -->
+<section class="section">
+  <div class="section-inner">
+    <span class="section-tag">Distinct Advantages</span>
+    <h2 class="section-h2">Why Me</h2>
+    <div class="section-rule"></div>
+
+    <div class="whyme-grid">
+      <div class="wm-card">
+        <div class="wm-icon">🏛</div>
+        <h3>Inside-Out Institutional Knowledge</h3>
+        <p>Years spent working inside Uzbekistan's government institutions means I understand how decisions are actually made — not just how the system is supposed to work on paper.</p>
       </div>
-      <div class="quote-box">
-        <blockquote>Uzbekistan is not a market you navigate from a distance. The regulations change too quickly, the relationships matter too much, and the informal dynamics are too important to ignore. You need someone on the ground who has worked inside the system &mdash; not just studied it.</blockquote>
-        <cite>Nurilla Abdushukurov</cite>
+      <div class="wm-card">
+        <div class="wm-icon">🤝</div>
+        <h3>Real Access, Not Cold Calls</h3>
+        <p>Long-standing relationships across ministries, regulatory bodies, and international organisations give me access to context and intelligence that rarely surfaces publicly.</p>
+      </div>
+      <div class="wm-card">
+        <div class="wm-icon">📡</div>
+        <h3>Active Daily Monitoring</h3>
+        <p>I track Uzbekistan's regulatory environment continuously. In a market where a single decree can reshape your operating conditions overnight, that is not optional. It is essential.</p>
+      </div>
+      <div class="wm-card">
+        <div class="wm-icon">💬</div>
+        <h3>Multilingual and Locally Fluent</h3>
+        <p>I work in Uzbek, English, and Russian without losing nuance. I understand the cultural dynamics of Uzbekistan's business environment as well as its formal institutions.</p>
+      </div>
+      <div class="wm-card">
+        <div class="wm-icon">🎯</div>
+        <h3>A Practitioner, Not Just an Analyst</h3>
+        <p>I have coordinated large-scale international programmes, facilitated major export and trade initiatives, and delivered on the ground across Uzbekistan and Central Asia.</p>
+      </div>
+      <div class="wm-card">
+        <div class="wm-icon">🧮</div>
+        <h3>Structured Around Your Budget</h3>
+        <p>I bring local market knowledge to every engagement, working to structure each assignment to deliver maximum practical value at every resource level.</p>
       </div>
     </div>
-  </section>
 
-  <section class="section" style="text-align:center;">
-    <div class="section-inner">
-      <div class="section-tag">Next Step</div>
-      <h2 class="section-h2">Ready to Work Together?</h2>
-      <div class="section-rule" style="margin:0 auto 32px;"></div>
-      <p style="font-size:.97rem;color:#555;line-height:1.8;max-width:560px;margin:0 auto 36px;">Whether you need a one-off briefing or an ongoing advisory relationship, I am happy to start with a conversation about your needs.</p>
-      <a href="contact.html" class="btn-gold">Get in Touch</a>
+    <!-- Quote -->
+    <div class="quote-box">
+      <blockquote>Uzbekistan is not a market you navigate from a distance. The regulations change too quickly, the relationships matter too much, and the informal dynamics are too important to ignore. You need someone on the ground who has worked inside the system — not just studied it.</blockquote>
+      <cite>Nurilla Abdushukurov</cite>
     </div>
-  </section>
+  </div>
+</section>
 
-  <footer>
-    <div class="footer-inner">
-      <div class="footer-left">
-        <span class="footer-name">Nurilla <span>Abdushukurov</span></span>
-        <span class="footer-sep">&middot;</span>
-        <span class="footer-role-item">Regulatory Affairs</span>
-        <span class="footer-sep">&middot;</span>
-        <span class="footer-role-item">Government Relations</span>
-        <span class="footer-sep">&middot;</span>
-        <span class="footer-role-item">Policy Advisory</span>
-      </div>
-      <span class="footer-copy">&copy; 2026 Nurilla Abdushukurov &nbsp;&middot;&nbsp; All rights reserved</span>
+<!-- CTA Section -->
+<section class="section" style="background:var(--grey);text-align:center;">
+  <div class="section-inner">
+    <span class="section-tag">Next Step</span>
+    <h2 class="section-h2">Ready to Work Together?</h2>
+    <div class="section-rule" style="margin:0 auto 32px;"></div>
+    <p class="section-intro" style="margin:0 auto 30px;">Whether you need a one-off briefing or an ongoing advisory relationship, I am happy to start with a conversation about your needs.</p>
+    <a href="contact.html" class="btn-gold">Get in Touch</a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-left">
+      <span class="footer-name">Nurilla <span>Abdushukurov</span></span>
+      <span class="footer-sep">·</span>
+      <span class="footer-role-item">Regulatory Affairs</span>
+      <span class="footer-sep">·</span>
+      <span class="footer-role-item">Government Relations</span>
+      <span class="footer-sep">·</span>
+      <span class="footer-role-item">Policy Advisory</span>
     </div>
-  </footer>
-  <script>function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open');}</script>
+    <div class="footer-copy">&copy; 2026 Nurilla Abdushukurov &middot; All rights reserved</div>
+  </div>
+</footer>
+
+<script src="nav.js"></script>
 </body>
 </html>

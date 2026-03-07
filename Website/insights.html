@@ -4,8 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Insights & Updates – Nurilla Abdushukurov</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
 /* ── PAGE HERO ── */
 .page-hero{background:var(--navy);padding:72px 30px 60px;text-align:center;border-bottom:2px solid var(--gold);}
@@ -39,15 +40,13 @@
 .tag{font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600;padding:4px 10px;border:1.5px solid var(--gold);border-radius:2px;color:var(--gold);}
 .tag.priority{border-color:#e05a5a;color:#e05a5a;}
 
-/* ── EXPAND TOGGLE ── */
+/* ── EXPAND TOGGLE (now opens modal) ── */
 .card-expand-btn{display:flex;align-items:center;gap:8px;background:none;border:none;cursor:pointer;font-size:.72rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);padding:18px 28px 22px;transition:color .2s;}
 .card-expand-btn:hover{color:var(--navy);}
 .card-expand-btn .chevron{display:inline-block;transition:transform .3s;font-style:normal;}
-.card-expand-btn.open .chevron{transform:rotate(180deg);}
 
-/* ── FULL CONTENT ── */
+/* ── FULL CONTENT (hidden, used as source for modal) ── */
 .card-full{display:none;padding:0 28px 28px;border-top:1px solid var(--grey);margin-top:0;}
-.card-full.open{display:block;}
 .card-full h4{font-family:'Playfair Display',serif;font-size:1rem;color:var(--navy);margin:18px 0 8px;}
 .card-full p{font-size:.88rem;line-height:1.75;color:#444;margin-bottom:12px;}
 .card-full ul{margin:0 0 12px 18px;}
@@ -64,17 +63,32 @@
 .sub-form{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;}
 .sub-form input[type=email]{padding:12px 20px;border:none;border-radius:2px;font-size:.88rem;width:300px;font-family:inherit;}
 .sub-form button{background:var(--gold);color:#fff;border:none;padding:12px 28px;border-radius:2px;font-size:.75rem;font-weight:600;letter-spacing:.13em;text-transform:uppercase;cursor:pointer;}
+
+/* ── MODAL OVERLAY ── */
+.insight-modal-overlay{display:none;position:fixed;inset:0;background:rgba(13,27,42,.7);z-index:9999;align-items:center;justify-content:center;padding:30px;backdrop-filter:blur(4px);}
+.insight-modal-overlay.open{display:flex;}
+.insight-modal{background:#fff;border-radius:6px;max-width:720px;width:100%;max-height:85vh;overflow-y:auto;position:relative;box-shadow:0 30px 80px rgba(0,0,0,.35);animation:modalIn .3s ease;}
+@keyframes modalIn{from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:translateY(0);}}
+.modal-close{position:sticky;top:0;float:right;background:var(--navy);color:#fff;border:none;font-size:1.6rem;width:40px;height:40px;border-radius:0 6px 0 4px;cursor:pointer;z-index:2;transition:background .3s;}
+.modal-close:hover{background:var(--gold);}
+.modal-content{padding:32px 36px 40px;}
+.modal-content h3{font-family:'Playfair Display',serif;font-size:1.4rem;color:var(--navy);margin-bottom:18px;}
+.modal-content h4{font-family:'Playfair Display',serif;font-size:1.05rem;color:var(--navy);margin:22px 0 10px;}
+.modal-content p{font-size:.9rem;line-height:1.8;color:#444;margin-bottom:14px;}
+.modal-content ul{margin:0 0 14px 20px;}
+.modal-content ul li{font-size:.9rem;line-height:1.75;color:#444;margin-bottom:6px;}
+.modal-content .read-cta{display:inline-block;margin-top:14px;font-size:.74rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#fff;background:var(--gold);padding:11px 24px;border-radius:2px;text-decoration:none;}
 </style>
 </head>
 <body>
 
-<!-- TOP BAR -->
+<!-- Top Bar -->
 <div class="topbar">
   <div class="tname">Nurilla <em>Abdushukurov</em></div>
   <div class="trole">Regulatory Affairs &middot; Government Relations &middot; Policy Advisory</div>
 </div>
 
-<!-- NAV -->
+<!-- Navigation -->
 <nav>
   <div class="nav-inner">
     <a href="index.html" class="nav-brand">Nurilla <span>Abdushukurov</span></a>
@@ -83,21 +97,22 @@
       <li><a href="market-context.html">Market Context</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="services.html">Services</a></li>
-      <li><a href="insights.html" class="active">Insights &amp; Updates</a></li>
+      <li><a href="insights.html" class="active">Insights & Updates</a></li>
       <li><a href="why-me.html">Why Me</a></li>
       <li class="nav-cta"><a href="contact.html">Get in Touch</a></li>
     </ul>
+    <button class="hamburger"><i class="fas fa-bars"></i></button>
   </div>
 </nav>
 
-<!-- HERO -->
+<!-- Hero -->
 <section class="page-hero">
-  <div class="eyebrow">Intelligence &middot; Analysis &middot; Updates</div>
-  <h1>Insights &amp; Updates</h1>
+  <p class="eyebrow">Intelligence &middot; Analysis &middot; Updates</p>
+  <h1>Insights & Updates</h1>
   <p>Regulatory alerts, policy briefs, market intelligence, and key events — curated for international companies navigating Uzbekistan.</p>
 </section>
 
-<!-- FILTER BAR -->
+<!-- Filter Bar -->
 <div class="filter-bar">
   <button class="filter-btn active" data-filter="all">All</button>
   <button class="filter-btn" data-filter="regulatory">Regulatory Alerts</button>
@@ -106,26 +121,24 @@
   <button class="filter-btn" data-filter="market">Market Intelligence</button>
 </div>
 
-<!-- GRID -->
+<!-- Insights Grid -->
 <div class="insights-grid">
 
-  <!-- CARD 1 -->
+  <!-- Card 1 -->
   <div class="card" data-type="regulatory">
     <div class="card-header">
-      <div class="card-type-badge badge-regulatory">Regulatory Alert</div>
+      <span class="card-type-badge badge-regulatory">Regulatory Alert</span>
       <h3>New Investment Framework: Key Changes for Foreign Investors</h3>
     </div>
     <div class="card-body">
-      <div class="card-date">March 2026</div>
-      <div class="card-summary">Uzbekistan's updated Investment Law introduces revised investor guarantees, new dispute resolution provisions, and sector-specific incentive structures taking effect Q2 2026.</div>
+      <p class="card-date">March 2026</p>
+      <p class="card-summary">Uzbekistan's updated Investment Law introduces revised investor guarantees, new dispute resolution provisions, and sector-specific incentive structures taking effect Q2 2026.</p>
     </div>
     <div class="card-tags">
       <span class="tag">Investment</span>
       <span class="tag priority">High Priority</span>
     </div>
-    <button class="card-expand-btn" onclick="toggleCard(this)">
-      Read Full Brief <em class="chevron">&#8964;</em>
-    </button>
+    <button class="card-expand-btn" onclick="toggleCard(this)">Read Full Brief <em class="chevron">⌄</em></button>
     <div class="card-full">
       <h4>What Changed</h4>
       <p>The revised Investment Law (effective 1 April 2026) introduces three substantive changes that directly affect foreign investors operating or planning to enter Uzbekistan:</p>
@@ -142,23 +155,21 @@
     </div>
   </div>
 
-  <!-- CARD 2 -->
+  <!-- Card 2 -->
   <div class="card" data-type="policy">
     <div class="card-header">
-      <div class="card-type-badge badge-policy">Policy Brief</div>
+      <span class="card-type-badge badge-policy">Policy Brief</span>
       <h3>WTO Accession Update: Where Uzbekistan Stands</h3>
     </div>
     <div class="card-body">
-      <div class="card-date">February 2026</div>
-      <div class="card-summary">Following the latest round of bilateral negotiations, Uzbekistan has advanced tariff and services commitments. This brief outlines outstanding issues, expected timeline, and practical implications for retail, logistics, and digital operators.</div>
+      <p class="card-date">February 2026</p>
+      <p class="card-summary">Following the latest round of bilateral negotiations, Uzbekistan has advanced tariff and services commitments. This brief outlines outstanding issues, expected timeline, and practical implications for retail, logistics, and digital operators.</p>
     </div>
     <div class="card-tags">
       <span class="tag">Trade Policy</span>
       <span class="tag">WTO</span>
     </div>
-    <button class="card-expand-btn" onclick="toggleCard(this)">
-      Read Full Brief <em class="chevron">&#8964;</em>
-    </button>
+    <button class="card-expand-btn" onclick="toggleCard(this)">Read Full Brief <em class="chevron">⌄</em></button>
     <div class="card-full">
       <h4>Current Status</h4>
       <p>Uzbekistan's WTO Working Party met for its 8th session in Geneva in January 2026. Significant progress was recorded on goods tariff schedules, with average MFN rates expected to settle near 9.5% — down from the current 14.2%.</p>
@@ -174,23 +185,21 @@
     </div>
   </div>
 
-  <!-- CARD 3 -->
+  <!-- Card 3 -->
   <div class="card" data-type="event">
     <div class="card-header">
-      <div class="card-type-badge badge-event">Event</div>
+      <span class="card-type-badge badge-event">Event</span>
       <h3>Uzbekistan Investment Forum 2026, Tashkent</h3>
     </div>
     <div class="card-body">
-      <div class="card-date">February 2026</div>
-      <div class="card-summary">Attending as part of the advisory delegation supporting international participants. Available for meetings on the margins.</div>
+      <p class="card-date">February 2026</p>
+      <p class="card-summary">Attending as part of the advisory delegation supporting international participants. Available for meetings on the margins.</p>
     </div>
     <div class="card-tags">
       <span class="tag">Event</span>
       <span class="tag">Investment</span>
     </div>
-    <button class="card-expand-btn" onclick="toggleCard(this)">
-      Read More <em class="chevron">&#8964;</em>
-    </button>
+    <button class="card-expand-btn" onclick="toggleCard(this)">Read More <em class="chevron">⌄</em></button>
     <div class="card-full">
       <h4>About the Forum</h4>
       <p>The Uzbekistan Investment Forum is the government's flagship annual event connecting international investors, development finance institutions, and senior policymakers. The 2026 edition focused on green transition, digital economy, and regional trade corridors.</p>
@@ -207,24 +216,22 @@
     </div>
   </div>
 
-  <!-- CARD 4 -->
+  <!-- Card 4 -->
   <div class="card" data-type="market">
     <div class="card-header">
-      <div class="card-type-badge badge-market">Market Intelligence</div>
+      <span class="card-type-badge badge-market">Market Intelligence</span>
       <h3>Digital Economy Regulation: What's Coming in 2026</h3>
     </div>
     <div class="card-body">
-      <div class="card-date">January 2026</div>
-      <div class="card-summary">Uzbekistan is preparing a comprehensive digital economy law covering data localisation, e-commerce licensing, and platform liability. Key provisions expected to affect tech, fintech, and logistics operators.</div>
+      <p class="card-date">January 2026</p>
+      <p class="card-summary">Uzbekistan is preparing a comprehensive digital economy law covering data localisation, e-commerce licensing, and platform liability. Key provisions expected to affect tech, fintech, and logistics operators.</p>
     </div>
     <div class="card-tags">
       <span class="tag">Digital</span>
       <span class="tag">Regulation</span>
       <span class="tag priority">High Priority</span>
     </div>
-    <button class="card-expand-btn" onclick="toggleCard(this)">
-      Read Full Brief <em class="chevron">&#8964;</em>
-    </button>
+    <button class="card-expand-btn" onclick="toggleCard(this)">Read Full Brief <em class="chevron">⌄</em></button>
     <div class="card-full">
       <h4>Legislative Pipeline</h4>
       <p>The draft Digital Economy Development Law is expected to pass parliament by Q3 2026. Based on current drafts circulated to stakeholders, three provisions are of particular significance to international operators:</p>
@@ -239,23 +246,21 @@
     </div>
   </div>
 
-  <!-- CARD 5 -->
+  <!-- Card 5 -->
   <div class="card" data-type="regulatory">
     <div class="card-header">
-      <div class="card-type-badge badge-regulatory">Regulatory Alert</div>
+      <span class="card-type-badge badge-regulatory">Regulatory Alert</span>
       <h3>Currency Regulation Update: New Rules for Foreign Exchange Transactions</h3>
     </div>
     <div class="card-body">
-      <div class="card-date">January 2026</div>
-      <div class="card-summary">The Central Bank of Uzbekistan has issued updated foreign exchange regulations affecting repatriation of profits, intercompany loan arrangements, and documentation requirements for capital transfers.</div>
+      <p class="card-date">January 2026</p>
+      <p class="card-summary">The Central Bank of Uzbekistan has issued updated foreign exchange regulations affecting repatriation of profits, intercompany loan arrangements, and documentation requirements for capital transfers.</p>
     </div>
     <div class="card-tags">
       <span class="tag">Finance</span>
       <span class="tag">FX</span>
     </div>
-    <button class="card-expand-btn" onclick="toggleCard(this)">
-      Read Full Brief <em class="chevron">&#8964;</em>
-    </button>
+    <button class="card-expand-btn" onclick="toggleCard(this)">Read Full Brief <em class="chevron">⌄</em></button>
     <div class="card-full">
       <h4>What Has Changed</h4>
       <p>Effective 1 February 2026, the Central Bank's updated Resolution No. 47 introduces the following changes:</p>
@@ -270,23 +275,21 @@
     </div>
   </div>
 
-  <!-- CARD 6 -->
+  <!-- Card 6 -->
   <div class="card" data-type="event">
     <div class="card-header">
-      <div class="card-type-badge badge-event">Event</div>
+      <span class="card-type-badge badge-event">Event</span>
       <h3>Central Asia Business Summit, Almaty — Speaker Participation</h3>
     </div>
     <div class="card-body">
-      <div class="card-date">December 2025</div>
-      <div class="card-summary">Participated as a panellist on regulatory convergence in Central Asia. Key themes: harmonisation, cross-border investment facilitation, and the role of advisory services in reducing market entry risk.</div>
+      <p class="card-date">December 2025</p>
+      <p class="card-summary">Participated as a panellist on regulatory convergence in Central Asia. Key themes: harmonisation, cross-border investment facilitation, and the role of advisory services in reducing market entry risk.</p>
     </div>
     <div class="card-tags">
       <span class="tag">Event</span>
       <span class="tag">Central Asia</span>
     </div>
-    <button class="card-expand-btn" onclick="toggleCard(this)">
-      Read More <em class="chevron">&#8964;</em>
-    </button>
+    <button class="card-expand-btn" onclick="toggleCard(this)">Read More <em class="chevron">⌄</em></button>
     <div class="card-full">
       <h4>Panel Session: Regulatory Convergence in Central Asia</h4>
       <p>I joined senior representatives from the EBRD, the Kazakhstani Ministry of Trade, and two European multinationals to discuss the evolving regulatory landscape across the Central Asian markets, with a particular focus on Uzbekistan's reform trajectory.</p>
@@ -302,23 +305,43 @@
     </div>
   </div>
 
-</div><!-- /insights-grid -->
+</div>
 
-<!-- SUBSCRIBE STRIP -->
+<!-- Subscribe Strip -->
 <section class="subscribe-strip">
   <h2>Stay Informed</h2>
   <p>Receive regulatory alerts and market intelligence directly to your inbox — no noise, just what matters.</p>
-  <form class="sub-form" action="https://formspree.io/f/mreanjlb" method="POST">
-    <input type="email" name="email" placeholder="Your email address" required>
+  <form class="sub-form">
+    <input type="email" placeholder="Your email address">
     <button type="submit">Subscribe</button>
   </form>
 </section>
 
-<!-- FOOTER -->
-<footer style="background:var(--navy);color:rgba(255,255,255,.45);text-align:center;padding:28px 20px;font-size:.75rem;letter-spacing:.05em;">
-  &copy; 2026 Nurilla Abdushukurov &mdash; Tashkent, Uzbekistan
+<!-- Footer -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-left">
+      <span class="footer-name">Nurilla <span>Abdushukurov</span></span>
+      <span class="footer-sep">·</span>
+      <span class="footer-role-item">Regulatory Affairs</span>
+      <span class="footer-sep">·</span>
+      <span class="footer-role-item">Government Relations</span>
+      <span class="footer-sep">·</span>
+      <span class="footer-role-item">Policy Advisory</span>
+    </div>
+    <div class="footer-copy">&copy; 2026 Nurilla Abdushukurov &middot; All rights reserved</div>
+  </div>
 </footer>
 
+<!-- Modal Overlay -->
+<div class="insight-modal-overlay" id="insightModal">
+  <div class="insight-modal">
+    <button class="modal-close" onclick="closeModal()">&times;</button>
+    <div class="modal-content" id="modalContent"></div>
+  </div>
+</div>
+
+<script src="nav.js"></script>
 <script>
 // Filter
 document.querySelectorAll('.filter-btn').forEach(btn => {
@@ -336,20 +359,33 @@ document.querySelectorAll('.filter-btn').forEach(btn => {
   });
 });
 
-// Expand/Collapse
+// Open modal instead of expanding inline
 function toggleCard(btn){
-  const full = btn.nextElementSibling;
-  const isOpen = full.classList.contains('open');
-  // Close all
-  document.querySelectorAll('.card-full').forEach(f => f.classList.remove('open'));
-  document.querySelectorAll('.card-expand-btn').forEach(b => b.classList.remove('open'));
-  // Open clicked (if was closed)
-  if(!isOpen){
-    full.classList.add('open');
-    btn.classList.add('open');
-    btn.scrollIntoView({behavior:'smooth', block:'nearest'});
-  }
+  var card = btn.closest('.card');
+  var title = card.querySelector('.card-header h3').innerHTML;
+  var fullContent = card.querySelector('.card-full').innerHTML;
+  var modal = document.getElementById('insightModal');
+  var mc = document.getElementById('modalContent');
+  mc.innerHTML = '<h3>' + title + '</h3>' + fullContent;
+  modal.classList.add('open');
+  document.body.style.overflow = 'hidden';
 }
+
+function closeModal(){
+  var modal = document.getElementById('insightModal');
+  modal.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+// Close on overlay click
+document.getElementById('insightModal').addEventListener('click', function(e){
+  if(e.target === this) closeModal();
+});
+
+// Close on Escape key
+document.addEventListener('keydown', function(e){
+  if(e.key === 'Escape') closeModal();
+});
 </script>
 </body>
 </html>
