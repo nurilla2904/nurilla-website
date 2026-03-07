@@ -17,7 +17,32 @@
 </div>
 
 <!-- Navigation -->
-<nav><div class="nav-inner"><a class="nav-brand" href="index.html">Nurilla <span>Abdushukurov</span></a><button class="hamburger" onclick="toggleMenu()">&#9776;</button><ul class="nav-links"><li><a href="index.html">Home</a></li><li><a href="market-context.html">Market Context</a></li><li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li><li><a href="insights.html">Insights &amp; Updates</a></li><li><a href="why-me.html">Why Me</a></li><li class="nav-cta"><a href="contact.html">Get in Touch</a></li></ul></div><div class="mobile-menu" id="mobileMenu"><ul><li><a href="index.html">Home</a></li><li><a href="market-context.html">Market Context</a></li><li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li><li><a href="insights.html">Insights &amp; Updates</a></li><li><a href="why-me.html">Why Me</a></li><li class="nav-cta"><a href="contact.html">Get in Touch</a></li></ul></div></nav>
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand">Nurilla <span>Abdushukurov</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="market-context.html">Market Context</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="insights.html">Insights & Updates</a></li>
+      <li><a href="why-me.html">Why Me</a></li>
+      <li class="nav-cta"><a href="contact.html">Get in Touch</a></li>
+    </ul>
+    <button class="hamburger" onclick="toggleMenu()"><i class="fas fa-bars"></i></button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="market-context.html">Market Context</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="insights.html">Insights & Updates</a></li>
+      <li><a href="why-me.html">Why Me</a></li>
+      <li><a href="contact.html">Get in Touch</a></li>
+    </ul>
+  </div>
+</nav>
 
 <!-- Page Hero -->
 <section class="page-hero">
@@ -63,21 +88,22 @@
       </div>
 
       <div class="contact-form-wrap">
+        <form action="https://formspree.io/f/mreanjlb" method="POST">
         <div class="form-group">
           <label>Your Name</label>
-          <input type="text" placeholder="">
+          <input type="text" name="name" placeholder="" required>
         </div>
         <div class="form-group">
           <label>Your Organisation</label>
-          <input type="text" placeholder="">
+          <input type="text" name="organisation" placeholder="">
         </div>
         <div class="form-group">
           <label>Email Address</label>
-          <input type="email" placeholder="">
+          <input type="email" name="email" placeholder="" required>
         </div>
         <div class="form-group">
           <label>Nature of Enquiry</label>
-          <select>
+          <select name="enquiry">
             <option value="">Select a category…</option>
             <option>Market Intelligence & Insights</option>
             <option>Stakeholder Engagement</option>
@@ -93,9 +119,10 @@
         </div>
         <div class="form-group">
           <label>Message</label>
-          <textarea></textarea>
+          <textarea name="message" rows="5"></textarea>
         </div>
-        <button class="form-submit">Send Message</button>
+        <button type="submit" class="form-submit">Send Message</button>
+        </form>
         <p class="form-privacy"><i class="fas fa-lock"></i> Your information is kept strictly confidential and will never be shared with third parties.</p>
       </div>
     </div>
@@ -118,7 +145,6 @@
   </div>
 </footer>
 
-
-<script>function toggleMenu(){document.getElementById("mobileMenu").classList.toggle("open");}</script>
+<script src="nav.js"></script>
 </body>
 </html>
