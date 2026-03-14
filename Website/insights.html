@@ -569,6 +569,144 @@
 </footer>
 
 <!-- Modal Overlay -->
-<div class="insight-modal-overlay" id="insightModal">
-  <div class="insight-modal">
-    <button
+<div class="insight-modal-overlay" id="insightModal" onclick="closeModalOnOverlay(event)">
+  <div class="insight-modal" id="insightModalBox">
+    <button class="modal-close" onclick="closeModal()" title="Close">&times;</button>
+    <div class="modal-content" id="insightModalContent"></div>
+  </div>
+</div>
+
+<script>
+/* ══════════════════════════════════════════
+   MODAL
+══════════════════════════════════════════ */
+function toggleCard(btn) {
+  const card = btn.closest('.card');
+  const full = card.querySelector('.card-full');
+  if (!full) return;
+
+  // Build modal content from card data
+  const title = card.querySelector('.card-header h3').innerText;
+  const badge = card.querySelector('.card-type-badge').outerHTML;
+  const date  = card.querySelector('.card-date') ? card.querySelector('.card-date').outerHTML : '';
+  const body  = full.innerHTML;
+
+  document.getElementById('insightModalContent').innerHTML =
+    '<div style="margin-bottom:16px;">' + badge + '</div>' +
+    '<h3>' + title + '</h3>' +
+    date +
+    body;
+
+  document.getElementById('insightModal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+  document.getElementById('insightModal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function closeModalOnOverlay(e) {
+  if (e.target === document.getElementById('insightModal')) closeModal();
+}
+
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeModal();
+});
+
+/* ══════════════════════════════════════════
+   FILTER & SORT
+══════════════════════════════════════════ */
+const filterDescriptions = {
+  all:        'Showing all insights, alerts and updates across every category.',
+  regulatory: 'Regulatory Alerts track new laws, decrees and compliance obligations affecting businesses operating in Uzbekistan.',
+  policy:     'Policy Briefs analyse strategic government policy shifts and what they mean for international companies.',
+  event:      'Events highlights key conferences, forums and government-convened meetings relevant to your sector.',
+  market:     'Market Intelligence covers economic trends, sector data and investment environment developments.',
+  strategic:  'Strategic Insights offer in-depth analysis of structural shifts shaping the business environment.'
+};
+
+let activeFilter  = 'all';
+let activeTag     = null;
+
+function applyFilters() {
+  const grid   = document.getElementById('insightsGrid');
+  const cards  = Array.from(grid.querySelectorAll('.card'));
+  const sort   = document.getElementById('sortSelect').value;
+
+  // 1. Determine visibility
+  cards.forEach(card => {
+    const type = card.dataset.type || '';
+    const tags = (card.dataset.tags || '').toLowerCase().split(',').map(t => t.trim());
+
+    const typeMatch = (activeFilter === 'all') || (type === activeFilter);
+    const tagMatch  = !activeTag || tags.includes(activeTag.toLowerCase());
+
+    card.classList.toggle('hidden', !(typeMatch && tagMatch));
+  });
+
+  // 2. Sort visible cards
+  const visible  = cards.filter(c => !c.classList.contains('hidden'));
+  const hidden   = cards.filter(c =>  c.classList.contains('hidden'));
+
+  visible.sort((a, b) => {
+    const da = new Date(a.dataset.date || '2000-01-01');
+    const db = new Date(b.dataset.date || '2000-01-01');
+    return sort === 'newest' ? db - da : da - db;
+  });
+
+  // 3. Re-append in order
+  [...visible, ...hidden].forEach(c => grid.appendChild(c));
+
+  // 4. No results message
+  const noResults = document.getElementById('noResults');
+  noResults.classList.toggle('visible', visible.length === 0);
+
+  // 5. Filter description
+  const descBox  = document.getElementById('filterDescription');
+  const descText = document.getElementById('filterDescText');
+  if (activeFilter === 'all' && !activeTag) {
+    descBox.style.display = 'none';
+  } else {
+    let text = filterDescriptions[activeFilter] || '';
+    if (activeTag) text += (text ? ' ' : '') + 'Filtered by tag: <strong>' + activeTag + '</strong>.';
+    descText.innerHTML = text;
+    descBox.style.display = 'block';
+  }
+}
+
+/* Filter buttons */
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', function() {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    this.classList.add('active');
+    activeFilter = this.dataset.filter;
+    applyFilters();
+  });
+});
+
+/* Sort select */
+document.getElementById('sortSelect').addEventListener('change', applyFilters);
+
+/* Tag clicks */
+document.querySelectorAll('.tag').forEach(tag => {
+  tag.addEventListener('click', function(e) {
+    e.stopPropagation();
+    activeTag = this.dataset.tag;
+    document.getElementById('activeTagName').textContent = '#' + activeTag;
+    document.getElementById('activeTagFilter').classList.add('visible');
+    applyFilters();
+  });
+});
+
+/* Clear tag */
+function clearTagFilter() {
+  activeTag = null;
+  document.getElementById('activeTagFilter').classList.remove('visible');
+  applyFilters();
+}
+
+/* Run on load */
+applyFilters();
+</script>
+
