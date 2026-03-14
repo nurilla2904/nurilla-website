@@ -60,16 +60,20 @@
 
 <!-- Insights & Updates Section -->
 <section class="home-insights">
-  <div class="home-insights-header">
-    <div>
-      <h2>Insights &amp; Updates</h2>
-      <p>Regulatory alerts, policy developments, and market intelligence from Uzbekistan.</p>
+  <div class="section-inner">
+    <div class="preview-header">
+      <div>
+        <div class="section-tag">Intelligence · Analysis · Updates</div>
+        <h2 class="section-h2">Insights &amp; Updates</h2>
+        <div class="section-rule"></div>
+        <p class="section-intro">Regulatory alerts, policy developments, and market intelligence from Uzbekistan.</p>
+      </div>
+      <a href="insights.html" class="btn-navy">All Insights</a>
     </div>
-    <a href="insights.html" class="btn-dark">All Insights</a>
-  </div>
-  <div class="insights-carousel-wrap">
-    <div class="insights-carousel" id="homeInsightsCarousel">
-      <p style="color:#999;font-style:italic;padding:20px 0;">Loading latest insights...</p>
+    <div class="insights-carousel-wrap">
+      <div class="insights-carousel" id="homeInsightsCarousel">
+        <p style="color:#999;font-style:italic;padding:20px 0;">Loading latest insights...</p>
+      </div>
     </div>
   </div>
 </section>
@@ -79,25 +83,32 @@
 <footer><div class="footer-inner"><div class="footer-left"><span class="footer-name">Nurilla <span>Abdushukurov</span></span><span class="footer-sep">&middot;</span><span class="footer-role-item">Regulatory Affairs</span><span class="footer-sep">&middot;</span><span class="footer-role-item">Government Relations</span><span class="footer-sep">&middot;</span><span class="footer-role-item">Policy Advisory</span></div><span class="footer-copy">&copy; 2026 Nurilla Abdushukurov &nbsp;&middot;&nbsp; All rights reserved</span></div></footer><script>function toggleMenu(){document.getElementById("mobileMenu").classList.toggle("open");}</script>
 </body></html>
 
-<script>
+<script>function toggleMenu(){document.getElementById("mobileMenu").classList.toggle("open");}
+
 fetch('insights.html')
   .then(r => r.text())
   .then(html => {
     const parser = new DOMParser();
     const doc = parser.parseFromString(html, 'text/html');
+
+    // Copy card styles from insights.html into this page
+    const insightStyles = doc.querySelector('style');
+    if (insightStyles) {
+      const styleClone = document.createElement('style');
+      styleClone.textContent = insightStyles.textContent;
+      document.head.appendChild(styleClone);
+    }
+
     const allCards = Array.from(doc.querySelectorAll('#insightsGrid .card'));
 
-    // Sort by data-date, newest first
     allCards.sort((a, b) => {
       const da = new Date(a.dataset.date || '2000-01-01');
       const db = new Date(b.dataset.date || '2000-01-01');
       return db - da;
     });
 
-    // Take the 5 most recent
     const latest = allCards.slice(0, 5);
 
-    // Strip expand buttons and full content — show summary only
     latest.forEach(card => {
       const full = card.querySelector('.card-full');
       if (full) full.remove();
@@ -105,10 +116,8 @@ fetch('insights.html')
       if (btn) {
         btn.textContent = 'Read More →';
         btn.removeAttribute('onclick');
-        btn.style.cssText = 'display:block;padding:18px 28px 22px;font-size:.72rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);text-decoration:none;background:none;border:none;cursor:pointer;';
-        btn.addEventListener('click', () => {
-          window.location.href = 'insights.html';
-        });
+        btn.style.cssText = 'display:block;padding:18px 28px 22px;font-size:.72rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);background:none;border:none;cursor:pointer;';
+        btn.addEventListener('click', () => { window.location.href = 'insights.html'; });
       }
     });
 
@@ -121,3 +130,5 @@ fetch('insights.html')
       '<p style="color:#999;font-style:italic;">Could not load insights.</p>';
   });
 </script>
+</body>
+</html>
