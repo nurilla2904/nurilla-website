@@ -216,3 +216,11 @@ footer{background:var(--navy);border-top:2px solid var(--gold);padding:24px 30px
 
 @media(max-width:1024px){.home-insights-grid{grid-template-columns:repeat(2,1fr);}}
 @media(max-width:768px){.home-insights-grid{grid-template-columns:1fr;}.home-insights h2{font-size:1.8rem;}}
+
+/* ── HOME INSIGHTS CAROUSEL ── */
+.insights-carousel-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;padding-bottom:16px;}
+.insights-carousel-wrap::-webkit-scrollbar{height:4px;}
+.insights-carousel-wrap::-webkit-scrollbar-track{background:#f0f0f0;}
+.insights-carousel-wrap::-webkit-scrollbar-thumb{background:var(--gold);border-radius:2px;}
+.insights-carousel{display:flex;gap:24px;padding:8px 4px 8px;}
+.insights-carousel .card{min-width:340px;max-width:340px;flex-shrink:0;}
