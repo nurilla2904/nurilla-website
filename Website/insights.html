@@ -4,24 +4,25 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Insights & Updates – Nurilla Abdushukurov</title>
+<meta name="description" content="Regulatory alerts, policy briefs, market intelligence, and key events curated for international companies navigating Uzbekistan.">
 <link rel="stylesheet" href="styles.css">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <script defer src="/_vercel/insights/script.js"></script>
 <style>
-/* ── PAGE HERO ── */
+/* PAGE HERO */
 .page-hero{background:var(--navy);padding:72px 30px 60px;text-align:center;border-bottom:2px solid var(--gold);}
 .page-hero .eyebrow{font-size:.68rem;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;}
 .page-hero h1{font-family:'Playfair Display',serif;font-size:2.6rem;font-weight:700;color:#fff;margin-bottom:16px;}
 .page-hero p{color:rgba(255,255,255,.6);font-size:.95rem;max-width:560px;margin:0 auto;line-height:1.7;}
 
-/* ── FILTER TABS ── */
+/* FILTER TABS */
 .filter-bar{max-width:1200px;margin:48px auto 0;padding:0 30px;display:flex;flex-wrap:wrap;gap:10px;align-items:center;}
 .filter-btn{border:1.5px solid #ccc;background:#fff;color:var(--navy);padding:9px 22px;border-radius:30px;font-size:.72rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;transition:all .25s;}
 .filter-btn:hover{border-color:var(--gold);color:var(--gold);}
 .filter-btn.active{background:var(--gold);border-color:var(--gold);color:#fff;}
 
-/* ── SORT BAR ── */
+/* SORT BAR */
 .sort-bar{max-width:1200px;margin:18px auto 40px;padding:0 30px;display:flex;align-items:center;gap:12px;flex-wrap:wrap;justify-content:space-between;}
 .sort-left{display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
 .sort-label{font-size:.72rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--navy);}
@@ -32,10 +33,10 @@
 .clear-tag{background:none;border:none;color:var(--gold);font-size:.9rem;cursor:pointer;padding:0 0 0 4px;line-height:1;font-weight:700;}
 .clear-tag:hover{color:var(--navy);}
 
-/* ── GRID ── */
+/* GRID */
 .insights-grid{max-width:1200px;margin:0 auto 80px;padding:0 30px;display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:28px;}
 
-/* ── CARD ── */
+/* CARD */
 .card{border-radius:4px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,.08);transition:box-shadow .3s;display:flex;flex-direction:column;}
 .card:hover{box-shadow:0 8px 40px rgba(0,0,0,.14);}
 .card-header{background:var(--navy);padding:28px 28px 22px;position:relative;}
@@ -44,6 +45,8 @@
 .badge-policy{background:rgba(100,160,220,.2);color:#7ab4e0;}
 .badge-event{background:rgba(120,200,140,.2);color:#7ecf97;}
 .badge-market{background:rgba(200,120,180,.2);color:#e09bd4;}
+.badge-strategic{background:rgba(130,80,200,.2);color:#a97de0;}
+.badge-insight{background:rgba(130,80,200,.2);color:#a97de0;}
 .card-header h3{font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:700;color:#fff;line-height:1.4;}
 .card-body{background:#fff;padding:22px 28px 0;flex:1;}
 .card-date{font-size:.75rem;color:var(--mid);font-style:italic;margin-bottom:10px;}
@@ -54,27 +57,19 @@
 .tag.priority{border-color:#e05a5a;color:#e05a5a;}
 .tag.priority:hover{background:#e05a5a;color:#fff;}
 
-/* ── EXPAND TOGGLE (now opens modal) ── */
-.card-expand-btn{display:flex;align-items:center;gap:8px;background:none;border:none;cursor:pointer;font-size:.72rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);padding:18px 28px 22px;transition:color .2s;}
+/* READ MORE LINK */
+.card-expand-btn{display:flex;align-items:center;gap:8px;background:none;border:none;cursor:pointer;font-size:.72rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);padding:18px 28px 22px;transition:color .2s;text-decoration:none;}
 .card-expand-btn:hover{color:var(--navy);}
-.card-expand-btn .chevron{display:inline-block;transition:transform .3s;font-style:normal;}
+.card-expand-btn .chevron{display:inline-block;font-style:normal;}
 
-/* ── FULL CONTENT (hidden, used as source for modal) ── */
-.card-full{display:none;padding:0 28px 28px;border-top:1px solid var(--grey);margin-top:0;}
-.card-full h4{font-family:'Playfair Display',serif;font-size:1rem;color:var(--navy);margin:18px 0 8px;}
-.card-full p{font-size:.88rem;line-height:1.75;color:#444;margin-bottom:12px;}
-.card-full ul{margin:0 0 12px 18px;}
-.card-full ul li{font-size:.88rem;line-height:1.7;color:#444;margin-bottom:5px;}
-.card-full .read-cta{display:inline-block;margin-top:10px;font-size:.72rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#fff;background:var(--gold);padding:10px 22px;border-radius:2px;text-decoration:none;}
-
-/* ── HIDDEN CARD ── */
+/* HIDDEN CARD */
 .card.hidden{display:none;}
 
-/* ── NO RESULTS ── */
+/* NO RESULTS */
 .no-results{display:none;text-align:center;padding:60px 30px;font-size:.95rem;color:var(--mid);font-style:italic;max-width:1200px;margin:0 auto;}
 .no-results.visible{display:block;}
 
-/* ── SUBSCRIBE STRIP ── */
+/* SUBSCRIBE STRIP */
 .subscribe-strip{background:var(--navy);padding:60px 30px;text-align:center;border-top:2px solid var(--gold);}
 .subscribe-strip h2{font-family:'Playfair Display',serif;font-size:1.7rem;color:#fff;margin-bottom:10px;}
 .subscribe-strip p{color:rgba(255,255,255,.6);font-size:.9rem;margin-bottom:28px;}
@@ -82,27 +77,9 @@
 .sub-form input[type=email]{padding:12px 20px;border:none;border-radius:2px;font-size:.88rem;width:300px;font-family:inherit;}
 .sub-form button{background:var(--gold);color:#fff;border:none;padding:12px 28px;border-radius:2px;font-size:.75rem;font-weight:600;letter-spacing:.13em;text-transform:uppercase;cursor:pointer;}
 
-/* ── MODAL OVERLAY ── */
-.insight-modal-overlay{display:none;position:fixed;inset:0;background:rgba(13,27,42,.7);z-index:9999;align-items:center;justify-content:center;padding:30px;backdrop-filter:blur(4px);}
-.insight-modal-overlay.open{display:flex;}
-.insight-modal{background:#fff;border-radius:6px;max-width:720px;width:100%;max-height:85vh;overflow-y:auto;position:relative;box-shadow:0 30px 80px rgba(0,0,0,.35);animation:modalIn .3s ease;}
-@keyframes modalIn{from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:translateY(0);}}
-.modal-close{position:sticky;top:0;float:right;background:var(--navy);color:#fff;border:none;font-size:1.6rem;width:40px;height:40px;border-radius:0 6px 0 4px;cursor:pointer;z-index:2;transition:background .3s;}
-.modal-close:hover{background:var(--gold);}
-.modal-content{padding:32px 36px 40px;}
-.modal-content h3{font-family:'Playfair Display',serif;font-size:1.4rem;color:var(--navy);margin-bottom:18px;}
-.modal-content h4{font-family:'Playfair Display',serif;font-size:1.05rem;color:var(--navy);margin:22px 0 10px;}
-.modal-content p{font-size:.9rem;line-height:1.8;color:#444;margin-bottom:14px;}
-.modal-content ul{margin:0 0 14px 20px;}
-.modal-content ul li{font-size:.9rem;line-height:1.75;color:#444;margin-bottom:6px;}
-.modal-content .read-cta{display:inline-block;margin-top:14px;font-size:.74rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#fff;background:var(--gold);padding:11px 24px;border-radius:2px;text-decoration:none;}
-
-/* ── FILTER DESCRIPTION ── */
+/* FILTER DESCRIPTION */
 .filter-description{max-width:1200px;margin:12px auto 0;padding:0 30px;}
 .filter-description p{font-size:.82rem;color:var(--mid);line-height:1.6;background:rgba(184,150,62,.07);border-left:3px solid var(--gold);padding:10px 16px;border-radius:0 4px 4px 0;margin:0;}
-
-/* ── BADGE: STRATEGIC ── */
-.badge-strategic{background:rgba(130,80,200,.2);color:#a97de0;}
 </style>
 </head>
 <body>
@@ -120,7 +97,7 @@
 <section class="page-hero">
   <p class="eyebrow">Intelligence &middot; Analysis &middot; Updates</p>
   <h1>Insights & Updates</h1>
-  <p>Regulatory alerts, policy briefs, market intelligence, and key events — curated for international companies navigating Uzbekistan.</p>
+  <p>Regulatory alerts, policy briefs, market intelligence, and key events &mdash; curated for international companies navigating Uzbekistan.</p>
 </section>
 
 <!-- Filter Bar -->
@@ -159,758 +136,265 @@
 <!-- Insights Grid -->
 <div class="insights-grid" id="insightsGrid">
 
-  <!-- Card: Uzbekistan Technical Regulation -->
-<div class="card" data-type="regulatory" data-date="2026-02-19" data-tags="technical-regulation,standards,market-surveillance,conformity-assessment,metrology,accreditation,regulatory-reform,decree-no-25">
-  <div class="card-header">
-    <span class="card-type-badge badge-regulatory">Regulatory Alert</span>
-    <h3>Uzbekistan overhauls technical regulation framework with presidential decree</h3>
-  </div>
-  <div class="card-body">
-    <p class="card-date">19 February 2026</p>
-    <p class="card-summary">President Mirziyoyev signed decree No. 25 on 16 February 2026, mandating full alignment of Uzbekistan's technical regulation, standardisation, metrology and accreditation systems with international best practices. The reforms introduce market surveillance, a new national conformity mark, sector-by-sector adoption of international standards and significant institutional restructuring, with phased implementation running from 2026 to 2028.</p>
-  </div>
-  <div class="card-tags">
-    <span class="tag" data-tag="technical-regulation">Technical Regulation</span>
+  <div class="card" data-type="regulatory" data-date="2026-02-19" data-tags="technical-regulation,standards,market-surveillance,conformity-assessment,metrology,accreditation,regulatory-reform">
+    <div class="card-header">
+      <span class="card-type-badge badge-regulatory">Regulatory Alert</span>
+      <h3>Uzbekistan overhauls technical regulation framework with presidential decree</h3>
+    </div>
+    <div class="card-body">
+      <p class="card-date">19 February 2026</p>
+      <p class="card-summary">President Mirziyoyev signed decree No. 25 on 16 February 2026, mandating full alignment of Uzbekistan's technical regulation, standardisation, metrology and accreditation systems with international best practices. The reforms introduce market surveillance, a new national conformity mark, sector-by-sector adoption of international standards and significant institutional restructuring, with phased implementation running from 2026 to 2028.</p>
+    </div>
+    <div class="card-tags">
+      <span class="tag" data-tag="technical-regulation">Technical Regulation</span>
     <span class="tag" data-tag="standards">Standards</span>
     <span class="tag" data-tag="market-surveillance">Market Surveillance</span>
     <span class="tag" data-tag="conformity-assessment">Conformity Assessment</span>
     <span class="tag" data-tag="metrology">Metrology</span>
     <span class="tag" data-tag="accreditation">Accreditation</span>
     <span class="tag" data-tag="regulatory-reform">Regulatory Reform</span>
+    </div>
+    <a href="insights/uzbekistan-technical-regulation-decree-25.html" class="card-expand-btn">Read More <em class="chevron">&#8594;</em></a>
   </div>
-  <button class="card-expand-btn" onclick="toggleCard(this)">Read More <em class="chevron">&#8964;</em></button>
-  <div class="card-full">
-    <h4>What has changed and why it matters</h4>
-    <p>On 16 February 2026, President Shavkat Mirziyoyev signed a Decree No. 25, launching the most significant overhaul of Uzbekistan's technical regulation system in years. The decree aims to dismantle ineffective legacy control mechanisms and replace them with a risk-based, internationally aligned framework covering standardisation, metrology, conformity assessment and market surveillance.</p>
-    <p>Key institutional changes include:</p>
-    <ul>
-      <li>The Uzbekistan Accreditation Centre is transferred from the Technical Regulation Agency to the Cabinet of Ministers, ensuring operational independence</li>
-      <li>The Uzbekistan Scientific Testing and Quality Control Centre is liquidated, with its certification bodies dissolved</li>
-      <li>The Uzbekistan Standards Institute is reorganised by absorbing parts of the former centre</li>
-      <li>From 1 July 2026, a new "Conformity Uzbekistan" (CU) national conformity mark replaces mandatory certification for products covered by technical regulations, assessed on a risk-based basis</li>
-    </ul>
-    <h4>Phased sector-by-sector implementation</h4>
-    <p>The decree sets a clear timeline for adoption of full international standards across industry:</p>
-    <ul>
-      <li>From 1 July 2026: Textiles, leather, furniture, electrical engineering, automotive and ICT</li>
-      <li>From 1 January 2027: Oil and gas, metallurgy, transport, construction products and medical devices</li>
-      <li>From 1 January 2028: Energy, chemicals, ecology and services</li>
-    </ul>
-    <p>Technical regulations covering 17 product groups, including personal protective equipment, pressure equipment, medical devices, radio equipment and wheeled vehicles, are scheduled for review and replacement between 2026 and 2028, benchmarked against EU, Korean, Japanese, Australian and other leading regulatory frameworks.</p>
-    <p>The decree allocates 78.8 billion UZS (approx. USD 6.5 million) for adoption of international standards from 2026 to 2028 and 250 billion UZS (approx. USD 20.6 million) for the procurement of high-precision measurement standards and equipment in 2026 alone.</p>
-    <h4>Business environment and compliance implications</h4>
-    <p>From 1 April 2026, businesses in the conformity assessment sector benefit from:</p>
-    <ul>
-      <li>Deductions from accreditation service revenues reduced 2.5-fold to 2%, retained fully by the Accreditation Centre</li>
-      <li>A prohibition on new state-run testing laboratories or certification bodies in sectors where two or more accredited private operators already exist</li>
-      <li>Permission to conduct conformity assessment against foreign standards required for export markets</li>
-    </ul>
-    <p>From 1 September 2026, all test reports from accredited laboratories must be registered in the "e-akkreditatsiya" information system.</p>
-    <p>The decree also establishes a "Quality Assistant" digital platform and mandates that designated deputy heads of 36 state bodies and major state-owned enterprises act as Quality Managers, integrating international standards implementation as a measurable performance indicator.</p>
-    <h4>What this means for your business</h4>
-    <p>For international companies operating in or exporting to Uzbekistan, this decree represents a significant shift in the compliance landscape. The move to risk-based conformity assessment, the phased withdrawal of mandatory certification across key sectors and the introduction of the "Conformity Uzbekistan" mark will affect product approval pathways, testing requirements and market entry strategies. Companies in textiles, automotive, ICT, medical devices, construction and energy sectors should begin assessing how the phased adoption of international standards affects their supply chains, certification arrangements and regulatory timelines.</p>
-    <a href="contact.html" class="read-cta">Get in touch to discuss what these changes mean for your operations.</a>
-  </div>
-</div>
 
-  <!-- Card 2 -->
-  <div class="card" data-type="policy" data-date="2026-02-18" data-tags="Investment,Strategy,Regulatory,Digital,Energy,Trade">
-  <div class="card-header">
-    <span class="card-type-badge badge-policy">Policy Brief</span>
-    <h3>Uzbekistan relaunches 2030 national development strategy</h3>
+  <div class="card" data-type="policy" data-date="2026-02-18" data-tags="investment,strategy,regulatory,digital,energy,trade">
+    <div class="card-header">
+      <span class="card-type-badge badge-policy">Policy Brief</span>
+      <h3>Uzbekistan relaunches 2030 national development strategy</h3>
+    </div>
+    <div class="card-body">
+      <p class="card-date">18 February 2026</p>
+      <p class="card-summary">President Mirziyoyev signed Decree No. 21 on 16 February 2026, formally closing the 2023 to 2025 phase of the national development strategy and launching a revised framework to 2030.</p>
+    </div>
+    <div class="card-tags">
+      <span class="tag" data-tag="investment">Investment</span>
+    <span class="tag" data-tag="strategy">Strategy</span>
+    <span class="tag" data-tag="regulatory">Regulatory</span>
+    <span class="tag" data-tag="digital">Digital</span>
+    <span class="tag" data-tag="energy">Energy</span>
+    <span class="tag" data-tag="trade">Trade</span>
+    </div>
+    <a href="insights/uzbekistan-2030-national-development-strategy.html" class="card-expand-btn">Read More <em class="chevron">&#8594;</em></a>
   </div>
-  <div class="card-body">
-    <p class="card-date">18 February 2026</p>
-    <p class="card-summary">President Mirziyoyev signed Decree No. 21 on 16 February 2026, formally closing the 2023 to 2025 phase of the national development strategy and launching a revised framework to 2030. The decree mandates 45 new sector and regional strategies to be completed by end of 2026, introduces a new digital performance tracking platform and makes ministers and regional governors personally accountable for results.</p>
-  </div>
-  <div class="card-tags">
-    <span class="tag" data-tag="Investment">Investment</span>
-    <span class="tag" data-tag="Strategy">Strategy</span>
-    <span class="tag" data-tag="Regulatory">Regulatory</span>
-    <span class="tag" data-tag="Digital">Digital</span>
-    <span class="tag" data-tag="Energy">Energy</span>
-    <span class="tag" data-tag="Trade">Trade</span>
-  </div>
-  <div class="card-full">
-    <h4>What has changed and why it matters</h4>
-    <p>On 16 February 2026, President Shavkat Mirziyoyev signed Decree No. 21, launching a comprehensive reset of the Uzbekistan 2030 national development strategy. The decree responds to shifts in global supply chains, energy markets and technology, and sets out a new governance architecture to drive delivery across all government bodies.</p>
-    <p>Key governance changes include:</p>
-    <ul>
-      <li>All ministries, agencies and regional administrations will operate against new measurable targets aligned to the updated strategy</li>
-      <li>A new Strategic Planning Digital Platform will track performance in real time using a traffic light rating system</li>
-      <li>The consolidated state budget must now be built around strategy targets</li>
-      <li>Ministers and regional governors are personally accountable for results</li>
-      <li>The Cabinet will review performance on a monthly basis with formal consequences for underperformance</li>
-    </ul>
-    <h4>45 strategies to be drafted in 2026</h4>
-    <p>The decree requires 45 new or revised strategic planning documents to be developed across sectors and regions during 2026. The most relevant for international companies are set out below.</p>
-    <table style="width:100%;border-collapse:collapse;font-size:.83rem;margin-bottom:16px;">
-      <thead>
-        <tr style="border-bottom:2px solid var(--gold);">
-          <th style="text-align:left;padding:8px 6px;color:var(--navy);">Strategy</th>
-          <th style="text-align:left;padding:8px 6px;color:var(--navy);">Deadline</th>
-          <th style="text-align:left;padding:8px 6px;color:var(--navy);">Lead body</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr><td style="padding:7px 6px;border-bottom:1px solid #eee;">FDI Attraction Strategy to 2030</td><td style="padding:7px 6px;border-bottom:1px solid #eee;">June 2026</td><td style="padding:7px 6px;border-bottom:1px solid #eee;">Ministry of Investment, Industry and Trade</td></tr>
-        <tr><td style="padding:7px 6px;border-bottom:1px solid #eee;">Industrial Development Strategy to 2030</td><td style="padding:7px 6px;border-bottom:1px solid #eee;">April 2026</td><td style="padding:7px 6px;border-bottom:1px solid #eee;">Ministry of Economy and Finance</td></tr>
-        <tr><td style="padding:7px 6px;border-bottom:1px solid #eee;">Export Development Strategy to 2030</td><td style="padding:7px 6px;border-bottom:1px solid #eee;">April 2026</td><td style="padding:7px 6px;border-bottom:1px solid #eee;">Ministry of Investment, Industry and Trade</td></tr>
-        <tr><td style="padding:7px 6px;border-bottom:1px solid #eee;">Fintech Development Strategy to 2030</td><td style="padding:7px 6px;border-bottom:1px solid #eee;">April 2026</td><td style="padding:7px 6px;border-bottom:1px solid #eee;">Central Bank</td></tr>
-        <tr><td style="padding:7px 6px;border-bottom:1px solid #eee;">Energy Sector Development Strategy to 2030</td><td style="padding:7px 6px;border-bottom:1px solid #eee;">September 2026</td><td style="padding:7px 6px;border-bottom:1px solid #eee;">Ministry of Energy</td></tr>
-        <tr><td style="padding:7px 6px;border-bottom:1px solid #eee;">Mining and Geology Development Strategy to 2030</td><td style="padding:7px 6px;border-bottom:1px solid #eee;">September 2026</td><td style="padding:7px 6px;border-bottom:1px solid #eee;">Ministry of Mining and Geology</td></tr>
-        <tr><td style="padding:7px 6px;border-bottom:1px solid #eee;">Cybersecurity Strategy to 2030</td><td style="padding:7px 6px;border-bottom:1px solid #eee;">May 2026</td><td style="padding:7px 6px;border-bottom:1px solid #eee;">State Security Service</td></tr>
-        <tr><td style="padding:7px 6px;border-bottom:1px solid #eee;">Automotive Industry Strategy to 2030</td><td style="padding:7px 6px;border-bottom:1px solid #eee;">May 2026</td><td style="padding:7px 6px;border-bottom:1px solid #eee;">UzAvtosanoat JSC</td></tr>
-        <tr><td style="padding:7px 6px;border-bottom:1px solid #eee;">Tourism Development Strategy to 2030</td><td style="padding:7px 6px;border-bottom:1px solid #eee;">May 2026</td><td style="padding:7px 6px;border-bottom:1px solid #eee;">Tourism Committee</td></tr>
-        <tr><td style="padding:7px 6px;border-bottom:1px solid #eee;">State Enterprise Reform and Privatisation Strategy to 2030</td><td style="padding:7px 6px;border-bottom:1px solid #eee;">June 2026</td><td style="padding:7px 6px;border-bottom:1px solid #eee;">State Assets Management Agency</td></tr>
-        <tr><td style="padding:7px 6px;border-bottom:1px solid #eee;">Public Transport Development Strategy to 2030</td><td style="padding:7px 6px;border-bottom:1px solid #eee;">June 2026</td><td style="padding:7px 6px;border-bottom:1px solid #eee;">Ministry of Transport</td></tr>
-        <tr><td style="padding:7px 6px;border-bottom:1px solid #eee;">Labour Market Development Strategy to 2030</td><td style="padding:7px 6px;border-bottom:1px solid #eee;">November 2026</td><td style="padding:7px 6px;border-bottom:1px solid #eee;">Ministry of Poverty Reduction and Employment</td></tr>
-        <tr><td style="padding:7px 6px;border-bottom:1px solid #eee;">Anti-Corruption Strategy to 2030</td><td style="padding:7px 6px;border-bottom:1px solid #eee;">August 2026</td><td style="padding:7px 6px;border-bottom:1px solid #eee;">Anti-Corruption Agency</td></tr>
-        <tr><td style="padding:7px 6px;">14 Regional Development Strategies covering all regions, Karakalpakstan and Tashkent city</td><td style="padding:7px 6px;">December 2026</td><td style="padding:7px 6px;">Regional Khokimiyats</td></tr>
-      </tbody>
-    </table>
-    <h4>Oversight structure</h4>
-    <p>A Republican Commission has been established to oversee implementation. It is chaired by Prime Minister Abdulla Aripov and co-chaired by Presidential Administration Head Saida Mirziyoyeva, and includes all deputy prime ministers, security chiefs and the Prosecutor General. The Agency for Strategic Development and Reforms will manage the digital platform and report to the President on a bi-annual basis.</p>
-    <h4>What this means for your business</h4>
-    <p>For international companies operating in or considering entry to Uzbekistan, this decree resets the strategic planning environment across virtually every sector. The 45 drafting processes opening over the next twelve months represent a rare and time-limited window to shape the frameworks that will govern investment conditions, trade facilitation, digital regulation, energy reform and regional development through to 2030.</p>
-    <p>Companies in renewables, extractives, fintech, logistics, automotive and consumer sectors should begin identifying which strategies are directly relevant to their operations and whether early engagement with the lead ministries during the drafting phase is warranted. Once strategies are adopted, the scope for influencing their content narrows considerably.</p>
-    <a href="contact.html" class="read-cta">Get in touch</a>
-  </div>
-  <button class="card-expand-btn" onclick="toggleCard(this)">
-    Read Full Brief <span class="chevron">&#8964;</span>
-  </button>
-</div>
 
-<!-- Card 3: Uzbekistan Digital Marking – Resolution No. 23 -->
-<div class="card" data-type="regulatory" data-date="2026-01-26" data-tags="uzbekistan,resolution-no-23,digital-marking,asl-belgisi">
-  <div class="card-header">
-    <span class="card-type-badge badge-regulatory">Regulatory Alert</span>
-    <h3>Uzbekistan tightens mandatory digital product marking rules</h3>
-  </div>
-  <div class="card-body">
-    <p class="card-date">26 January 2026</p>
-    <p class="card-summary">Cabinet of Ministers Resolution No. 23, signed on 23 January 2026, introduces a significant upgrade to Uzbekistan's mandatory digital marking system, setting a firm 1 July 2026 deadline for new compliance requirements across invoicing, point of sale systems and wholesale transactions.</p>
-  </div>
-  <div class="card-tags">
-    <span class="tag" data-tag="uzbekistan">Uzbekistan</span>
-    <span class="tag" data-tag="resolution-no-23">Remote Tax Audits</span>
+  <div class="card" data-type="regulatory" data-date="2026-01-26" data-tags="uzbekistan,digital-marking,asl-belgisi">
+    <div class="card-header">
+      <span class="card-type-badge badge-regulatory">Regulatory Alert</span>
+      <h3>Uzbekistan tightens mandatory digital product marking rules</h3>
+    </div>
+    <div class="card-body">
+      <p class="card-date">26 January 2026</p>
+      <p class="card-summary">Cabinet of Ministers Resolution No. 23, signed on 23 January 2026, introduces a significant upgrade to Uzbekistan's mandatory digital marking system.</p>
+    </div>
+    <div class="card-tags">
+      <span class="tag" data-tag="uzbekistan">Uzbekistan</span>
     <span class="tag" data-tag="digital-marking">Digital Marking</span>
     <span class="tag" data-tag="asl-belgisi">Asl Belgisi</span>
+    </div>
+    <a href="insights/uzbekistan-digital-marking-resolution-23.html" class="card-expand-btn">Read More <em class="chevron">&#8594;</em></a>
   </div>
-  <button class="card-expand-btn" onclick="toggleCard(this)">Read More <em class="chevron">&#8594;</em></button>
-  <div class="card-full">
-    <h4>What has changed and why it matters</h4>
-    <p>Cabinet of Ministers Resolution No. 23, adopted on 23 January 2026, delivers the most substantive upgrade to Uzbekistan's mandatory digital product marking framework in recent years. The resolution implements President Mirziyoyev's May 2025 directive on strengthening the Asl belgisi national product tracking system, tightening controls across invoicing, retail and wholesale practices and significantly expanding enforcement capacity.</p>
-    <h4>Electronic invoicing and point of sale controls</h4>
-    <p>From 1 July 2026, electronic invoices for mandatorily marked products will be subject to automated pre-clearance checks. The system will verify that the seller holds a valid licence, is registered in the Asl belgisi system and that the marking codes on the invoice are accurate. Invoices that fail these checks cannot be generated.</p>
-    <p>Parallel requirements apply to online cash register systems. When a marking code is scanned at point of sale, the system must automatically generate the correct product identifier data and attach it to the fiscal receipt. The system must also block any attempt to use a duplicate or previously used marking code, preventing counterfeit or recycled codes from producing valid sales receipts.</p>
-    <p>A further restriction applies at the wholesale level. From 1 July 2026, digitally marked products may only be sold wholesale via non-cash bank transfers. Cash-based wholesale transactions for marked products are prohibited from the same date.</p>
-    <h4>New products entering the system</h4>
-    <p>The resolution formally adds vegetable oil to the mandatory digital marking list under HS codes 1507 to 1515. The Tax Committee is authorised to launch a pilot marking project for vegetable oil immediately, with full mandatory marking entering into force from 1 July 2027. Medicines and medical devices, previously scheduled for completion by early 2025, are placed on a revised timeline with full mandatory marking now set for 1 July 2027.</p>
-    <h4>A new dedicated enforcement body</h4>
-    <p>The resolution establishes a dedicated Interregional Tax Inspectorate for Digital Marking Compliance within the Tax Committee, reporting directly to its chairman. The inspectorate is empowered to conduct remote tax audits of businesses where marking violations are detected, issue formal warnings, apply financial penalties and monitor the entire supply chain from import and production through to retail. It will also lead efforts to expand the mandatory marking product list.</p>
-    <p>Financial penalties collected through remote audits will be distributed with 80 percent going to the State Budget and 20 percent to the Tax Committee's special development fund. For large taxpayers, the split is 60 to 40.</p>
-    <h4>What this means for your business</h4>
-    <p>Any company importing, producing, distributing or retailing mandatorily marked products in Uzbekistan faces a material compliance deadline of 1 July 2026. Electronic invoicing platforms and cash register systems must be reconfigured before that date. Companies that have not yet registered in the Asl belgisi system, or that are operating with incomplete or informal marking practices, face elevated enforcement risk given the new inspectorate's remote audit powers.</p>
-    <p>Businesses in food, pharmaceutical, consumer goods, logistics and retail sectors should treat this as an immediate operational priority. We recommend auditing current marking and invoicing workflows against the new requirements without delay.</p>
-    <a href="contact.html" class="read-cta">Get in touch to discuss what these changes mean for your operations.</a>
-  </div>
-</div>
 
-<!-- Card 4: Uzbekistan AI Legal Framework -->
-<div class="card" data-type="regulatory" data-date="2026-01-21" data-tags="artificial-intelligence,data-protection,personal-data,digital-regulation,administrative-liability,regulatory-reform">
-  <div class="card-header">
-    <span class="card-type-badge badge-regulatory">Regulatory Alert</span>
-    <h3>Uzbekistan introduces legal framework for artificial intelligence</h3>
-  </div>
-  <div class="card-body">
-    <p class="card-date">23 January 2026</p>
-    <p class="card-summary">A new law establishing the first legal definition of artificial intelligence and setting general rules for the use of AI technologies has been adopted in Uzbekistan. Law No. 1115 amends the Law on Informatisation and the Code of Administrative Responsibility, introducing safeguards for fundamental rights and administrative penalties for unlawful processing of personal data using AI.</p>
-  </div>
-  <div class="card-tags">
-    <span class="tag" data-tag="artificial-intelligence">Artificial Intelligence</span>
+  <div class="card" data-type="regulatory" data-date="2026-01-21" data-tags="artificial-intelligence,data-protection,personal-data,digital-regulation">
+    <div class="card-header">
+      <span class="card-type-badge badge-regulatory">Regulatory Alert</span>
+      <h3>Uzbekistan introduces legal framework for artificial intelligence</h3>
+    </div>
+    <div class="card-body">
+      <p class="card-date">23 January 2026</p>
+      <p class="card-summary">A new law establishing the first legal definition of artificial intelligence and setting general rules for the use of AI technologies has been adopted in Uzbekistan.</p>
+    </div>
+    <div class="card-tags">
+      <span class="tag" data-tag="artificial-intelligence">Artificial Intelligence</span>
     <span class="tag" data-tag="data-protection">Data Protection</span>
     <span class="tag" data-tag="personal-data">Personal Data</span>
     <span class="tag" data-tag="digital-regulation">Digital Regulation</span>
-    <span class="tag" data-tag="administrative-liability">Administrative Liability</span>
-    <span class="tag" data-tag="regulatory-reform">Regulatory Reform</span>
+    </div>
+    <a href="insights/uzbekistan-ai-legal-framework.html" class="card-expand-btn">Read More <em class="chevron">&#8594;</em></a>
   </div>
-  <button class="card-expand-btn" onclick="toggleCard(this)">Read More <em class="chevron">&#8964;</em></button>
-  <div class="card-full">
-    <h4>What has changed and why it matters</h4>
-    <p>As artificial intelligence tools become increasingly embedded in business operations and public services across Central Asia, Uzbekistan has moved to establish a legal foundation for regulating the technology. Law No. 1115, signed on 21 January 2026 and adopted by the Legislative Chamber on 12 August 2025 and approved by the Senate on 1 November 2025, represents the country's first attempt to codify the concept of AI and establish ground rules for its use across government and society.</p>
-    <h4>Key changes to the Law on Informatisation</h4>
-    <ul>
-      <li><strong>Legal definition of AI.</strong> AI is defined as "a set of technological solutions that simulate human cognitive functions (including self-learning and problem-solving) and produce results comparable to human intellectual activity when performing specific tasks"</li>
-      <li><strong>State policy objectives.</strong> The state is now explicitly tasked with creating the necessary conditions for the introduction and development of AI, including establishing legal, technological and economic foundations</li>
-      <li><strong>New competencies for the authorised state body.</strong> This includes attracting investment in AI, building technical infrastructure for AI-based processing of government data and organising AI-related training and professional development</li>
-      <li><strong>Safeguards for fundamental rights.</strong> AI-generated information resources and AI-powered information systems must not harm individuals' life, health, freedom, honour or dignity. Legally significant decisions affecting human rights and freedoms cannot be based exclusively on AI-generated conclusions</li>
-    </ul>
-    <h4>New administrative penalties</h4>
-    <p>The law introduces a new offence under the Code of Administrative Responsibility. Unlawful processing of personal data using AI technologies, or their dissemination through mass media, telecommunications networks or the internet, carries a fine of 50 to 100 base calculation units (approx. USD 1,700 to USD 3,400), with confiscation of the instruments of the offence.</p>
-    <h4>What this means for your business</h4>
-    <p>For international companies operating in or deploying AI-powered tools in Uzbekistan, this law establishes important new boundaries. The prohibition on relying exclusively on AI for legally significant decisions will affect automated decision-making processes in areas such as HR, credit scoring, insurance and public services. The new administrative penalties for unlawful AI-based personal data processing add a compliance layer that businesses using AI for customer analytics, profiling or targeted services will need to assess. Companies should review their AI governance frameworks and data processing practices to ensure alignment with the new requirements.</p>
-    <a href="contact.html" class="read-cta">Get in touch to discuss what these changes mean for your operations.</a>
-   </div>
-</div>
 
-<!-- Card: Uzbekistan Light Industry Support -->
-<div class="card" data-type="policy" data-date="2026-01-12" data-tags="light-industry,textiles,leather,export,foreign-investment,tax-incentives,supply-chains,trade-fairs">
-  <div class="card-header">
-    <span class="card-type-badge badge-policy">Policy Brief</span>
-    <h3>Uzbekistan expands support for light industry integration into global supply chains</h3>
-  </div>
-  <div class="card-body">
-    <p class="card-date">15 January 2026</p>
-    <p class="card-summary">A new presidential decree sets ambitious targets for Uzbekistan's textile, garment and leather industries for 2026 to 2027, including USD 4 billion in exports, USD 2.2 billion in foreign investment and 80,000 new jobs. The decree introduces financial restructuring measures for struggling enterprises, new tax incentives, overseas trade representation and a programme to establish partnerships with 40 international brands and sourcing companies.</p>
-  </div>
-  <div class="card-tags">
-    <span class="tag" data-tag="light-industry">Light Industry</span>
+  <div class="card" data-type="policy" data-date="2026-01-12" data-tags="light-industry,textiles,leather,export,foreign-investment,tax-incentives">
+    <div class="card-header">
+      <span class="card-type-badge badge-policy">Policy Brief</span>
+      <h3>Uzbekistan expands support for light industry integration into global supply chains</h3>
+    </div>
+    <div class="card-body">
+      <p class="card-date">15 January 2026</p>
+      <p class="card-summary">A new presidential decree sets ambitious targets for Uzbekistan's textile, garment and leather industries for 2026 to 2027.</p>
+    </div>
+    <div class="card-tags">
+      <span class="tag" data-tag="light-industry">Light Industry</span>
     <span class="tag" data-tag="textiles">Textiles</span>
     <span class="tag" data-tag="leather">Leather</span>
     <span class="tag" data-tag="export">Export</span>
     <span class="tag" data-tag="foreign-investment">Foreign Investment</span>
     <span class="tag" data-tag="tax-incentives">Tax Incentives</span>
-    <span class="tag" data-tag="supply-chains">Supply Chains</span>
-    <span class="tag" data-tag="trade-fairs">Trade Fairs</span>
+    </div>
+    <a href="insights/uzbekistan-light-industry-support.html" class="card-expand-btn">Read More <em class="chevron">&#8594;</em></a>
   </div>
-  <button class="card-expand-btn" onclick="toggleCard(this)">Read More <em class="chevron">&#8964;</em></button>
-  <div class="card-full">
-    <h4>What has changed and why it matters</h4>
-    <p>Uzbekistan's light industry sector, particularly textiles, garments and leather goods, has been a central pillar of the country's export diversification strategy for several years. Presidential Decree No. 4, signed on 12 January 2026, represents the most comprehensive package of support measures to date, combining production targets, financial restructuring tools, export promotion infrastructure and tax incentives into a single framework covering 2026 to 2027.</p>
-    <h4>Key production and export targets</h4>
-    <p>The decree establishes the following targets for the textile and garment sector:</p>
-    <ul>
-      <li>Production output to grow 9% in 2026 (to UZS 146 trillion, approx. USD 12.07 billion) and 10% in 2027 (to UZS 167 trillion, approx. USD 13.8 billion)</li>
-      <li>Foreign investment of USD 2.2 billion in 2026 and USD 2.5 billion in 2027</li>
-      <li>Exports of USD 4 billion in 2026 (including USD 700 million via e-commerce platforms) and USD 4.5 billion in 2027 (including USD 1 billion via e-commerce)</li>
-      <li>80,000 new jobs across 2026 to 2027</li>
-      <li>Partnerships with 40 international brands and sourcing companies</li>
-    </ul>
-    <h4>Financial restructuring and enterprise support</h4>
-    <p>The decree introduces a traffic light classification system for textile enterprises based on economic and financial indicators (green, yellow and red categories), with targeted support for each. Measures include:</p>
-    <ul>
-      <li>Credits of up to USD 2 million per enterprise secured against purchased or self-produced raw cotton</li>
-      <li>Extension of existing commercial loan terms up to 7 years for enterprises assessed as recoverable</li>
-      <li>Refinancing of existing loans where interest rates exceed 7% in foreign currency or 16% in national currency</li>
-      <li>Rescheduling of January and February loan repayments for cotton procurement credits, with amounts distributed across the final six months of the loan term</li>
-    </ul>
-    <h4>Tax incentives and customs exemptions</h4>
-    <p>From 1 January 2026 to 1 January 2028, cotton ginning facilities benefit from a 50% reduction in property and land tax rates. From 1 January 2026 to 1 January 2029, the decree provides:</p>
-    <ul>
-      <li>VAT exemption on the sale of textile and garment enterprise assets held on commercial bank balance sheets to investors</li>
-      <li>50% property tax reduction for one year for investors who acquire such assets and restore production within six months</li>
-      <li>Extension of existing profit tax, property tax, land tax, turnover tax and customs duty exemptions for the leather, footwear and fur sectors</li>
-    </ul>
-    <h4>Overseas representation and export promotion</h4>
-    <p>The decree establishes trade offices and representatives of the Light Industry Development Agency in the US, China, Russia, Turkey, Germany, Poland, the UAE and Saudi Arabia, funded through the Light Industry Support Fund. Their core mandate covers attracting foreign investors, finding new buyers for export products, building partnerships with major sourcing companies and brands, and securing international grants and expertise for workforce development.</p>
-    <p>Uzbekistan's diplomatic missions abroad will also receive export promotion targets by country, with quarterly performance reviews.</p>
-    <h4>International trade fair programme</h4>
-    <p>The decree approves a list of 40 international trade fairs across 2026 where participation by local light industry enterprises will be supported, covering 25 textile events and 15 leather and footwear events across Europe, the US, Asia, the Middle East and Africa.</p>
-    <h4>What this means for your business</h4>
-    <p>For international brands, sourcing companies and investors in textiles, garments, leather and footwear, this decree opens a structured entry point into Uzbekistan's light industry sector. The explicit target of 40 new partnerships with foreign brands and sourcing companies, combined with overseas trade representation and trade fair participation, signals an active outreach effort by the government. Companies in these sectors should assess whether the financial incentives, customs exemptions and restructured enterprise assets present viable sourcing, investment or joint venture opportunities. The e-commerce export targets also suggest growing openness to digital trade channels.</p>
-    <a href="contact.html" class="read-cta">Get in touch to discuss what these changes mean for your operations.</a>
-  </div>
-</div>
 
-  <!-- Card: Uzbekistan Creative Economy Framework -->
-<div class="card" data-type="policy" data-date="2026-03-03" data-tags="creative-economy,creative-industries,creative-park,tax-incentives,digital-economy,investment,regulatory-reform,startups,cultural-policy">
-  <div class="card-header">
-   <span class="card-type-badge badge-policy">Policy Brief</span>
-    <h3>Uzbekistan establishes creative economy regulatory framework and creative industry park</h3>
-  </div>
-  <div class="card-body">
-    <p class="card-date">5 March 2026</p>
-    <p class="card-summary">Cabinet of Ministers Resolution No. 90, adopted on 3 March 2026, approves the regulatory framework for Uzbekistan's creative economy sector. The resolution establishes a Republican Council for Creative Economy Development, sets out the operating rules for a new Creative Industry Park with tax incentives for residents and defines 142 types of economic activity across 15 creative industry sectors.</p>
-  </div>
-  <div class="card-tags">
-    <span class="tag" data-tag="creative-economy">Creative Economy</span>
+  <div class="card" data-type="policy" data-date="2026-03-03" data-tags="creative-economy,creative-industries,tax-incentives,digital-economy,investment">
+    <div class="card-header">
+      <span class="card-type-badge badge-policy">Policy Brief</span>
+      <h3>Uzbekistan establishes creative economy regulatory framework and creative industry park</h3>
+    </div>
+    <div class="card-body">
+      <p class="card-date">5 March 2026</p>
+      <p class="card-summary">Cabinet of Ministers Resolution No. 90, adopted on 3 March 2026, approves the regulatory framework for Uzbekistan's creative economy sector.</p>
+    </div>
+    <div class="card-tags">
+      <span class="tag" data-tag="creative-economy">Creative Economy</span>
     <span class="tag" data-tag="creative-industries">Creative Industries</span>
-    <span class="tag" data-tag="creative-park">Creative Park</span>
     <span class="tag" data-tag="tax-incentives">Tax Incentives</span>
     <span class="tag" data-tag="digital-economy">Digital Economy</span>
     <span class="tag" data-tag="investment">Investment</span>
-    <span class="tag" data-tag="regulatory-reform">Regulatory Reform</span>
-    <span class="tag" data-tag="startups">Startups</span>
-    <span class="tag" data-tag="cultural-policy">Cultural Policy</span>
+    </div>
+    <a href="insights/uzbekistan-creative-economy-framework.html" class="card-expand-btn">Read More <em class="chevron">&#8594;</em></a>
   </div>
-  <button class="card-expand-btn" onclick="toggleCard(this)">Read More <em class="chevron">&#8964;</em></button>
-  <div class="card-full">
-    <h4>What has changed and why it matters</h4>
-    <p>Governments across emerging markets are increasingly recognising the creative economy as a driver of employment, exports and innovation. Uzbekistan has now taken a formal step in this direction with Cabinet of Ministers Resolution No. 90, signed on 3 March 2026. The resolution implements the Law on Creative Economy and Presidential Decree No. 64, putting in place three foundational documents that define the institutional, regulatory and operational framework for the sector.</p>
-    <h4>Republican Council for Creative Economy Development</h4>
-    <p>The resolution establishes a 15-member advisory council under the presidency, tasked with developing proposals for creative economy policy, identifying growth areas, attracting investment and promoting exports. The council brings together government officials, civil society representatives, leading entrepreneurs and international and local experts. The Culture and Art Development Foundation under the Presidential Administration serves as the working body. The council meets at least once per year and decisions are taken by simple majority.</p>
-    <h4>Creative Industry Park</h4>
-    <p>A Creative Industry Park is established on an extraterritorial basis across Uzbekistan, managed by a dedicated directorate structured as a limited liability company under the Culture and Art Development Foundation. The park offers residents access to co-working spaces, laboratories, virtual offices, consulting services, investor matchmaking and support for participation in international fairs and exhibitions.</p>
-    <p>Key features for residents include:</p>
-    <ul>
-      <li>Tax incentives applied from the first day of the month following registration as a resident</li>
-      <li>The right to export goods and services via online platforms without customs cargo declarations</li>
-      <li>Virtual office facilities (except for VAT payers)</li>
-      <li>Access to venture financing for startup projects</li>
-      <li>Support with entering domestic and international markets</li>
-    </ul>
-    <p>Membership fees are set at 0.1% of turnover for individual entrepreneurs and self-employed persons and 0.3% for legal entities.</p>
-    <p>To qualify, at least 80% of a resident's annual gross income must come from creative industry activities. Newly registered entities are exempt from this threshold in their first year, but incentives are recalculated and recovered if the threshold is not met by year end.</p>
-    <h4>142 types of creative economic activity across 15 sectors</h4>
-    <p>The resolution formally defines the scope of the creative economy through a list of 142 eligible activity types grouped into 15 sectors, including applied arts and crafts, architecture and urban planning, audiovisual arts, performing arts, fashion and design, publishing, digital technologies, advertising, visual arts and museum and gallery activities. The list covers both traditional crafts (such as ganch carving, atlas weaving, calligraphy and knife-making) and modern creative services (such as game development, motion design, SMM, copywriting and product design).</p>
-    <h4>What this means for your business</h4>
-    <p>For international companies in media, entertainment, digital content, fashion, design, advertising and technology, this resolution creates a structured incentive regime for establishing creative operations in Uzbekistan. The extraterritorial park model, combined with tax benefits and simplified export procedures for digital and creative products, may be relevant for companies looking to establish regional production or service delivery hubs. The broad definition of eligible activities, particularly in digital technologies, software development and advertising, means the framework extends well beyond traditional arts and crafts.</p>
-    <a href="contact.html" class="read-cta">Get in touch to discuss what these changes mean for your operations.</a>
-  </div>
-</div>
 
-<!-- Card: Uzbekistan Pharmaceutical Sector Reform -->
-<div class="card" data-type="regulatory" data-date="2026-03-05" data-tags="pharmaceuticals,biotechnology,tax-incentives,investment,gmp,export,research,healthcare,biopharma-city,digital-labelling,importers">
-  <div class="card-header">
-    <span class="card-type-badge badge-regulatory">Regulatory Alert</span>
-    <h3>Uzbekistan introduces major pharmaceutical sector incentive and reform package</h3>
-  </div>
-  <div class="card-body">
-    <p class="card-date">7 March 2026</p>
-    <p class="card-summary">Presidential Decree No. 35, signed on 5 March 2026, sets out a comprehensive package of measures to boost pharmaceutical production, attract investment, promote exports and strengthen R&D infrastructure. The decree establishes production targets of UZS 8.5 trillion (approx. USD 703 million), export targets of USD 300 million and investment pipeline targets of USD 1 billion for 2026, alongside tax exemptions, credit interest subsidies, technology transfer cost reimbursements and the creation of a new National Biopharmaceutical Research Institute and "BioPharma City" hub. Critically for international companies already operating in the market, the decree also extends mandatory digital labelling obligations to importers and redirects 75% of customs duties collected on imported medicines to a fund supporting domestic manufacturers.</p>
-  </div>
-  <div class="card-tags">
-    <span class="tag" data-tag="pharmaceuticals">Pharmaceuticals</span>
+  <div class="card" data-type="regulatory" data-date="2026-03-05" data-tags="pharmaceuticals,biotechnology,tax-incentives,investment,gmp,export">
+    <div class="card-header">
+      <span class="card-type-badge badge-regulatory">Regulatory Alert</span>
+      <h3>Uzbekistan introduces major pharmaceutical sector incentive and reform package</h3>
+    </div>
+    <div class="card-body">
+      <p class="card-date">7 March 2026</p>
+      <p class="card-summary">Presidential Decree No. 35, signed on 5 March 2026, sets out a comprehensive package of measures to boost pharmaceutical production, attract investment, promote exports and strengthen R&D infrastructure.</p>
+    </div>
+    <div class="card-tags">
+      <span class="tag" data-tag="pharmaceuticals">Pharmaceuticals</span>
     <span class="tag" data-tag="biotechnology">Biotechnology</span>
     <span class="tag" data-tag="tax-incentives">Tax Incentives</span>
     <span class="tag" data-tag="investment">Investment</span>
     <span class="tag" data-tag="gmp">GMP</span>
     <span class="tag" data-tag="export">Export</span>
-    <span class="tag" data-tag="research">R&amp;D</span>
-    <span class="tag" data-tag="healthcare">Healthcare</span>
-    <span class="tag" data-tag="biopharma-city">BioPharma City</span>
-    <span class="tag" data-tag="digital-labelling">Digital Labelling</span>
-    <span class="tag" data-tag="importers">Importers</span>
+    </div>
+    <a href="insights/uzbekistan-pharmaceutical-sector-reform.html" class="card-expand-btn">Read More <em class="chevron">&#8594;</em></a>
   </div>
-  <button class="card-expand-btn" onclick="toggleCard(this)">Read More <em class="chevron">&#8964;</em></button>
-  <div class="card-full">
-    <h4>What has changed and why it matters</h4>
-    <p>Uzbekistan's pharmaceutical sector has been the subject of sustained government attention over the past several years, with a series of presidential decrees progressively building out the regulatory, financial and institutional framework for local production and import substitution. Presidential Decree No. 35, signed on 5 March 2026, represents the most detailed package to date, combining production and export targets, financial support mechanisms, tax exemptions, institutional reform and workforce development into a single instrument. While the headline measures are designed to attract manufacturing investment, several provisions have direct compliance and operational implications for international companies already present in the market through distributors and importers.</p>
-    <h4>Production, investment and export targets for 2026</h4>
-    <p>The decree sets the following headline targets for 2026:</p>
-    <ul>
-      <li>Production output of UZS 8.5 trillion (approx. USD 703 million)</li>
-      <li>Formation of a pipeline of investment projects worth USD 1 billion</li>
-      <li>Launch of USD 800 million in new investment projects</li>
-      <li>Exports of pharmaceutical products and services of USD 300 million</li>
-      <li>Mastery of production of 350 new products</li>
-      <li>Expansion of the Tashkent Pharma Park cluster into a regional biotechnology and pharmaceutical R&amp;D and production hub branded "BioPharma City", with an additional 100 hectares of land to be allocated</li>
-    </ul>
-    <h4>Mandatory digital labelling — new obligations for importers</h4>
-    <p>The decree amends Cabinet of Ministers Resolution No. 149 of 2 April 2022, which established the mandatory digital labelling system for medicines and medical devices. The key changes directly affect importers:</p>
-    <ul>
-      <li>Importers are now included alongside manufacturers and registration certificate holders as entities entitled to receive labelling codes from the system operator ("Asl belgisi")</li>
-      <li>A new requirement is introduced: importers must hold a power of attorney from the foreign manufacturer, certified by the competent authorities of the relevant foreign country, confirming the right to obtain digital labelling codes for the products in question</li>
-      <li>Importers assume full operational responsibility for labelling imported products, including ordering and receiving codes from the operator, converting codes into digital identification markers and applying them to consumer packaging</li>
-      <li>A phased code inventory is scheduled: manufacturers by July 2026, wholesale distributors by September 2026 and retail pharmacies by November 2026</li>
-    </ul>
-    <p>International companies selling into Uzbekistan via local distributors or importers should urgently review their distribution agreements to ensure that powers of attorney and labelling responsibilities are clearly allocated, and that importers are operationally prepared to meet the new timeline.</p>
-    <h4>Redistribution of customs duties on imported medicines</h4>
-    <p>The decree formalises a mechanism whereby 75% of customs duties collected on imported medicines are transferred monthly to the Pharmaceutical Sector Support and Development Fund. While this does not add a direct new charge on importers, it explicitly links import revenues to the funding of domestic manufacturing competitors, reinforcing the government's broader import substitution agenda.</p>
-    <h4>Financial support for domestic manufacturers</h4>
-    <p>From 1 June 2026, a range of financial incentives come into effect for local producers:</p>
-    <ul>
-      <li>Reimbursement of 50% of technology transfer costs (capped at USD 50,000) or 50% of R&amp;D costs (capped at USD 100,000) for manufacturers that begin producing generic equivalents within one year of the original drug's patent expiry</li>
-      <li>Reimbursement of 50% of the cost of obtaining EU GMP, US FDA GMP certification or WHO prequalification, including foreign consulting services, capped at USD 50,000 per enterprise</li>
-      <li>Reimbursement of 80% of registration, clinical trial and bioequivalence study costs (capped at USD 8,000) for manufacturers that bring into industrial production drugs or medical devices developed by domestic research institutes</li>
-      <li>Credit interest subsidies for high-tech pharmaceutical investment projects brought into operation within three years</li>
-    </ul>
-    <h4>Tax exemptions and incentives</h4>
-    <p>Investment projects in pharmaceutical production, medicinal plant cultivation or processing launched before 2040 benefit from:</p>
-    <ul>
-      <li>Land tax exemption for three years from the start of the investment project</li>
-      <li>Profit tax and property tax exemption for three years from the date the project is commissioned</li>
-    </ul>
-    <p>These exemptions apply where revenue from pharmaceutical production or medicinal plant activities constitutes at least 60% of total income.</p>
-    <p>A reduced 5% profit tax rate applies until 1 January 2030 for non-resident royalty income from technology transfer and brand licensing used in the production of drugs and medical devices in Uzbekistan, unless international treaties provide otherwise.</p>
-    <p>From 1 April 2026, customs duty exemptions previously available to pharmaceutical producers are extended to manufacturers of biological active supplements (BAS) and cosmetics. This exemption does not apply to importers who do not carry out manufacturing activities in Uzbekistan.</p>
-    <h4>GMP, BAS and quality standards</h4>
-    <p>From 1 January 2027, enterprises holding a national GMP certificate will be permitted to produce biological active supplements on their certified production lines. From 1 January 2028, BAS products will require HACCP system implementation for licensing and will be subject to mandatory digital labelling.</p>
-    <h4>Post-marketing supervision and distribution rules</h4>
-    <p>The decree's roadmap provides for the development of new regulations on post-marketing supervision of pharmaceutical products (to be submitted to the Cabinet by August 2026) and on wholesale and retail distribution rules, product withdrawal and disposal procedures (to be submitted by September 2026). Distributors and importers should prepare for potentially tighter documentary and procedural requirements.</p>
-    <h4>National Biopharmaceutical Research Institute</h4>
-    <p>A new National Biopharmaceutical Research Institute is established by merging three existing bodies: the Uzbekistan Chemical-Pharmaceutical Research Institute, the Tashkent Vaccine and Serum Research Institute, and the Oriental Medicine Research Institute.</p>
-    <h4>Pharmaceutical regulatory sandbox</h4>
-    <p>The government is directed to introduce a regulatory sandbox for pharmaceuticals by September 2026, covering the testing and registration of drugs, medical devices, new products and other intellectual property outputs. This could potentially simplify market entry for new products.</p>
-    <h4>What this means for your business</h4>
-    <p>This decree operates on two levels. For companies considering manufacturing investment in Uzbekistan, it creates a structured and well-funded incentive regime combining tax exemptions, credit subsidies, technology transfer reimbursements and the expanded BioPharma City hub.</p>
-    <p>For international companies already operating in the market through importers and distributors, however, the decree introduces immediate compliance obligations that require attention. The extension of full digital labelling responsibility to importers, including the requirement for certified powers of attorney from foreign manufacturers, means that companies must review and potentially renegotiate distribution agreements well ahead of the July 2026 manufacturer deadline. The redistribution of import customs duties to the domestic manufacturing support fund, while not a new tax, signals a continued strategic push toward import substitution. Meanwhile, forthcoming changes to post-marketing supervision and distribution rules may impose additional procedural requirements on existing market participants.</p>
-    <p>Companies in pharmaceuticals, medical devices, BAS and cosmetics should assess the operational and contractual implications of these changes as a matter of priority.</p>
-    <a href="contact.html" class="read-cta">Get in touch to discuss what these changes mean for your operations.</a>
-  </div>
-</div>
 
-<!-- Card: TIIF 2026 -->
-<div class="card" data-type="event" data-date="2026-06-16" data-tags="investment,forum,tashkent,tiif,fdi,energy,fintech,infrastructure,privatisation,sez,automotive,pharmaceuticals,logistics,digital">
-  <div class="card-header">
-    <span class="card-type-badge badge-event">Event</span>
-    <h3>5th Tashkent International Investment Forum — 16–19 June 2026</h3>
-  </div>
-  <div class="card-body">
-    <p class="card-date">16–19 June 2026 · CAEx Centre, Tashkent</p>
-    <p class="card-summary">Uzbekistan's flagship investment event returns for its fifth edition, bringing together heads of state, ministers, multilateral institutions and international investors across four days of plenary sessions, sector panels, pitch sessions, bilateral meetings and document signings. With a 6,000 sqm exhibition and sessions spanning energy, fintech, pharma, logistics, automotive, SEZs and capital markets, TIIF 2026 is the premier access point to Uzbekistan's investment agenda for 2026 and beyond.</p>
-  </div>
-  <div class="card-tags">
-    <span class="tag" data-tag="investment">Investment</span>
+  <div class="card" data-type="event" data-date="2026-06-16" data-tags="investment,forum,fdi,energy,fintech,infrastructure">
+    <div class="card-header">
+      <span class="card-type-badge badge-event">Event</span>
+      <h3>5th Tashkent International Investment Forum — 16–19 June 2026</h3>
+    </div>
+    <div class="card-body">
+      <p class="card-date">16–19 June 2026</p>
+      <p class="card-summary">Uzbekistan's flagship investment event returns for its fifth edition, bringing together heads of state, ministers, multilateral institutions and international investors.</p>
+    </div>
+    <div class="card-tags">
+      <span class="tag" data-tag="investment">Investment</span>
     <span class="tag" data-tag="forum">Forum</span>
     <span class="tag" data-tag="fdi">FDI</span>
     <span class="tag" data-tag="energy">Energy</span>
     <span class="tag" data-tag="fintech">Fintech</span>
     <span class="tag" data-tag="infrastructure">Infrastructure</span>
-    <span class="tag" data-tag="sez">SEZs</span>
-    <span class="tag" data-tag="logistics">Logistics</span>
+    </div>
+    <a href="insights/tashkent-international-investment-forum-2026.html" class="card-expand-btn">Read More <em class="chevron">&#8594;</em></a>
   </div>
-  <button class="card-expand-btn" onclick="toggleCard(this)">Read More <em class="chevron">&#8964;</em></button>
-  <div class="card-full">
 
-    <h4>What is TIIF?</h4>
-    <p>The Tashkent International Investment Forum is Uzbekistan's highest-profile annual investment event, convened under the auspices of the President of the Republic of Uzbekistan. Now in its fifth year, the forum has established itself as the primary platform for presenting Uzbekistan's investment pipeline to the international business community, for signing major bilateral and multilateral agreements, and for setting the tone for government economic policy priorities for the year ahead.</p>
-
-    <h4>Programme overview</h4>
-    <p>TIIF 2026 runs across four days at the CAEx Centre in Tashkent, with a 6,000 sqm exhibition open throughout showcasing investment opportunities across more than ten sectors of the national economy.</p>
-    <ul>
-      <li><strong>Day 0, 16 June (Pre-Opening).</strong> Exhibition opens. Panel sessions on global investment trends in Central Asia, the green transition and renewable energy finance, public-private infrastructure partnerships, and digital transformation and fintech. Pitch sessions on manufacturing value-added production and agribusiness.</li>
-      <li><strong>Day 1, 17 June (Grand Opening).</strong> Presidential speech and high-level panel. Sessions on trade facilitation and regional connectivity, tourism investment, SME financing and digitalisation, and smart cities and urban infrastructure. Formal document signing ceremony.</li>
-      <li><strong>Day 2, 18 June.</strong> Sessions on IPO strategies and capital market development, private equity and sector investment, financial sector modernisation, SOE reform and privatisation, sustainable mining and critical minerals, fintech and digital banking, women's entrepreneurship, textiles and apparel, and the chemical industry. Evening: Stihia x TIIF 5th Anniversary celebration (by invitation).</li>
-      <li><strong>Day 3, 19 June (Closing Day).</strong> Sessions on integrated transport and logistics hubs, the creative economy, legal frameworks and corporate governance for FDI, ESG integration, AI and big data, water resource management, healthcare and pharmaceuticals, SEZs and fiscal incentives, advanced automotive and electric mobility, and smart construction materials. Closing ceremony and final document signings.</li>
-    </ul>
-
-    <h4>Key sectors on the agenda</h4>
-    <ul>
-      <li>Renewable energy, green finance and the energy transition</li>
-      <li>Fintech, digital banking and payment systems</li>
-      <li>Pharmaceuticals, medical technology and healthcare</li>
-      <li>Automotive manufacturing and electric mobility</li>
-      <li>Transport, logistics and regional connectivity</li>
-      <li>Mining and strategic minerals</li>
-      <li>Special Economic Zones and fiscal incentives for FDI</li>
-      <li>Capital markets, IPOs and private equity</li>
-      <li>SOE privatisation and reform</li>
-      <li>Textiles, apparel and the chemical industry</li>
-      <li>Creative economy and digital innovation</li>
-    </ul>
-
-    <h4>Participation fees</h4>
-    <p>Registration is open now.</p>
-    <ul>
-      <li><strong>USD 300</strong> for payments received on or before 20 April 2026</li>
-      <li><strong>USD 500</strong> for payments received from 21 April 2026 up to and including 5 June 2026</li>
-    </ul>
-    <p>Early registration is strongly recommended to secure the reduced rate and to allow adequate time for bilateral meeting preparation ahead of the forum.</p>
-
-    <h4>Why attend?</h4>
-    <p>For international companies active in or considering entry to Uzbekistan, TIIF provides unmatched direct access to government decision-makers, state agencies, multilateral institutions and the broader investment community in a single venue. The forum's structured programme of sector panels, pitch sessions, individual meetings and signing ceremonies makes it the most efficient platform available for building relationships, advancing regulatory discussions and identifying partnership opportunities across every major sector of Uzbekistan's economy.</p>
-
-    <h4>Making the most of TIIF</h4>
-    <p>Attending the forum is one thing. Arriving prepared with the right meetings in your diary, the right people briefed on your agenda and a clear plan for what you want to achieve is another. I support international companies at every stage of their TIIF participation. Before the forum, that means stakeholder mapping, bilateral meeting scheduling and mission preparation. During the forum, I provide on-the-ground logistics support, interpretation and accompaniment. After the forum, I follow up with government counterparts and potential partners to keep momentum going.</p>
-    <p>Whether you are attending for the first time or returning with a specific investment or regulatory objective, I can help you get the most out of four days in Tashkent.</p>
-
-    <a href="contact.html" class="read-cta">Get in touch to discuss TIIF support</a>
-    <a href="https://tiif.online/" target="_blank" class="read-cta" style="margin-left:12px;background:#fff;color:var(--gold);border:1.5px solid var(--gold);">Visit the official TIIF website</a>
-
-  </div>
-</div>
-<!-- Card: Uzbekistan Draft Law on Transport -->
-<div class="card" data-type="regulatory" data-date="2026-02-03" data-tags="transport,logistics,digital-platforms,ride-hailing,freight,cabotage,multimodal,route-licensing,regulatory-compliance,aggregators,labour,customs">
-  <div class="card-header">
-    <span class="card-type-badge badge-regulatory">Regulatory Alert</span>
-    <h3>Uzbekistan advances comprehensive new Law on Transport</h3>
-  </div>
-  <div class="card-body">
-    <p class="card-date">3 February 2026</p>
-    <p class="card-summary">A draft Law on Transport, published for public discussion in January 2026, sets out a unified statutory framework consolidating all commercial transport activity across road, rail, air, water and multimodal modes under a single instrument. The draft introduces a mandatory registration and integration regime for digital aggregator platforms, an open electronic tender system for route licensing, new cabotage and transit corridor restrictions for foreign carriers, and a restructured multimodal liability framework. For international companies operating in or through Uzbekistan in ride-hailing, freight, logistics, automotive or consumer goods, the draft carries material compliance and contractual implications that require assessment well ahead of its expected adoption in Q4 2026.</p>
-  </div>
-  <div class="card-tags">
-    <span class="tag" data-tag="transport">Transport</span>
+  <div class="card" data-type="regulatory" data-date="2026-02-03" data-tags="transport,logistics,digital-platforms,ride-hailing,freight,cabotage">
+    <div class="card-header">
+      <span class="card-type-badge badge-regulatory">Regulatory Alert</span>
+      <h3>Uzbekistan advances comprehensive new Law on Transport</h3>
+    </div>
+    <div class="card-body">
+      <p class="card-date">3 February 2026</p>
+      <p class="card-summary">A draft Law on Transport sets out a unified statutory framework consolidating all commercial transport activity under a single instrument.</p>
+    </div>
+    <div class="card-tags">
+      <span class="tag" data-tag="transport">Transport</span>
     <span class="tag" data-tag="logistics">Logistics</span>
     <span class="tag" data-tag="digital-platforms">Digital Platforms</span>
     <span class="tag" data-tag="ride-hailing">Ride-Hailing</span>
     <span class="tag" data-tag="freight">Freight</span>
     <span class="tag" data-tag="cabotage">Cabotage</span>
-    <span class="tag" data-tag="multimodal">Multimodal</span>
-    <span class="tag" data-tag="route-licensing">Route Licensing</span>
-    <span class="tag" data-tag="regulatory-compliance">Regulatory Compliance</span>
-    <span class="tag" data-tag="aggregators">Aggregators</span>
-    <span class="tag" data-tag="labour">Labour</span>
-    <span class="tag" data-tag="customs">Customs</span>
+    </div>
+    <a href="insights/uzbekistan-draft-law-on-transport.html" class="card-expand-btn">Read More <em class="chevron">&#8594;</em></a>
   </div>
-  <button class="card-expand-btn" onclick="toggleCard(this)">Read More <em class="chevron">&#8964;</em></button>
-  <div class="card-full">
-    <h4>What has changed and why it matters</h4>
-    <p>Uzbekistan's transport sector has been subject to incremental regulatory development over recent years, but the draft Law on Transport represents a step-change in ambition. The draft is a single consolidated statute replacing fragmented sector-specific rules and introducing new obligations that extend well beyond traditional carriers to encompass digital platforms, aggregators and international operators. The draft was open for public discussion in January 2026 and is expected to be adopted in Q4 2026. Companies have a window to assess compliance gaps and where appropriate engage with the legislative process before the law is finalised.</p>
-    <h4>Mandatory aggregator registration</h4>
-    <p>Chapter 4 of the draft introduces a dedicated legal framework for digital platforms that match carriers with passengers or shippers, covering ride-hailing, freight matching and last-mile delivery aggregation. Obligations include incorporation as an Uzbek legal entity, a notification procedure with the Ministry of Transport, system integration with the Ministry of Transport and the National Agency for Prospective Projects, mandatory issuance of fiscal electronic receipts for all transactions, registration of all driver and courier labour contracts in the unified national labour register, and a restriction on onboarding carriers that do not hold a valid licence.</p>
-    <p>Companies operating aggregator platforms across the region through a non-Uzbek legal entity should review whether their current structure will satisfy the local incorporation requirement once the law is in force.</p>
-    <h4>Open electronic tendering for routes</h4>
-    <p>All urban, suburban, intercity and international passenger routes will be allocated through open electronic tenders administered by the relevant authorities. Any registered legal entity holding the requisite licence may participate. Routes deemed socially necessary but commercially unviable will be eligible for state subsidy. This replaces discretionary route allocation with a structured competitive process, creating both opportunity and displacement risk for existing operators.</p>
-    <h4>Multimodal transport and unified liability</h4>
-    <p>The draft defines a multimodal transport operator as a legal entity that assumes full legal responsibility for the entire journey across all modes of transport. A single multimodal transport document covers the entire journey and a single through-tariff applies regardless of the number of modes or carriers involved. New Civil Code provisions codify multimodal contracts and the liability of the organising operator. The multimodal operator bears liability to the cargo owner for loss, damage or delay across all legs including those subcontracted to other carriers.</p>
-    <p>Companies structuring cross-border supply chains through Uzbekistan should review their contract architecture with logistics partners in light of this consolidated liability model.</p>
-    <h4>Cabotage and transit corridor restrictions</h4>
-    <p>The draft introduces explicit prohibitions with direct implications for international road freight operators. Cabotage, meaning the carriage of goods between two points within Uzbekistan by a foreign carrier, is prohibited. Third-country transport by foreign road carriers, meaning the carriage of goods between two foreign countries through Uzbekistan, is also prohibited unless a bilateral or multilateral agreement provides otherwise. Transit corridors are designated by the Cabinet of Ministers and within approved corridors simplified customs procedures apply.</p>
-    <p>International logistics companies routing freight through Uzbekistan or using foreign subcontractors for domestic legs should review compliance with these restrictions.</p>
-    <h4>Taxi and ride-hailing vehicle and operational standards</h4>
-    <p>Non-fixed ride-hailing taxi services may be operated by registered legal entities or licensed self-employed individuals. Vehicle and operational requirements include a maximum vehicle age of 15 years, mandatory civil liability insurance, acceptance of aggregator-mediated or direct electronic payments, and display of a standardised taxi passport inside the vehicle.</p>
-    <h4>What this means for your business</h4>
-    <p>The draft Law on Transport operates across two dimensions. For companies already active in the transport and logistics market in Uzbekistan, it introduces specific new compliance obligations, particularly the aggregator registration and labour integration requirements, that may necessitate structural changes to operating models ahead of the expected adoption in Q4 2026.</p>
-    <p>For international companies using Uzbekistan as a transit or logistics corridor, the cabotage prohibition and transit corridor framework require immediate review of subcontractor arrangements and route structures. The multimodal liability provisions affect how cross-border logistics contracts are drafted and how risk is allocated between parties.</p>
-    <p>Companies in ride-hailing, freight and delivery aggregation, international road freight, automotive, retail, pharma and infrastructure should assess the operational, structural and contractual implications of the draft as a matter of priority.</p>
-    <a href="contact.html" class="read-cta">Get in touch to discuss what these changes mean for your operations.</a>
-  </div>
-</div>
-<!-- Card: Uzbekistan AI Ethics Code -->
-<div class="card" data-type="regulatory" data-date="2026-03-17" data-tags="artificial-intelligence,ai-ethics,digital-regulation,data-protection,human-oversight,transparency,compliance">
-  <div class="card-header">
-    <span class="card-type-badge badge-regulatory">Regulatory Alert</span>
-    <h3>Uzbekistan adopts ethics code for artificial intelligence</h3>
-  </div>
-  <div class="card-body">
-    <p class="card-date">17 March 2026</p>
-    <p class="card-summary">Order No. 284 of the Minister of Digital Technologies, registered on 14 March 2026, establishes mandatory ethics rules for AI development, deployment and use in Uzbekistan. The code enters into force three months after official publication and introduces eight core principles covering human oversight, transparency, non-discrimination and data protection. For international companies deploying AI tools or automated decision-making systems in Uzbekistan, the code creates binding compliance obligations requiring review of AI governance frameworks ahead of entry into force.</p>
-  </div>
-  <div class="card-tags">
-    <span class="tag" data-tag="artificial-intelligence">Artificial Intelligence</span>
+
+  <div class="card" data-type="regulatory" data-date="2026-03-17" data-tags="artificial-intelligence,ai-ethics,digital-regulation,data-protection,compliance">
+    <div class="card-header">
+      <span class="card-type-badge badge-regulatory">Regulatory Alert</span>
+      <h3>Uzbekistan adopts ethics code for artificial intelligence</h3>
+    </div>
+    <div class="card-body">
+      <p class="card-date">17 March 2026</p>
+      <p class="card-summary">Order No. 284 establishes mandatory ethics rules for AI development, deployment and use in Uzbekistan.</p>
+    </div>
+    <div class="card-tags">
+      <span class="tag" data-tag="artificial-intelligence">Artificial Intelligence</span>
     <span class="tag" data-tag="ai-ethics">AI Ethics</span>
     <span class="tag" data-tag="digital-regulation">Digital Regulation</span>
     <span class="tag" data-tag="data-protection">Data Protection</span>
-    <span class="tag" data-tag="human-oversight">Human Oversight</span>
-    <span class="tag" data-tag="transparency">Transparency</span>
     <span class="tag" data-tag="compliance">Compliance</span>
+    </div>
+    <a href="insights/uzbekistan-ai-ethics-code.html" class="card-expand-btn">Read More <em class="chevron">&#8594;</em></a>
   </div>
-  <button class="card-expand-btn" onclick="toggleCard(this)">Read More <em class="chevron">&#8964;</em></button>
-  <div class="card-full">
-    <h4>What has changed and why it matters</h4>
-    <p>Order No. 284, registered on 14 March 2026, establishes Uzbekistan's first comprehensive AI ethics framework. The order implements Presidential Decree No. 189 (October 2025) on AI development and Presidential Resolution No. 358 (October 2024) approving the AI Development Strategy to 2030. The code was coordinated with the Supreme Court, Ministry of Internal Affairs, State Security Service, Anti-Corruption Agency and National Agency for Prospective Projects.</p>
-    <p>The code applies to all individuals and legal entities developing, deploying or using AI systems in Uzbekistan.</p>
-    <h4>Eight core principles</h4>
-    <ul>
-      <li><strong>Legality.</strong> Compliance with all applicable legislation</li>
-      <li><strong>Protection of interests.</strong> AI must not harm individuals, society, the state or the environment</li>
-      <li><strong>Explainability.</strong> AI decisions must be understandable, with logic, criteria and data sources disclosed</li>
-      <li><strong>Responsibility and human oversight.</strong> All AI decisions must remain under human control with final decisions made by humans</li>
-      <li><strong>Fairness and non-discrimination.</strong> Prohibition of discrimination based on personal characteristics</li>
-      <li><strong>Openness and transparency.</strong> AI systems must be accessible and understandable</li>
-      <li><strong>Data protection.</strong> Protection of state secrets, personal data and restricted information</li>
-      <li><strong>Reliability and security.</strong> Stable operation with minimal errors and secure data storage</li>
-    </ul>
-    <h4>Prohibition on AI-only decisions</h4>
-    <p>Legally significant decisions affecting human rights cannot rely solely on AI conclusions. This extends to healthcare decisions including diagnosis, treatment and medical image analysis, reinforcing Law No. 1115 of January 2026.</p>
-    <h4>Key obligations</h4>
-    <p><strong>Developers and deployers must:</strong> ensure algorithm transparency, prevent bias, protect data, disclose AI limitations and risks, inform users that outputs are advisory only, maintain human oversight and publish user guidelines.</p>
-    <p><strong>Users must:</strong> comply with usage rules, protect data, respect intellectual property and avoid causing harm.</p>
-    <h4>What this means for your business</h4>
-    <p>The three-month implementation window provides time to assess compliance gaps. Companies using AI for automated decision-making, analytics, profiling or HR processes should review whether their systems meet explainability, transparency and non-discrimination standards. The human oversight requirement may require updates to product documentation and internal workflows. The code does not introduce specific penalties, but non-compliance may trigger enforcement under personal data, informatisation and cybersecurity laws, including administrative penalties under Law No. 1115.</p>
-    <a href="contact.html" class="read-cta">Get in touch to discuss what these changes mean for your operations.</a>
-  </div>
-</div>
-<!-- Card: Uzbekistan Cybersecurity Strategy 2030 -->
-<div class="card" data-type="policy" data-date="2026-03-17" data-tags="cybersecurity,critical-infrastructure,digital-regulation,compliance,financial-services,telecommunications,e-commerce,cloud-services">
-  <div class="card-header">
-    <span class="card-type-badge badge-policy">Policy Brief</span>
-    <h3>Uzbekistan adopts national cybersecurity strategy to 2030</h3>
-  </div>
-  <div class="card-body">
-    <p class="card-date">15 March 2026</p>
-    <p class="card-summary">Presidential Decree No. 38, signed on 10 March 2026, establishes the Cybersecurity Strategy for 2026 to 2030 and creates a comprehensive institutional framework for cyber resilience. The decree mandates new cybersecurity units across government agencies from 1 April 2026, establishes a National Coordinating Council under the Security Council Secretary, introduces a registry of authorised cybersecurity outsourcing providers and launches a vulnerability identification platform with independent expert participation. For international companies operating in Uzbekistan, the strategy signals tightened compliance requirements for critical information infrastructure, mandatory outsourcing provider registration and new obligations for telecom operators, financial institutions and digital platforms.</p>
-  </div>
-  <div class="card-tags">
-    <span class="tag" data-tag="cybersecurity">Cybersecurity</span>
+
+  <div class="card" data-type="policy" data-date="2026-03-17" data-tags="cybersecurity,critical-infrastructure,digital-regulation,compliance,financial-services">
+    <div class="card-header">
+      <span class="card-type-badge badge-policy">Policy Brief</span>
+      <h3>Uzbekistan adopts national cybersecurity strategy to 2030</h3>
+    </div>
+    <div class="card-body">
+      <p class="card-date">15 March 2026</p>
+      <p class="card-summary">Presidential Decree No. 38, signed on 10 March 2026, establishes the Cybersecurity Strategy for 2026 to 2030.</p>
+    </div>
+    <div class="card-tags">
+      <span class="tag" data-tag="cybersecurity">Cybersecurity</span>
     <span class="tag" data-tag="critical-infrastructure">Critical Infrastructure</span>
     <span class="tag" data-tag="digital-regulation">Digital Regulation</span>
     <span class="tag" data-tag="compliance">Compliance</span>
     <span class="tag" data-tag="financial-services">Financial Services</span>
-    <span class="tag" data-tag="telecommunications">Telecommunications</span>
-    <span class="tag" data-tag="e-commerce">E-Commerce</span>
-    <span class="tag" data-tag="cloud-services">Cloud Services</span>
+    </div>
+    <a href="insights/uzbekistan-cybersecurity-strategy-2030.html" class="card-expand-btn">Read More <em class="chevron">&#8594;</em></a>
   </div>
-  <button class="card-expand-btn" onclick="toggleCard(this)">Read More <em class="chevron">&#8964;</em></button>
-  <div class="card-full">
-    <h4>What has changed and why it matters</h4>
-    <p>Presidential Decree No. 38, signed on 10 March 2026, establishes Uzbekistan's first comprehensive cybersecurity strategy for 2026 to 2030. The decree sets five strategic goals: strengthening national cyber resilience, protecting critical digital infrastructure, combating cybercrime, developing AI-based cybersecurity technologies and expanding international cooperation.</p>
-    <p>The strategy is accompanied by a detailed roadmap assigning specific tasks, deadlines and responsible agencies across ten priority areas.</p>
-    <h4>Institutional framework</h4>
-    <p>A National Coordinating Council on Cybersecurity and Combating Cybercrime is to be established under the Presidential Security Council within one week of the decree. From 1 April 2026, dedicated cybersecurity units must be created across more than a dozen state bodies. State organisations are also authorised from the same date to direct both budget and off-budget funds toward cybersecurity needs.</p>
-    <h4>Commercial implications</h4>
-    <p>Ten priority directions underpin implementation. The most commercially significant include:</p>
-    <ul>
-      <li>Strengthening cybersecurity for credit and payment organisations, payment system operators and mobile applications</li>
-      <li>Development of public-private partnerships in cybersecurity</li>
-      <li>Improvement of the regulatory framework governing critical information infrastructure</li>
-      <li>Introduction of standards across data protection, private sector accountability and cyber incident response</li>
-    </ul>
-    <h4>Key compliance requirements</h4>
-    <p><strong>Authentication and secure connections.</strong> Information systems used to deliver online state, banking and e-commerce services must implement mandatory identification, multi-factor authentication and secure connection protocols. Draft regulatory document due by May 2027, with implementation measures by December 2027.</p>
-    <p><strong>Outsourcing and cloud services oversight.</strong> A dedicated compliance oversight regime for outsourcing and cloud service providers is being introduced. Analytical review due by March 2027, draft oversight regulations by June 2027.</p>
-    <p><strong>Cybersecurity outsourcing registry.</strong> State bodies lacking in-house cybersecurity capacity may engage certified private providers, but only those listed in an official registry to be established by 1 August 2026.</p>
-    <p><strong>Vulnerability assessments.</strong> Independent vulnerability assessments of public and private critical information infrastructure will be launched from 1 August 2026 through a dedicated electronic platform, with competition rules developed jointly with the Ministry of Justice.</p>
-    <h4>Telecom and financial sector obligations</h4>
-    <p>Telecom operators face new requirements including obligations to block suspicious calls, warn users and protect against unwanted communications. Draft regulations due by December 2027.</p>
-    <p>Banks, payment system operators and credit organisations must comply with specific cyber resilience requirements, ensure operational reliability of financial services and establish cooperation mechanisms with law enforcement for cybercrime prevention.</p>
-    <h4>Key roadmap deadlines</h4>
-    <table>
-      <tr><th>Measure</th><th>Deadline</th></tr>
-      <tr><td>Cybersecurity requirements for critical infrastructure</td><td>May 2026</td></tr>
-      <tr><td>Outsourcing provider registry regulations</td><td>August 2026</td></tr>
-      <tr><td>Vulnerability identification platform launch</td><td>August 2026</td></tr>
-      <tr><td>Cloud services cybersecurity requirements</td><td>December 2026</td></tr>
-      <tr><td>Authentication and secure connection draft regulations</td><td>May 2027</td></tr>
-      <tr><td>Outsourcing and cloud oversight regulations</td><td>June 2027</td></tr>
-      <tr><td>Telecom operator protection requirements</td><td>December 2027</td></tr>
-    </table>
-    <h4>What this means for your business</h4>
-    <p>The explicit inclusion of e-commerce platforms in new authentication and security standards, the planned improvement of legislation across data protection, private sector accountability and cyber incident response, alongside a formal compliance oversight regime for cloud and outsourcing providers, means digital platforms may face enforceable regulatory obligations around data security, third-party infrastructure management and demonstrable compliance within the next 12 to 18 months.</p>
-    <p>Companies providing cybersecurity services to government clients must register in the official outsourcing provider registry once established. Cloud service providers used by government bodies will be subject to new cybersecurity requirements.</p>
-    <p>Financial sector participants should prepare for specific cyber resilience requirements and closer cooperation mechanisms with law enforcement. Telecom operators face obligations around suspicious call blocking and user protection.</p>
-    <p>The strategy also signals increased enforcement, with provisions for strengthening liability for officials who fail to comply with cybersecurity requirements and new Criminal Code and Administrative Code amendments for cyberspace violations.</p>
-    <a href="contact.html" class="read-cta">Get in touch to discuss what these changes mean for your operations.</a>
-  </div>
-</div>
-<!-- Card: Uzbekistan FMCG Regulatory Landscape -->
-<div class="card" data-type="market" data-date="2026-03-18" data-tags="fmcg,import,customs,food-safety,sugar-tax,infant-nutrition,digital-labelling,regulatory-compliance,uzbekistan">
-  <div class="card-header">
-    <span class="card-type-badge badge-market">Market Intelligence</span>
-    <h3>Regulatory landscape shifts for FMCG importers in Uzbekistan</h3>
-  </div>
-  <div class="card-body">
-    <p class="card-date">18 March 2026</p>
-    <p class="card-summary">A series of regulatory changes effective from late 2025 and early 2026 are reshaping the operating environment for international FMCG companies importing food and beverage products into Uzbekistan. Key developments include the reinstatement of mandatory sanitary-epidemiological certificates from 1 January 2026, a new sugar tax on sweetened beverages from 1 April 2026, tightened transfer pricing scrutiny under the revised Tax Code, and a looming tariff reset in January 2027 when current zero-duty exemptions expire. For companies relying on import-distribution models across categories such as coffee, confectionery, dairy, water and infant nutrition, the next 12 months present both compliance risks and strategic opportunities.</p>
-  </div>
-  <div class="card-tags">
-    <span class="tag" data-tag="fmcg">FMCG</span>
+
+  <div class="card" data-type="market" data-date="2026-03-18" data-tags="fmcg,import,customs,food-safety,sugar-tax,digital-labelling">
+    <div class="card-header">
+      <span class="card-type-badge badge-market">Market Intelligence</span>
+      <h3>Regulatory landscape shifts for FMCG importers in Uzbekistan</h3>
+    </div>
+    <div class="card-body">
+      <p class="card-date">18 March 2026</p>
+      <p class="card-summary">A series of regulatory changes are reshaping the operating environment for international FMCG companies importing food and beverage products into Uzbekistan.</p>
+    </div>
+    <div class="card-tags">
+      <span class="tag" data-tag="fmcg">FMCG</span>
     <span class="tag" data-tag="import">Import</span>
     <span class="tag" data-tag="customs">Customs</span>
     <span class="tag" data-tag="food-safety">Food Safety</span>
     <span class="tag" data-tag="sugar-tax">Sugar Tax</span>
-    <span class="tag" data-tag="infant-nutrition">Infant Nutrition</span>
     <span class="tag" data-tag="digital-labelling">Digital Labelling</span>
-    <span class="tag" data-tag="regulatory-compliance">Regulatory Compliance</span>
+    </div>
+    <a href="insights/uzbekistan-fmcg-regulatory-landscape.html" class="card-expand-btn">Read More <em class="chevron">&#8594;</em></a>
   </div>
-  <button class="card-expand-btn" onclick="toggleCard(this)">Read More <em class="chevron">&#8964;</em></button>
-  <div class="card-full">
-    <h4>What has changed and why it matters</h4>
-    <p>International food and beverage companies operating in Uzbekistan through import-distribution models face a materially changed regulatory environment following a wave of legislative updates in late 2025 and early 2026. These changes affect customs duties, sanitary certification, product labelling, digital marking and taxation.</p>
-    <h4>Temporary zero tariff window expiring January 2027</h4>
-    <p>Presidential Decree No. 41 (March 2023), as amended by Decree No. 269 (December 2025), suspends import customs duties until 1 January 2027 across most key FMCG categories including chocolate and confectionery, coffee extracts, dairy products, water and soft drinks, culinary products and homogenised infant food. Upon expiry, baseline rates under Resolution No. 181 (May 2025) apply immediately:</p>
-    <ul>
-      <li>Chocolate and confectionery: 30% plus minimum USD 0.35/kg</li>
-      <li>Water and soft drinks: 30% plus minimum USD 0.50/litre</li>
-      <li>Bouillons and soups: 30% plus minimum USD 1.00/kg</li>
-      <li>Yoghurt and fermented dairy: 20% plus minimum USD 0.30/kg</li>
-    </ul>
-    <p>Companies should conduct pricing and distribution strategy reviews for the post-exemption period no later than mid-2026.</p>
-    <h4>Sanitary-epidemiological certificates reinstated</h4>
-    <p>The temporary moratorium on sanitary-epidemiological certificates (SEZ), introduced by Decree No. 67 (April 2025), expired on 31 December 2025. From 1 January 2026, SEZ requirements are restored under Cabinet Resolution No. 814 (December 2025) for a wide range of imported food products including coffee, chocolate, cereal-based products, sauces, water, soft drinks, dairy and complementary foods.</p>
-    <p>Responsibility for obtaining SEZ lies with manufacturers, suppliers and sellers, placing direct compliance obligations on distributors and retail partners. Notably, 50% of penalty revenues are directed to the Committee for Sanitary-Epidemiological Wellbeing's off-budget fund, creating enforcement incentives.</p>
-    <h4>Sugar tax on sweetened beverages</h4>
-    <p>Law No. 1108 (December 2025) introduces excise tax on packaged non-alcoholic beverages containing sugar or sweeteners from 1 January 2026. From 1 April 2026, rates are differentiated by sugar content per 100ml:</p>
-    <ul>
-      <li>Up to 5g: 500 UZS/litre</li>
-      <li>5-10g: 515 UZS/litre</li>
-      <li>10g+: 535 UZS/litre</li>
-    </ul>
-    <p>At current exchange rates, this translates to approximately USD 0.04 per litre across all tiers.</p>
-    <p>Where sugar content is not indicated on packaging, the maximum rate applies automatically. The tax is payable by importing legal entities.</p>
-    <h4>Transfer pricing and tax enforcement</h4>
-    <p>Law No. 1108 incorporates transfer pricing audits into standard field tax inspection procedures (Article 137 of the Tax Code). International companies importing through affiliated group structures face heightened scrutiny.</p>
-    <p>New Article 121-1 permits direct enforcement of tax debts against a taxpayer's debtors via collection orders to their bank accounts, bypassing court procedures. Distributor tax liabilities may thus be enforced against retail partners.</p>
-    <p>Expanded provisions on high-risk invoices (Article 266-1) deny VAT credits to buyers receiving goods under flagged invoices unless they self-assess as tax agents.</p>
-    <h4>Inventory turnover requirements</h4>
-    <p>Decree No. 246 (December 2025) establishes that unsold imported food inventory exceeding 500 base calculation units (approximately USD 17,000), remaining unsold for nine months from import date, triggers mandatory field tax inspection. This effectively creates an inventory turnover standard for imported FMCG products.</p>
-    <h4>Digital labelling expansion</h4>
-    <p>Mandatory DataMatrix labelling under the Asl belgisi system applies to water and soft drinks (codes 2009, 2201, 2202) since March 2024, with sales of unlabelled products prohibited since March 2025. Coffee, chocolate, infant nutrition and culinary products are not yet included but remain at risk of inclusion given consistent scope expansion.</p>
-    <h4>Uzbek language labelling</h4>
-    <p>Decree No. 269 (December 2025) suspends mandatory Uzbek-language labelling requirements for imported food products until 1 January 2027. Companies should prepare compliant packaging across full product ranges ahead of this deadline.</p>
-    <h4>Infant nutrition restrictions</h4>
-    <p>Cabinet Resolution No. 636 (October 2025) adopts the National Breastfeeding Support Programme to 2030, aligned with the WHO International Code. The programme mandates amendments to the Advertising Law introducing a full ban on sponsorship by infant formula manufacturers of any events related to pregnant women, nursing mothers and child nutrition, including medical conferences. Target exclusive breastfeeding rates of 80% by 2030 (from current 25%) create long-term structural pressure on the infant formula segment.</p>
-    <h4>What this means for your business</h4>
-    <p>Companies importing FMCG products into Uzbekistan should prioritise the following:</p>
-    <ul>
-      <li>Conduct tariff impact assessment ahead of January 2027 duty reset</li>
-      <li>Audit SEZ documentation across full product portfolios</li>
-      <li>Review sugar content declarations and excise exposure for sweetened beverages</li>
-      <li>Assess transfer pricing documentation and intercompany pricing structures</li>
-      <li>Establish inventory management protocols to avoid nine-month threshold triggers</li>
-      <li>Monitor digital labelling expansion for categories not yet covered</li>
-      <li>Prepare Uzbek-language packaging for January 2027 deadline</li>
-      <li>For infant nutrition, assess strategic shift toward complementary feeding products</li>
-    </ul>
-    <a href="contact.html" class="read-cta">Get in touch to discuss what these changes mean for your operations.</a>
-  </div>
-</div>
-<!-- Card: Uzbekistan WTO Accession -->
-<div class="card" data-type="insight" data-date="2026-03-18" data-tags="wto,trade-policy,market-access,tariffs,regulatory-reform,investment-climate,central-asia,uzbekistan">
-  <div class="card-header">
-    <span class="card-type-badge badge-insight">Strategic Insight</span>
-    <h3>Uzbekistan's WTO accession: final stretch with uncertain timing</h3>
-  </div>
-  <div class="card-body">
-    <p class="card-date">14 March 2026</p>
-    <p class="card-summary">Uzbekistan is in the final stages of its three-decade journey to join the World Trade Organization. The 12th Working Party meeting on 9 March 2026 confirmed that 30 bilateral market access agreements have been deposited with the WTO Secretariat, with negotiations ongoing to conclude the remaining bilaterals. Despite some member states delaying document review, accession by the end of 2026 remains realistic. WTO membership is a priority at the highest level of government, with significant political capital invested in delivering this centrepiece of the country's economic reform agenda. For international companies, WTO membership will lock in bound tariffs, services liberalisation and regulatory transparency. However, the post-accession period may prove more challenging than the negotiations themselves, as government bodies and the private sector lack deep understanding of what implementation will require.</p>
-  </div>
-  <div class="card-tags">
-    <span class="tag" data-tag="wto">WTO</span>
+
+  <div class="card" data-type="strategic" data-date="2026-03-18" data-tags="wto,trade-policy,market-access,tariffs,regulatory-reform,investment-climate">
+    <div class="card-header">
+      <span class="card-type-badge badge-strategic">Strategic Insight</span>
+      <h3>Uzbekistan's WTO accession: final stretch with uncertain timing</h3>
+    </div>
+    <div class="card-body">
+      <p class="card-date">14 March 2026</p>
+      <p class="card-summary">Uzbekistan is in the final stages of its three-decade journey to join the World Trade Organization.</p>
+    </div>
+    <div class="card-tags">
+      <span class="tag" data-tag="wto">WTO</span>
     <span class="tag" data-tag="trade-policy">Trade Policy</span>
     <span class="tag" data-tag="market-access">Market Access</span>
     <span class="tag" data-tag="tariffs">Tariffs</span>
     <span class="tag" data-tag="regulatory-reform">Regulatory Reform</span>
     <span class="tag" data-tag="investment-climate">Investment Climate</span>
-    <span class="tag" data-tag="central-asia">Central Asia</span>
+    </div>
+    <a href="insights/uzbekistan-wto-accession.html" class="card-expand-btn">Read More <em class="chevron">&#8594;</em></a>
   </div>
-  <button class="card-expand-btn" onclick="toggleCard(this)">Read More <em class="chevron">&#8964;</em></button>
-  <div class="card-full">
-    <h4>Background and current status</h4>
-    <p>Uzbekistan's Working Party on WTO accession was established in December 1994. After years of limited progress, the process accelerated significantly from 2017 onwards as part of the country's broader economic reform agenda.</p>
-    <p>At the 12th Working Party meeting on 9 March 2026, Deputy Prime Minister Jamshid Khodjaev reaffirmed Uzbekistan's commitment to concluding accession this year and asked for members' continued engagement and constructive cooperation. The high-level delegation included chief negotiator Azizbek Urunov, Deputy Minister of Economy and Finance Akhadbek Khaydarov and Deputy Minister of Justice Makhmud Istamov. The involvement of such senior figures signals that WTO accession remains a top priority for the government.</p>
-    <p>Key milestones achieved to date include 30 bilateral market access agreements deposited with WTO Secretariat, five of which since November 2025 with Ecuador, the EU, Paraguay, Russia and Uruguay. Bilateral negotiations have been concluded with 33 of 34 engaged WTO members, with only Taiwan remaining. Over 30 WTO-related laws have been adopted domestically. The current Working Party Report contains 62 draft commitments, up from 56 previously. Twelve Working Party meetings have been held.</p>
-    <p>The Working Party Chair, Ambassador Sung-yo Choi of the Republic of Korea, commended Uzbekistan for impressive progress since 2020 and noted that the market access pillar is very close to conclusion.</p>
-    <h4>Delays and political dynamics</h4>
-    <p>Despite progress, chief negotiator Urunov confirmed in March 2026 that accession may be delayed beyond the original target of the 14th WTO Ministerial Conference in Cameroon.</p>
-    <p>"Some countries are delaying the review of our documents. It would be wrong to disclose them now. But such countries exist, and we are currently negotiating with them, trying to expedite the process," Urunov stated.</p>
-    <p>The unnamed countries delaying document review are likely raising concerns unrelated to trade. Some may be using the accession process as leverage on bilateral political issues. Others may have domestic constituencies, including agricultural lobbies and manufacturing interests, pushing back on Uzbekistan's market access offers. The fact that Taiwan remains the only outstanding bilateral is politically sensitive given Uzbekistan's relations with China. Resolving this quietly will require diplomatic finesse.</p>
-    <p>Nonetheless, accession by the end of 2026 remains achievable. Delay beyond 2026 would represent a significant setback for a government that has made WTO membership a flagship reform commitment.</p>
-    <h4>Tariff commitments and transitional periods</h4>
-    <p>A key element of negotiation concerns tariff liberalisation schedules. According to Urunov, Uzbekistan has secured transitional periods for sensitive sectors.</p>
-    <p>Transitional periods of three to eight years have been negotiated for certain sectors. Sensitive sectors include agriculture, light industry and automotive. The overall direction is that tariffs will decrease, but with graduated timelines.</p>
-    <p>"In the course of negotiations, we agreed on transitional periods for tariff liberalisation of three, five, seven, and in some cases up to eight years," Urunov confirmed, while noting he cannot disclose specific details.</p>
-    <p>Current Uzbek tariff levels are already relatively low by historical comparison. Urunov noted that average import duties have halved over the past eight years, and are four to five times lower than China's or India's levels at the time of their WTO accession.</p>
-    <h4>Services and regulatory commitments</h4>
-    <p>As part of accession, Uzbekistan is undertaking comprehensive reforms.</p>
-    <p>Domestic legislation is being aligned with WTO agreements covering technical barriers to trade, sanitary and phytosanitary measures, customs valuation based on GATT Article VII principles, intellectual property protection under TRIPS, subsidy transparency and notification requirements, and state-owned enterprise disciplines.</p>
-    <p>On subsidy transparency, Urunov confirmed that WTO rules require annual reporting on subsidies. If the level of these subsidies exceeds the commitments made upon accession, the WTO requires compliance. Subsidies can only be provided within the agreed commitments.</p>
-    <h4>Sectors most affected</h4>
-    <p>The automotive sector will see the most significant impact. Despite transitional periods, the direction is clear and local manufacturers face pressure. International brands already entering the market, including BYD, JAC and Kia, will benefit from gradual liberalisation.</p>
-    <p>Agriculture and food processing face a dual effect. Tariff reductions will increase import competition, but exporters gain MFN access to 166 markets. Cotton textiles and dried fruits are well positioned for export growth.</p>
-    <p>Financial services and banking will face liberalisation pressure. With state banks holding around 60% of assets, WTO services commitments will accelerate privatisation and foreign entry.</p>
-    <p>Pharmaceuticals are currently protected by registration barriers. WTO disciplines on TBT and SPS will force alignment with international standards, benefiting importers.</p>
-    <p>Retail and distribution will see increased competition as services commitments open the market to foreign operators.</p>
-    <h4>The difficult post-accession period</h4>
-    <p>WTO accession is not the finish line but the starting point of a challenging adjustment period. This is perhaps the most underappreciated risk for companies planning their Uzbekistan strategy.</p>
-    <p>The legislative overload is substantial. Over 30 laws have been adopted and nearly 30 more are in preparation. Government bodies will struggle to implement and enforce these coherently.</p>
-    <p>A significant knowledge gap exists across the system. Ministries, regulatory agencies, customs officials and the private sector lack deep understanding of WTO rules. Training and capacity building have not kept pace with the negotiation timeline.</p>
-    <p>Business uncertainty remains high. Companies do not know exactly what the bound tariff rates will be, which services sectors will open, or how transitional periods will be applied in practice. The full accession package remains confidential until adoption.</p>
-    <p>Enforcement will be unpredictable. Even with WTO-compliant laws on paper, implementation will be uneven. Companies should expect inconsistent customs practices, varying interpretations by different agencies, and a learning curve for dispute resolution.</p>
-    <p>The private sector is largely unprepared. Local businesses, particularly SMEs, have little awareness of how WTO membership will affect them. Many will be caught off guard by new competition.</p>
-    <h4>What this means for your business</h4>
-    <p>International companies operating in or considering Uzbekistan should treat the pre-accession period as a strategic window.</p>
-    <p>Building relationships now is essential. The period before accession offers an opportunity to establish presence, build government relationships and shape implementation before the market becomes more competitive.</p>
-    <p>Investing in local knowledge will pay dividends. Companies that understand both WTO rules and Uzbek regulatory practice will navigate the transition better than those relying on either alone.</p>
-    <p>Preparing for volatility is prudent. The first two to three years post-accession will see regulatory flux, enforcement inconsistencies and potential policy adjustments as the government learns by doing.</p>
-    <p>Engaging on implementation matters. Joining industry associations and chambers of commerce that can advocate for sensible implementation of WTO commitments will help shape outcomes.</p>
-    <p>Monitoring sensitive sectors is critical. Companies operating in agriculture, automotive or light industry should track transitional period schedules closely once published.</p>
-    <p>Assessing supply chain opportunities is timely. Uzbekistan will gain MFN access to 166 member markets, potentially creating new export and sourcing options.</p>
-    <a href="contact.html" class="read-cta">Get in touch to discuss what WTO accession means for your market strategy.</a>
-  </div>
-</div>
 
-
-  
 </div>
 
 <!-- Subscribe Strip -->
 <section class="subscribe-strip">
   <h2>Stay Informed</h2>
-  <p>Receive regulatory alerts and market intelligence directly to your inbox — no noise, just what matters.</p>
+  <p>Receive regulatory alerts and market intelligence directly to your inbox &mdash; no noise, just what matters.</p>
   <form class="sub-form" action="https://formspree.io/f/mreanjlb" method="POST">
     <input type="email" name="email" placeholder="Your email address" required>
     <button type="submit">Subscribe</button>
@@ -922,98 +406,48 @@
   <div class="footer-inner">
     <div class="footer-left">
       <span class="footer-name">Nurilla <span>Abdushukurov</span></span>
-      <span class="footer-sep">·</span>
+      <span class="footer-sep">&middot;</span>
       <span class="footer-role-item">Regulatory Affairs</span>
-      <span class="footer-sep">·</span>
+      <span class="footer-sep">&middot;</span>
       <span class="footer-role-item">Government Relations</span>
-      <span class="footer-sep">·</span>
+      <span class="footer-sep">&middot;</span>
       <span class="footer-role-item">Policy Advisory</span>
     </div>
     <div class="footer-copy">&copy; 2026 Nurilla Abdushukurov &middot; All rights reserved</div>
   </div>
 </footer>
 
-<!-- Modal Overlay -->
-<div class="insight-modal-overlay" id="insightModal" onclick="closeModalOnOverlay(event)">
-  <div class="insight-modal" id="insightModalBox">
-    <button class="modal-close" onclick="closeModal()" title="Close">&times;</button>
-    <div class="modal-content" id="insightModalContent"></div>
-  </div>
-</div>
-
 <script>
 function toggleMenu(){document.getElementById("mobileMenu").classList.toggle("open");}
-/* ══════════════════════════════════════════
-   MODAL
-══════════════════════════════════════════ */
-function toggleCard(btn) {
-  const card = btn.closest('.card');
-  const full = card.querySelector('.card-full');
-  if (!full) return;
 
-  // Build modal content from card data
-  const title = card.querySelector('.card-header h3').innerText;
-  const badge = card.querySelector('.card-type-badge').outerHTML;
-  const date  = card.querySelector('.card-date') ? card.querySelector('.card-date').outerHTML : '';
-  const body  = full.innerHTML;
-
-  document.getElementById('insightModalContent').innerHTML =
-    '<div style="margin-bottom:16px;">' + badge + '</div>' +
-    '<h3>' + title + '</h3>' +
-    date +
-    body;
-
-  document.getElementById('insightModal').classList.add('open');
-  document.body.style.overflow = 'hidden';
-}
-
-function closeModal() {
-  document.getElementById('insightModal').classList.remove('open');
-  document.body.style.overflow = '';
-}
-
-function closeModalOnOverlay(e) {
-  if (e.target === document.getElementById('insightModal')) closeModal();
-}
-
-document.addEventListener('keydown', function(e) {
-  if (e.key === 'Escape') closeModal();
-});
-
-/* ══════════════════════════════════════════
-   FILTER & SORT
-══════════════════════════════════════════ */
+/* FILTER & SORT */
 const filterDescriptions = {
   all:        'Regulatory alerts, policy briefs, market intelligence and event coverage curated for international companies navigating Uzbekistan.',
-  regulatory: 'New laws, decrees and regulations creating direct compliance obligations for businesses operating in or exporting to Uzbekistan. Each alert flags what has changed, what action is needed and by when.',
-  policy:     'Government strategies, institutional reforms and policy frameworks that signal where Uzbekistan is heading without creating immediate compliance obligations. Each brief helps identify which sectors are being prioritised and where early engagement may be warranted.',
-  event:      'Major forums, investment summits and industry gatherings relevant to international companies in Uzbekistan. Coverage includes programme highlights, key sectors on the agenda, registration details and how to prepare for maximum impact.',
-  market:     'Data-driven analysis of economic trends, sector performance, trade flows and investment environment developments. Each update helps international companies understand the broader operating landscape and identify emerging opportunities or risks.',
-  strategic:  'In-depth analysis of structural, political and institutional shifts shaping the business environment over the medium to long term. Designed for senior decision-makers assessing market entry, expansion or risk exposure at a strategic level.'
+  regulatory: 'New laws, decrees and regulations creating direct compliance obligations for businesses operating in or exporting to Uzbekistan.',
+  policy:     'Government strategies, institutional reforms and policy frameworks that signal where Uzbekistan is heading.',
+  event:      'Major forums, investment summits and industry gatherings relevant to international companies in Uzbekistan.',
+  market:     'Data-driven analysis of economic trends, sector performance, trade flows and investment environment developments.',
+  strategic:  'In-depth analysis of structural, political and institutional shifts shaping the business environment over the medium to long term.'
 };
 
-let activeFilter  = 'all';
-let activeTag     = null;
+let activeFilter = 'all';
+let activeTag = null;
 
 function applyFilters() {
-  const grid   = document.getElementById('insightsGrid');
-  const cards  = Array.from(grid.querySelectorAll('.card'));
-  const sort   = document.getElementById('sortSelect').value;
+  const grid = document.getElementById('insightsGrid');
+  const cards = Array.from(grid.querySelectorAll('.card'));
+  const sort = document.getElementById('sortSelect').value;
 
-  // 1. Determine visibility
   cards.forEach(card => {
     const type = card.dataset.type || '';
     const tags = (card.dataset.tags || '').toLowerCase().split(',').map(t => t.trim());
-
     const typeMatch = (activeFilter === 'all') || (type === activeFilter);
-    const tagMatch  = !activeTag || tags.includes(activeTag.toLowerCase());
-
+    const tagMatch = !activeTag || tags.includes(activeTag.toLowerCase());
     card.classList.toggle('hidden', !(typeMatch && tagMatch));
   });
 
-  // 2. Sort visible cards
-  const visible  = cards.filter(c => !c.classList.contains('hidden'));
-  const hidden   = cards.filter(c =>  c.classList.contains('hidden'));
+  const visible = cards.filter(c => !c.classList.contains('hidden'));
+  const hidden = cards.filter(c => c.classList.contains('hidden'));
 
   visible.sort((a, b) => {
     const da = new Date(a.dataset.date || '2000-01-01');
@@ -1021,15 +455,11 @@ function applyFilters() {
     return sort === 'newest' ? db - da : da - db;
   });
 
-  // 3. Re-append in order
   [...visible, ...hidden].forEach(c => grid.appendChild(c));
 
-  // 4. No results message
-  const noResults = document.getElementById('noResults');
-  noResults.classList.toggle('visible', visible.length === 0);
+  document.getElementById('noResults').classList.toggle('visible', visible.length === 0);
 
-  // 5. Filter description
-  const descBox  = document.getElementById('filterDescription');
+  const descBox = document.getElementById('filterDescription');
   const descText = document.getElementById('filterDescText');
   if (activeFilter === 'all' && !activeTag) {
     descBox.style.display = 'none';
@@ -1041,7 +471,6 @@ function applyFilters() {
   }
 }
 
-/* Filter buttons */
 document.querySelectorAll('.filter-btn').forEach(btn => {
   btn.addEventListener('click', function() {
     document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
@@ -1051,10 +480,8 @@ document.querySelectorAll('.filter-btn').forEach(btn => {
   });
 });
 
-/* Sort select */
 document.getElementById('sortSelect').addEventListener('change', applyFilters);
 
-/* Tag clicks */
 document.querySelectorAll('.tag').forEach(tag => {
   tag.addEventListener('click', function(e) {
     e.stopPropagation();
@@ -1065,14 +492,13 @@ document.querySelectorAll('.tag').forEach(tag => {
   });
 });
 
-/* Clear tag */
 function clearTagFilter() {
   activeTag = null;
   document.getElementById('activeTagFilter').classList.remove('visible');
   applyFilters();
 }
 
-/* Run on load */
 applyFilters();
 </script>
-
+</body>
+</html>
